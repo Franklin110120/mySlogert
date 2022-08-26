@@ -1,0 +1,28 @@
+EventId,EventTemplate,Occurrences
+f49657b2,"imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)",2491
+7edba00f,imap(<*>): Logged out in=<*> out=<*>,2620
+aa436bfa,(<*>) CMD ( cd / && run-parts --report /<*>),7
+19d70957,"imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>",2619
+c7a9a5e4,"[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of ""/<*>""]",842
+0c2ce181,"[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",673
+8f8ad23c,"[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",60
+3cdd7a4b,"[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of ""/<*>""]",86
+a33acd0c,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of ""/<*>""]",164
+09cc6741,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of ""/<*>""]",164
+02e23f8a,"[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",78
+2fc5a013,"[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of ""/<*>""]",28
+b6f5e68b,"[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",52
+aca16d28,(<*>) CMD ( [ -x /<*> ] && if [ ! -d /<*> ]; then /<*>; fi),13
+73f564e0,Starting Clean php session files...,13
+6d8806bb,Started Clean php session files.,13
+c9f3df73,"[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",52
+8dbb2c05,DHCPREQUEST of <*> on eth0 to <*> port <*>,2
+151a0778,DHCPACK of <*> from <*>,2
+032e2c6f,bound to <*> -- renewal in <*> seconds.,2
+6385bb71,"[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",8
+038a758d,Starting Cleanup of Temporary Directories...,1
+20447797,Started Cleanup of Temporary Directories.,1
+6039f7f0,"[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",6
+4086fa06,"[<*>] [<*>] Authentication failed. [pid <*> on line <*> of ""/<*>""]",1
+5431e37d,"[<*>] FAILED LOGIN for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",2
+2dbdc7da,"imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, session=<<*>>",1

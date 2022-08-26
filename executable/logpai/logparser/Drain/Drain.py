@@ -4,7 +4,7 @@ Author      : LogPAI team
 License     : MIT
 """
 
-import regex as re
+import re
 import os
 import numpy as np
 import pandas as pd

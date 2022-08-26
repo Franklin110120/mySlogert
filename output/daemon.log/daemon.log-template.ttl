@@ -1,0 +1,561 @@
+@prefix logex: <https://w3id.org/sepses/ns/logex#> .
+@prefix cee:   <https://w3id.org/sepses/cee#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix log:   <https://w3id.org/sepses/ns/log#> .
+@prefix lxid:  <https://w3id.org/sepses/id/logex/> .
+@prefix lid:   <https://w3id.org/sepses/id/log/> .
+@prefix ottr:  <http://ns.ottr.xyz/0.4/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix svid:  <https://w3id.org/sepses/id/service/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+lxid:LogEventTemplate_3f3a41fb
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3f3a41fb" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 12:29:43 2020 -> Database updated (6769409 signatures) from db.local.clamav.net (IP: 104.16.219.84)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "ip" ) ;
+        logex:keyword                  "signature" , "ip" , "database update" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>)" .
+
+lxid:LogEventTemplate_73f564e0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "73f564e0" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Starting Clean php session files..." ;
+        logex:hasAnnotation            cee:action_start , cee:object_file , cee:object_session , cee:action_clean ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "clean" , "php" , "file" , "session" , "start" ;
+        logex:pattern                  "Starting Clean php session files..." .
+
+lxid:LogEventTemplate_3f36733a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3f36733a" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 12:29:13 2020 -> daily.cld updated (version: 25740, sigs: 2204413, f-level: 63, builder: raynman)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "sig" , "daily.cld update" , "tue mar" , "version" , "raynman" , "f-level" , "builder" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)" .
+
+lxid:LogEventTemplate_cdf0b291
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cdf0b291" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> ^Local version: 0.100.2 Recommended version: 0.102.2" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "recommend version" , "local version" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>" .
+
+lxid:LogEventTemplate_be35dfa1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "be35dfa1" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Started Daily apt upgrade and clean activities." ;
+        logex:hasAnnotation            cee:action_clean , cee:action_start , cee:action_upgrade ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "start" , "daily" , "upgrade" , "apt" , "clean activity" ;
+        logex:pattern                  "Started Daily apt upgrade and clean activities." .
+
+lxid:LogEventTemplate_769dc921
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "769dc921" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "failure 1" ;
+        logex:hasAnnotation            cee:status_failure ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "failure" ;
+        logex:pattern                  "failure <*>" .
+
+lxid:LogEventTemplate_b7846b4e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b7846b4e" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> Received signal: wake up" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "wake" , "receive signal" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up" .
+
+lxid:LogEventTemplate_2e87be9e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2e87be9e" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "The audit daemon is exiting." ;
+        logex:hasAnnotation            cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "audit" , "be" , "daemon" , "exit" ;
+        logex:pattern                  "The audit daemon is exiting." .
+
+lxid:LogEventTemplate_d0f6fa37
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d0f6fa37" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav" ;
+        logex:hasAnnotation            cee:action_read ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "url" ) ;
+        logex:keyword                  "wed mar" , "panic" , "read" , "do" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>" .
+
+lxid:LogEventTemplate_54585b4f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "54585b4f" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 15:31:22 2020 -> Database updated (6771362 signatures) from db.local.clamav.net (IP: 104.16.219.84)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "ip" ) ;
+        logex:keyword                  "ip" , "wed mar" , "signature" , "database update" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>)" .
+
+lxid:LogEventTemplate_6d8806bb
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6d8806bb" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Started Clean php session files." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean , cee:object_file , cee:object_session ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "php" , "start" , "session" , "file" , "clean" ;
+        logex:pattern                  "Started Clean php session files." .
+
+lxid:LogEventTemplate_8dbb2c05
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8dbb2c05" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "DHCPREQUEST of 192.168.10.122 on eth0 to 192.168.10.2 port 67" ;
+        logex:hasParameterList         ( "ip" "ip" "port" ) ;
+        logex:keyword                  "port" , "eth0" , "dhcprequest" ;
+        logex:pattern                  "DHCPREQUEST of <*> on eth0 to <*> port <*>" .
+
+lxid:LogEventTemplate_cc63a5ac
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cc63a5ac" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "No rules" ;
+        logex:hasAnnotation            cee:object_rule ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "rule" ;
+        logex:pattern                  "No rules" .
+
+lxid:LogEventTemplate_fb2814e0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fb2814e0" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> ^Local version: 0.100.2 Recommended version: 0.102.2" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "recommend version" , "local version" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>" .
+
+lxid:LogEventTemplate_dd23ebe3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "dd23ebe3" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "/sbin/augenrules: No change" ;
+        logex:hasParameterList         ( "path" ) ;
+        logex:keyword                  "change" ;
+        logex:pattern                  "/<*>: No change" .
+
+lxid:LogEventTemplate_53f856aa
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "53f856aa" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Started dispatcher: /sbin/audispd pid: 12451" ;
+        logex:hasAnnotation            cee:action_start ;
+        logex:hasParameterList         ( "path" "pid" ) ;
+        logex:keyword                  "pid" , "start dispatcher" ;
+        logex:pattern                  "Started dispatcher: /<*> pid: <*>" .
+
+lxid:LogEventTemplate_df3544f5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "df3544f5" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> main.cvd is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "builder" , "wed mar" , "f-level" , "version" , "be" , "sig" , "date" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>" .
+
+lxid:LogEventTemplate_9f54fa65
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9f54fa65" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 15:31:22 2020 -> !NotifyClamd: Can't find or parse configuration file /etc/clamav/clamd.conf" ;
+        logex:hasAnnotation            cee:object_file , cee:action_find ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "file" , "configuration" , "parse" , "notifyclamd" , "wed mar" , "find" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>" .
+
+lxid:LogEventTemplate_ed52ffed
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ed52ffed" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> Received signal: wake up" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "wake" , "receive signal" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up" .
+
+lxid:LogEventTemplate_d7be613d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d7be613d" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Reloading The Apache HTTP Server." ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "http" , "apache" , "server" , "reload" ;
+        logex:pattern                  "Reloading The Apache HTTP Server." .
+
+lxid:LogEventTemplate_cb372a73
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cb372a73" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 12:28:12 2020 -> Downloading daily-25740.cdiff [100%]" ;
+        logex:hasAnnotation            cee:action_download ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "download daily" , "cdiff" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%]" .
+
+lxid:LogEventTemplate_032e2c6f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "032e2c6f" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "bound to 192.168.10.122 -- renewal in 32799 seconds." ;
+        logex:hasAnnotation            cee:action_bind ;
+        logex:hasParameterList         ( "ip" "unknown" ) ;
+        logex:keyword                  "renewal" , "bind" , "seconds" ;
+        logex:pattern                  "bound to <*> -- renewal in <*> seconds." .
+
+lxid:LogEventTemplate_2abce80a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2abce80a" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> ClamAV update process started at Tue Mar  3 00:28:11 2020" ;
+        logex:hasAnnotation            cee:action_update , cee:object_process , cee:action_start ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "process" , "clamav" , "start" , "update" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Tue Mar <*> <*>:<*>:<*> <*>" .
+
+lxid:LogEventTemplate_fac4355b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fac4355b" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "apt-daily.timer: Adding 33min 10.556007s random time." ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "random time" , "add" , "timer" ;
+        logex:pattern                  "apt-daily.timer: Adding <*> <*> random time." .
+
+lxid:LogEventTemplate_43d542ce
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "43d542ce" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Started Daily apt download activities." ;
+        logex:hasAnnotation            cee:action_download , cee:action_start ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "activity" , "download" , "apt" , "start" , "daily" ;
+        logex:pattern                  "Started Daily apt download activities." .
+
+lxid:LogEventTemplate_1dc1bdd9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1dc1bdd9" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Init complete, auditd 2.6.7 listening for events (startup state enable)" ;
+        logex:hasAnnotation            cee:service_audit , cee:object_event , cee:action_audit , cee:action_start ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "listen" , "enable" , "auditd" , "startup" , "init complete" , "event" , "state" ;
+        logex:pattern                  "Init complete, auditd <*>.<*>.<*> listening for events (startup state enable)" .
+
+lxid:LogEventTemplate_dce780ab
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "dce780ab" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "pid 12447" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "pid" ;
+        logex:pattern                  "pid <*>" .
+
+lxid:LogEventTemplate_f03cbe60
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f03cbe60" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "lost 1565" ;
+        logex:hasAnnotation            cee:domain_os ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "lose" ;
+        logex:pattern                  "lost <*>" .
+
+lxid:LogEventTemplate_6ad000fd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6ad000fd" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> ClamAV update process started at Wed Mar  4 00:29:43 2020" ;
+        logex:hasAnnotation            cee:object_process , cee:action_update , cee:action_start ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "process" , "update" , "clamav" , "start" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Wed Mar <*> <*>:<*>:<*> <*>" .
+
+lxid:LogEventTemplate_972148e8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "972148e8" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "backlog_limit 81920" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "limit" , "backlog" ;
+        logex:pattern                  "backlog_limit <*>" .
+
+lxid:LogEventTemplate_6be8674a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6be8674a" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Starting Security Auditing Service..." ;
+        logex:hasAnnotation            cee:action_start , cee:service , cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "security" , "start" , "service" , "auditing" ;
+        logex:pattern                  "Starting Security Auditing Service..." .
+
+lxid:LogEventTemplate_918d45a8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "918d45a8" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 15:29:44 2020 -> Downloading daily-25741.cdiff [100%]" ;
+        logex:hasAnnotation            cee:action_download ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "wed mar" , "download daily" , "cdiff" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%]" .
+
+lxid:LogEventTemplate_45bfe7f4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "45bfe7f4" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "dispatch error reporting limit reached - ending report notification." ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "end" , "error" , "notification" , "reach" , "dispatch" , "report" , "limit" ;
+        logex:pattern                  "dispatch error reporting limit reached - ending report notification." .
+
+lxid:LogEventTemplate_151a0778
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "151a0778" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "DHCPACK of 192.168.10.122 from 192.168.10.2" ;
+        logex:hasParameterList         ( "ip" "ip" ) ;
+        logex:keyword                  "dhcpack" ;
+        logex:pattern                  "DHCPACK of <*> from <*>" .
+
+lxid:LogEventTemplate_d7954569
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d7954569" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> ^Your ClamAV installation is OUTDATED!" ;
+        logex:hasAnnotation            cee:action_install ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "clamav" , "outdated" , "installation" , "be" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!" .
+
+lxid:LogEventTemplate_2373bc64
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2373bc64" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 15:31:18 2020 -> *Can't query daily.25741.93.1.0.6810DB54.ping.clamav.net" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "query" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> *Can't query <*>" .
+
+lxid:LogEventTemplate_ba7787c1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ba7787c1" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Stopping Security Auditing Service..." ;
+        logex:hasAnnotation            cee:service_audit , cee:service , cee:action_audit , cee:action_stop ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "stopping" , "security" , "auditing" , "service" ;
+        logex:pattern                  "Stopping Security Auditing Service..." .
+
+lxid:LogEventTemplate_76b18ae2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "76b18ae2" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Starting Daily apt upgrade and clean activities..." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean , cee:action_upgrade ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "daily" , "clean activity" , "upgrade" , "apt" , "start" ;
+        logex:pattern                  "Starting Daily apt upgrade and clean activities..." .
+
+lxid:LogEventTemplate_074ecaa1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "074ecaa1" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 12:29:38 2020 -> *Can't query daily.25740.93.1.0.6810DB54.ping.clamav.net" ;
+        logex:hasAnnotation            cee:service_db , cee:domain_net ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "tue mar" , "query" , "db54.ping.clamav.net" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> *Can't query daily.<*>.6810DB54.ping.clamav.net" .
+
+lxid:LogEventTemplate_669adf99
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "669adf99" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "enabled 1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "enable" ;
+        logex:pattern                  "enabled <*>" .
+
+lxid:LogEventTemplate_20447797
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "20447797" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Started Cleanup of Temporary Directories." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "temporary directories" , "start cleanup" ;
+        logex:pattern                  "Started Cleanup of Temporary Directories." .
+
+lxid:LogEventTemplate_15f92ecf
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "15f92ecf" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Wed Mar  4 15:31:07 2020 -> daily.cld updated (version: 25741, sigs: 2206366, f-level: 63, builder: raynman)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "sig" , "wed mar" , "f-level" , "raynman" , "version" , "builder" , "daily.cld update" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)" .
+
+lxid:LogEventTemplate_78b42a20
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "78b42a20" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> main.cvd is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "tue mar" , "version" , "date" , "sig" , "builder" , "f-level" , "be" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>" .
+
+lxid:LogEventTemplate_d70ab203
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d70ab203" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> ^Your ClamAV installation is OUTDATED!" ;
+        logex:hasAnnotation            cee:action_install ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "clamav" , "outdated" , "be" , "tue mar" , "installation" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!" .
+
+lxid:LogEventTemplate_26a2e0f6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "26a2e0f6" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "backlog_wait_time 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "time" , "wait" , "backlog" ;
+        logex:pattern                  "backlog_wait_time <*>" .
+
+lxid:LogEventTemplate_fd82c615
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fd82c615" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "dispatch err (pipe full) event lost" ;
+        logex:hasAnnotation            cee:object_event , cee:domain_os ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "pipe full" , "event lose" , "dispatch err" ;
+        logex:pattern                  "dispatch err (pipe full) event lost" .
+
+lxid:LogEventTemplate_b69f03bd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b69f03bd" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav" ;
+        logex:hasAnnotation            cee:action_read ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "url" ) ;
+        logex:keyword                  "panic" , "read" , "tue mar" , "do" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>" .
+
+lxid:LogEventTemplate_a7c1984d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a7c1984d" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Tue Mar  3 12:29:43 2020 -> !NotifyClamd: Can't find or parse configuration file /etc/clamav/clamd.conf" ;
+        logex:hasAnnotation            cee:action_find , cee:object_file ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "configuration" , "file" , "tue mar" , "parse" , "notifyclamd" , "find" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>" .
+
+lxid:LogEventTemplate_038a758d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "038a758d" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Starting Cleanup of Temporary Directories..." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "start cleanup" , "temporary directory" ;
+        logex:pattern                  "Starting Cleanup of Temporary Directories..." .
+
+lxid:LogEventTemplate_b37fee6f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b37fee6f" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Starting Daily apt download activities..." ;
+        logex:hasAnnotation            cee:action_start , cee:action_download ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "apt" , "start" , "daily" , "activity" , "download" ;
+        logex:pattern                  "Starting Daily apt download activities..." .
+
+lxid:LogEventTemplate_8cabb1a7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8cabb1a7" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "apt-daily.timer: Adding 11h 19min 15.464837s random time." ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "random time" , "add" , "timer" ;
+        logex:pattern                  "apt-daily.timer: Adding <*> <*> <*> random time." .
+
+lxid:LogEventTemplate_18e1df3f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "18e1df3f" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Started Security Auditing Service." ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit , cee:service , cee:action_start ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "start" , "service" , "auditing" , "security" ;
+        logex:pattern                  "Started Security Auditing Service." .
+
+lxid:LogEventTemplate_bc851626
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bc851626" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Stopped Security Auditing Service." ;
+        logex:hasAnnotation            cee:action_stop , cee:service_audit , cee:service , cee:action_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "stopped" , "service" , "security" , "auditing" ;
+        logex:pattern                  "Stopped Security Auditing Service." .
+
+lxid:LogEventTemplate_bfae94f5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bfae94f5" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "Reloaded The Apache HTTP Server." ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "apache" , "http" , "server" , "reload" ;
+        logex:pattern                  "Reloaded The Apache HTTP Server." .
+
+lxid:LogEventTemplate_058f6143
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "058f6143" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "backlog 1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "backlog" ;
+        logex:pattern                  "backlog <*>" .
+
+lxid:LogEventTemplate_640a7d30
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "640a7d30" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "apt-daily-upgrade.timer: Adding 26min 33.210855s random time." ;
+        logex:hasAnnotation            cee:action_upgrade ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "apt-daily-upgrade" , "timer" , "random time" , "add" ;
+        logex:pattern                  "apt-daily-upgrade.timer: Adding <*> <*> random time." .
+
+lxid:LogEventTemplate_df89639b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "df89639b" ;
+        logex:associatedLogSourceType  lid:SourceType_daemon.log ;
+        logex:example                  "rate_limit 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "limit" , "rate" ;
+        logex:pattern                  "rate_limit <*>" .

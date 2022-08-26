@@ -1,0 +1,1564 @@
+@prefix logex: <https://w3id.org/sepses/ns/logex#> .
+@prefix cee:   <https://w3id.org/sepses/cee#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix log:   <https://w3id.org/sepses/ns/log#> .
+@prefix lxid:  <https://w3id.org/sepses/id/logex/> .
+@prefix lid:   <https://w3id.org/sepses/id/log/> .
+@prefix ottr:  <http://ns.ottr.xyz/0.4/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix svid:  <https://w3id.org/sepses/id/service/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+lxid:LogEventTemplate_ca965ec3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ca965ec3" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[logging.py:69:log_dist] [Rank 0] DeepSpeed info: version=0.6.6+4f9c535, git-hash=4f9c535, git-branch=arpan/elasticity" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "deepspeed" , "rank" , "logging.py" ;
+        logex:pattern                  "[logging.py:<*>:<*>] [Rank <*>] DeepSpeed <*> <*> <*> <*>" .
+
+lxid:LogEventTemplate_b20db7a5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b20db7a5" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "amp_enabled .................. False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "enable" , "amp" ;
+        logex:pattern                  "amp_enabled .................. False" .
+
+lxid:LogEventTemplate_11121736
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "11121736" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Rank 0] DeepSpeed info: version=0.6.6+4f9c535, git-hash=4f9c535, git-branch=arpan/elasticity" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "path" ) ;
+        logex:keyword                  "deepspeed info" , "rank" ;
+        logex:pattern                  "[Rank <*>] DeepSpeed info: version=<*>+4f9c535, git-hash=<*>, git-branch=<*>" .
+
+lxid:LogEventTemplate_9a6fa12e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9a6fa12e" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   eigenvalue_tol ............... 0.01" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> <*> <*>.<*>" .
+
+lxid:LogEventTemplate_dc7da35f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "dc7da35f" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   train_batch_size ............. 480" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "batch" , "size" , "train" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] train_batch_size ............. <*>" .
+
+lxid:LogEventTemplate_abcca85f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "abcca85f" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   eigenvalue_layer_num ......... 0" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> ......... <*>" .
+
+lxid:LogEventTemplate_2374d1b2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2374d1b2" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "sparse_gradients_enabled ..... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "gradient" , "enable" , "sparse" , "false" ;
+        logex:pattern                  "sparse_gradients_enabled ..... False" .
+
+lxid:LogEventTemplate_bc93983c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bc93983c" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "gradient_clipping ............ 0.0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "clipping" , "gradient" ;
+        logex:pattern                  "gradient_clipping ............ <*>.<*>" .
+
+lxid:LogEventTemplate_050829a3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "050829a3" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "global_rank_mapping=defaultdict(<class 'list'>, {'lassen268': [0, 1, 2, 3], 'lassen412': [4, 5, 6, 7]})" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "lassen412" , "lassen268" , "list" ;
+        logex:pattern                  "global_rank_mapping=<*>(<class 'list'>, {'lassen268': [<*>, <*>, <*>, <*>], 'lassen412': [<*>, <*>, <*>, <*>]})" .
+
+lxid:LogEventTemplate_1e3d9c20
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1e3d9c20" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "zero_config .................. {" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "config" ;
+        logex:pattern                  "zero_config .................. {" .
+
+lxid:LogEventTemplate_b4525677
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b4525677" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[engine.py:1086:_configure_optimizer] DeepSpeed Basic Optimizer = FusedAdam" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "basic" , "deepspeed" , "fusedadam" , "optimizer" , "engine.py" ;
+        logex:pattern                  "[engine.py:<*>:<*>] DeepSpeed Basic Optimizer = FusedAdam" .
+
+lxid:LogEventTemplate_0e29a366
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0e29a366" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Before Building Model" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "building model" ;
+        logex:pattern                  "Before Building Model" .
+
+lxid:LogEventTemplate_ab8b3167
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ab8b3167" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[checkpointing.py:548:forward] ----Partition Activations False, CPU CHECKPOINTING False" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "partition" , "checkpointing.py" , "false" , "cpu" , "activation" , "checkpointing" ;
+        logex:pattern                  "[checkpointing.py:<*>:<*>] ----Partition Activations False, CPU CHECKPOINTING False" .
+
+lxid:LogEventTemplate_077664f9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "077664f9" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   checkpoint_tag_validation_fail  False" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "false" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> False" .
+
+lxid:LogEventTemplate_5144d680
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "5144d680" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[checkpointing.py:226:model_parallel_cuda_manual_seed] > initializing model parallel cuda seeds on global rank 0, model parallel rank 0, and data parallel rank 0 with model parallel seed: 3952 and data parallel seed: 1234" ;
+        logex:hasAnnotation            cee:action_initialize ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "cuda" , "rank" , "initialize" , "model" , "seed" , "parallel" , "global rank" , "datum" , "checkpointing.py" ;
+        logex:pattern                  "[checkpointing.py:<*>:<*>] > initializing model parallel cuda seeds on global rank <*>, model parallel rank <*>, and data parallel rank <*> with model parallel seed: <*> and data parallel seed: <*>" .
+
+lxid:LogEventTemplate_f543a5bd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f543a5bd" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[elasticity.py:385:compute_elastic_config] Valid World Size (GPUs / Model Parallel Size): [8, 12, 16, 20, 24, 40, 48, 60, 80, 120, 240]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "size" , "parallel" , "model" , "world" , "gpus" , "valid" , "elasticity.py" ;
+        logex:pattern                  "[elasticity.py:<*>:<*>] Valid World Size (GPUs / Model Parallel Size): [<*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>]" .
+
+lxid:LogEventTemplate_08a4492a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "08a4492a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "scheduler_params ............. None" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "none" , "param" , "scheduler" ;
+        logex:pattern                  "scheduler_params ............. None" .
+
+lxid:LogEventTemplate_32fa1626
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "32fa1626" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_stability ......... 1e-06" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "stability" , "eigenvalue" ;
+        logex:pattern                  "eigenvalue_stability ......... 1e-<*>" .
+
+lxid:LogEventTemplate_d1edd8d4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d1edd8d4" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0}" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" , "stage" , "interval" , "auto" , "false" , "layer" , "activation" , "seed" , "pipeline" , "partition" , "checkpoint" ;
+        logex:pattern                  "[config.py:<*>:<*>] pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': <*>}" .
+
+lxid:LogEventTemplate_3f0148f6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3f0148f6" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[launch.py:136:main] global_rank_mapping=defaultdict(<class 'list'>, {'lassen268': [0, 1, 2, 3], 'lassen412': [4, 5, 6, 7]})" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "lassen268" , "launch.py" , "list" , "lassen412" ;
+        logex:pattern                  "[launch.py:<*>:<*>] global_rank_mapping=<*>(<class 'list'>, {'lassen268': [<*>, <*>, <*>, <*>], 'lassen412': [<*>, <*>, <*>, <*>]})" .
+
+lxid:LogEventTemplate_663ae7ca
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "663ae7ca" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[logging.py:69:log_dist] [Rank 0] rank=0 time (ms) | compute_norm: 1.17 | overflow_check: 71.86 | unscale_and_clip: 1.08 | basic_step: 3.83 | update_fp16: 2.89" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "time" , "rank" , "logging.py" ;
+        logex:pattern                  "[logging.py:<*>:<*>] [Rank <*>] rank=<*> time (<*>) | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*>" .
+
+lxid:LogEventTemplate_b584137e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b584137e" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "gradient_predivide_factor .... 1.0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "factor" , "gradient" ;
+        logex:pattern                  "gradient_predivide_factor .... <*>.<*>" .
+
+lxid:LogEventTemplate_9e584687
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9e584687" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_max_iter .......... 100" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "iter" , "eigenvalue" ;
+        logex:pattern                  "eigenvalue_max_iter .......... <*>" .
+
+lxid:LogEventTemplate_cb76094b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cb76094b" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   eigenvalue_layer_name ........ bert.encoder.layer" ;
+        logex:hasParameterList         ( "unknown" "unknown" "domain" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> ........ <*>" .
+
+lxid:LogEventTemplate_37def568
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "37def568" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "CPU Virtual Memory:  used = 39.79 GB, percent = 12.5%" ;
+        logex:hasAnnotation            cee:object_memory ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "gb" , "percent" , "memory" , "virtual" , "cpu" , "use" ;
+        logex:pattern                  "CPU Virtual Memory: used = <*>.<*> GB, percent = <*>.<*>%" .
+
+lxid:LogEventTemplate_429f7ca6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "429f7ca6" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "flops_profiler_config ........ {" ;
+        logex:hasAnnotation            cee:object_file ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "flop" , "config" , "profiler" ;
+        logex:pattern                  "flops_profiler_config ........ {" .
+
+lxid:LogEventTemplate_fced26b0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fced26b0" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "scheduler_name ............... None" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "none" , "name" , "scheduler" ;
+        logex:pattern                  "scheduler_name ............... None" .
+
+lxid:LogEventTemplate_cf48736c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cf48736c" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[logging.py:69:log_dist] [Rank 0] Creating fp16 optimizer with dynamic loss scale" ;
+        logex:hasAnnotation            cee:action_create , cee:domain_os ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "logging.py" , "scale" , "fp16" , "loss" , "optimizer" , "rank" , "dynamic" , "create" ;
+        logex:pattern                  "[logging.py:<*>:<*>] [Rank <*>] Creating fp16 optimizer with dynamic loss scale" .
+
+lxid:LogEventTemplate_70ed8281
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "70ed8281" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_layer_num ......... 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "num" , "layer" , "eigenvalue" ;
+        logex:pattern                  "eigenvalue_layer_num ......... <*>" .
+
+lxid:LogEventTemplate_8cef1637
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8cef1637" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_period .............. 1000" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "period" , "quantize" ;
+        logex:pattern                  "quantize_period .............. <*>" .
+
+lxid:LogEventTemplate_c8296646
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c8296646" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   checkpoint_tag_validation_enabled  True" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "validation" , "enable" , "config.py" , "tag" , "true" , "checkpoint" ;
+        logex:pattern                  "[config.py:<*>:<*>] checkpoint_tag_validation_enabled True" .
+
+lxid:LogEventTemplate_874baa2f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "874baa2f" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[elasticity.py:73:get_candidate_batch_sizes] Candidate batch size: [120, 96]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "batch" , "candidate" , "size" , "elasticity.py" ;
+        logex:pattern                  "[elasticity.py:<*>:<*>] Candidate batch size: [<*>, <*>]" .
+
+lxid:LogEventTemplate_572b5463
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "572b5463" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "0 NCCL_DEBUG=warn" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:pattern                  "<*> NCCL_DEBUG=<*>" .
+
+lxid:LogEventTemplate_8d0e4fa4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8d0e4fa4" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "fp16_enabled ................. True" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "true" , "enable" , "fp16" ;
+        logex:pattern                  "fp16_enabled ................. True" .
+
+lxid:LogEventTemplate_1ab7d420
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1ab7d420" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   num_gpus_per_node ............ 4" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> ............ <*>" .
+
+lxid:LogEventTemplate_623dbfa8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "623dbfa8" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[logging.py:69:log_dist] [Rank 0] step=0, skipped=0, lr=[5.9999999999999995e-05, 5.9999999999999995e-05], mom=[(0.9, 0.95), (0.9, 0.95)]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "rank" , "logging.py" ;
+        logex:pattern                  "[logging.py:<*>:<*>] [Rank <*>] step=<*>, skipped=<*>, <*> <*> mom=[(<*>.<*>, <*>.<*>), (<*>.<*>, <*>.<*>)]" .
+
+lxid:LogEventTemplate_ff2adda7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ff2adda7" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "dump_state ................... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "state" , "dump" ;
+        logex:pattern                  "dump_state ................... False" .
+
+lxid:LogEventTemplate_5f4c49f5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "5f4c49f5" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Candidate batch size: [120, 96]" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "size" , "batch" , "candidate" ;
+        logex:pattern                  "Candidate batch size: [<*>, <*>]" .
+
+lxid:LogEventTemplate_76e91027
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "76e91027" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "DeepSpeed elasticity support enabled" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "elasticity" , "deepspeed" , "enable" , "support" ;
+        logex:pattern                  "DeepSpeed elasticity support enabled" .
+
+lxid:LogEventTemplate_7850e62f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7850e62f" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   loss_scale ................... 0" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> ................... <*>" .
+
+lxid:LogEventTemplate_cb2cb073
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cb2cb073" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Valid World Size (GPUs / Model Parallel Size): [8, 12, 16, 20, 24, 40, 48, 60, 80, 120, 240]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "gpus" , "valid" , "world" , "parallel" , "model" , "size" ;
+        logex:pattern                  "Valid World Size (GPUs / Model Parallel Size): [<*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>]" .
+
+lxid:LogEventTemplate_4e3dadaf
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4e3dadaf" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "steps_per_print .............. 1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "_ print" , "step _" ;
+        logex:pattern                  "steps_per_print .............. <*>" .
+
+lxid:LogEventTemplate_5312d01a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "5312d01a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "autotuning_config ............ {" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "config" , "autotun" ;
+        logex:pattern                  "autotuning_config ............ {" .
+
+lxid:LogEventTemplate_6edf1159
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6edf1159" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[engine.py:1064:_configure_optimizer] Removing param_group that has no 'params' in the client Optimizer" ;
+        logex:hasAnnotation            cee:action_remove , cee:action_move ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "have" , "engine.py" , "group" , "remove" , "param" , "client optimizer" ;
+        logex:pattern                  "[engine.py:<*>:<*>] Removing param_group that has no 'params' in the client Optimizer" .
+
+lxid:LogEventTemplate_f8909c47
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f8909c47" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Rank 0] Saving model checkpoint: results/el_scale_up_down//ds_z0_nl24_hs512_gb512_mb4/checkpoint/global_step20/mp_rank_00_model_states.pt" ;
+        logex:hasAnnotation            cee:action_save ;
+        logex:hasParameterList         ( "unknown" "path" ) ;
+        logex:keyword                  "model" , "result" , "checkpoint" , "save" , "rank" ;
+        logex:pattern                  "[Rank <*>] Saving model checkpoint: results/<*>" .
+
+lxid:LogEventTemplate_086a2d06
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "086a2d06" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   monitor_config ............... <deepspeed.monitor.config.DeepSpeedMonitorConfig object at 0x2000bd763c10>" ;
+        logex:hasAnnotation            cee:object ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "deepspeed.monitor.config.deepspeedmonitorconfig object" , "config.py" , "config" , "monitor" ;
+        logex:pattern                  "[config.py:<*>:<*>] monitor_config ............... <deepspeed.monitor.config.DeepSpeedMonitorConfig object at <*>" .
+
+lxid:LogEventTemplate_e6d83b25
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "e6d83b25" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "elastic_model_parallel_size .. 1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "elastic" , "parallel" , "model" , "size" ;
+        logex:pattern                  "elastic_model_parallel_size .. <*>" .
+
+lxid:LogEventTemplate_04779f53
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "04779f53" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "----Partition Activations False, CPU CHECKPOINTING False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "checkpointing" , "cpu" , "false" , "partition" , "activation" ;
+        logex:pattern                  "----Partition Activations False, CPU CHECKPOINTING False" .
+
+lxid:LogEventTemplate_ec925f35
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ec925f35" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   quantize_type ................ 0" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "type" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] quantize_type ................ <*>" .
+
+lxid:LogEventTemplate_437694a9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "437694a9" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "elasticity_enabled ........... True" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "true" , "enable" , "elasticity" ;
+        logex:pattern                  "elasticity_enabled ........... True" .
+
+lxid:LogEventTemplate_05a72aef
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "05a72aef" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "DeepSpeed Flops Profiler Enabled: False" ;
+        logex:hasAnnotation            cee:object_file ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "profiler" , "enable" , "deepspeed" , "flops" ;
+        logex:pattern                  "DeepSpeed Flops Profiler Enabled: False" .
+
+lxid:LogEventTemplate_4748f35b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4748f35b" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   dynamic_loss_scale_args ...... {'init_scale': 4096, 'scale_window': 1000, 'delayed_shift': 2, 'min_scale': 1}" ;
+        logex:hasAnnotation            cee:domain_os ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "min" , "scale" , "arg" , "delay" , "shift" , "init" , "window" , "dynamic" , "loss" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] dynamic_loss_scale_args ...... {'init_scale': <*>, 'scale_window': <*>, 'delayed_shift': <*>, 'min_scale': <*>}" .
+
+lxid:LogEventTemplate_66306e76
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "66306e76" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Elasticity] valid GPU counts: [8, 12, 16, 20, 24, 40, 48, 60, 80, 120, 240]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "count" , "gpu" , "valid" ;
+        logex:pattern                  "[<*>] valid GPU counts: [<*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>]" .
+
+lxid:LogEventTemplate_e7261fa7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "e7261fa7" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   elasticity_enabled ........... True" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "true" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> <*> True" .
+
+lxid:LogEventTemplate_dd9bb945
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "dd9bb945" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "----Profiling time in checkpointing False" ;
+        logex:hasAnnotation            cee:object_file ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "checkpoint false" , "profile time" ;
+        logex:pattern                  "----Profiling time in checkpointing False" .
+
+lxid:LogEventTemplate_8dfe98a0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8dfe98a0" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "DeepSpeed Basic Optimizer = FusedAdam" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "basic" , "fusedadam" , "optimizer" , "deepspeed" ;
+        logex:pattern                  "DeepSpeed Basic Optimizer = FusedAdam" .
+
+lxid:LogEventTemplate_44eccd97
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "44eccd97" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "nnodes=2, num_local_procs=4, node_rank=0" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:pattern                  "nnodes=<*>, num_local_procs=<*>, node_rank=<*>" .
+
+lxid:LogEventTemplate_6a14f83d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6a14f83d" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_tol ............... 0.01" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "tol" , "eigenvalue" ;
+        logex:pattern                  "eigenvalue_tol ............... <*>.<*>" .
+
+lxid:LogEventTemplate_3e9d3024
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3e9d3024" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_gas_boundary_resolution  1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "gas" , "eigenvalue" , "resolution" , "boundary" ;
+        logex:pattern                  "eigenvalue_gas_boundary_resolution <*>" .
+
+lxid:LogEventTemplate_9522b3ad
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9522b3ad" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_offset .............. 1000" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "offset" , "quantize" ;
+        logex:pattern                  "quantize_offset .............. <*>" .
+
+lxid:LogEventTemplate_ddad4b74
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ddad4b74" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   autotuning_config ............ {" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> <*> {" .
+
+lxid:LogEventTemplate_d12742c8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d12742c8" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "DeepSpeed using client LR scheduler" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "use" , "scheduler" , "deepspeed" , "client" , "lr" ;
+        logex:pattern                  "DeepSpeed using client LR scheduler" .
+
+lxid:LogEventTemplate_36778482
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "36778482" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "optimizer_params ............. None" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "none" , "param" , "optimizer" ;
+        logex:pattern                  "optimizer_params ............. None" .
+
+lxid:LogEventTemplate_b7ba94e3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b7ba94e3" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[timer.py:194:stop] 0/3, SamplesPerSec=173.0448361577259, MemAllocated=1.33GB, MaxMemAllocated=2.29GB" ;
+        logex:hasParameterList         ( "unknown" "path" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "timer.py" ;
+        logex:pattern                  "[timer.py:<*>:<*>] <*>/<*>, SamplesPerSec=<*>, MemAllocated=<*>, MaxMemAllocated=<*>" .
+
+lxid:LogEventTemplate_92df95f3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "92df95f3" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:847:__init__] [Elasticity] overriding training_batch_size: 512 -> 480" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "override" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] [<*>] overriding <*> <*> -> <*>" .
+
+lxid:LogEventTemplate_48689334
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "48689334" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:861:__init__] [Elasticity] valid GPU counts: [4.0]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "gpu" , "valid" , "count" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] [<*>] valid GPU counts: [<*>.<*>]" .
+
+lxid:LogEventTemplate_15d4fae6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "15d4fae6" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   communication_data_type ...... None" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "none" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> <*> None" .
+
+lxid:LogEventTemplate_ccb03221
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ccb03221" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[engine.py:2487:load_checkpoint] Unable to find latest file at results/el_scale_up_down//ds_z0_nl24_hs512_gb512_mb4/checkpoint/latest, if trying to load latest checkpoint please ensure this file exists or pass an explicit checkpoint tag when loading a checkpoint." ;
+        logex:hasAnnotation            cee:action_find , cee:object_file ;
+        logex:hasParameterList         ( "unknown" "path" ) ;
+        logex:keyword                  "file" , "result" , "file exist" , "pass" , "load" , "try" , "tag" , "unable" , "please" , "find" , "explicit" , "ensure" , "engine.py" , "checkpoint" ;
+        logex:pattern                  "[engine.py:<*>:<*>] Unable to find latest file at results/<*>, if trying to load latest checkpoint please ensure this file exists or pass an explicit checkpoint tag when loading a checkpoint." .
+
+lxid:LogEventTemplate_aac74d1f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "aac74d1f" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[engine.py:296:__init__] DeepSpeed Flops Profiler Enabled: False" ;
+        logex:hasAnnotation            cee:object_file ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "profiler" , "deepspeed" , "false" , "enable" , "engine.py" , "flops" ;
+        logex:pattern                  "[engine.py:<*>:<*>] DeepSpeed Flops Profiler Enabled: False" .
+
+lxid:LogEventTemplate_55dd3316
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "55dd3316" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_training_enabled .... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "enable" , "training" , "false" , "quantize" ;
+        logex:pattern                  "quantize_training_enabled .... False" .
+
+lxid:LogEventTemplate_96704e02
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "96704e02" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "dist_world_size=8" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:pattern                  "dist_world_size=<*>" .
+
+lxid:LogEventTemplate_2556a272
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2556a272" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[logging.py:69:log_dist] [Rank 0] Saving model checkpoint: results/el_scale_up_down//ds_z0_nl24_hs512_gb512_mb4/checkpoint/global_step20/mp_rank_00_model_states.pt" ;
+        logex:hasAnnotation            cee:action_save ;
+        logex:hasParameterList         ( "unknown" "unknown" "path" ) ;
+        logex:keyword                  "save" , "rank" , "result" , "checkpoint" , "model" , "logging.py" ;
+        logex:pattern                  "[logging.py:<*>:<*>] [Rank <*>] Saving model checkpoint: results/<*>" .
+
+lxid:LogEventTemplate_e9f907e5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "e9f907e5" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "amp_params ................... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "param" , "amp" ;
+        logex:pattern                  "amp_params ................... False" .
+
+lxid:LogEventTemplate_8ebf4064
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8ebf4064" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "curriculum_params ............ False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "param" , "curriculum" ;
+        logex:pattern                  "curriculum_params ............ False" .
+
+lxid:LogEventTemplate_a8a41ace
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a8a41ace" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Initializing TorchBackend in DeepSpeed with backend nccl" ;
+        logex:hasAnnotation            cee:action_initialize ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "deepspeed" , "backend nccl" , "initialize torchbackend" ;
+        logex:pattern                  "Initializing TorchBackend in DeepSpeed with backend nccl" .
+
+lxid:LogEventTemplate_4e272e49
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4e272e49" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Rank 0] rank=0 time (ms) | compute_norm: 1.17 | overflow_check: 71.86 | unscale_and_clip: 1.08 | basic_step: 3.83 | update_fp16: 2.89" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "time" , "rank" ;
+        logex:pattern                  "[Rank <*>] rank=<*> time (<*>) | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*>" .
+
+lxid:LogEventTemplate_cfa5e20a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cfa5e20a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   elastic_model_parallel_size .. 1" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> .. <*>" .
+
+lxid:LogEventTemplate_f24320bb
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f24320bb" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Elasticity] overriding training_batch_size: 512 -> 480" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "override" ;
+        logex:pattern                  "[<*>] overriding <*> <*> -> <*>" .
+
+lxid:LogEventTemplate_c4d4bc01
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c4d4bc01" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_type ................ 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "type" , "quantize" ;
+        logex:pattern                  "quantize_type ................ <*>" .
+
+lxid:LogEventTemplate_3908097b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3908097b" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[launch.py:137:main] dist_world_size=8" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "launch.py" ;
+        logex:pattern                  "[launch.py:<*>:<*>] dist_world_size=<*>" .
+
+lxid:LogEventTemplate_55e6b3e7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "55e6b3e7" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[comm.py:423:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl" ;
+        logex:hasAnnotation            cee:action_initialize ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "initialize torchbackend" , "backend nccl" , "deepspeed" , "comm.py" ;
+        logex:pattern                  "[comm.py:<*>:<*>] Initializing TorchBackend in DeepSpeed with backend nccl" .
+
+lxid:LogEventTemplate_615dc366
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "615dc366" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[utils.py:828:see_memory_usage] MA 0.0 GB         Max_MA 0.0 GB         CA 0.0 GB         Max_CA 0 GB" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "max" , "utils.py" , "ca" , "ma" , "gb" , "gb ca" ;
+        logex:pattern                  "[utils.py:<*>:<*>] MA <*>.<*> GB Max_MA <*>.<*> GB CA <*>.<*> GB Max_CA <*> GB" .
+
+lxid:LogEventTemplate_fbe58aea
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fbe58aea" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "checkpoint_tag_validation_fail  False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "tag" , "fail" , "validation" , "checkpoint" , "false" ;
+        logex:pattern                  "checkpoint_tag_validation_fail False" .
+
+lxid:LogEventTemplate_2c8bd350
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2c8bd350" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "0/3, SamplesPerSec=173.0448361577259, MemAllocated=1.33GB, MaxMemAllocated=2.29GB" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:pattern                  "0/<*>, SamplesPerSec=<*>, MemAllocated=<*>, MaxMemAllocated=<*>" .
+
+lxid:LogEventTemplate_1fcd89f7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1fcd89f7" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1051:print] DeepSpeedEngine configuration:" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "deepspeedengine configuration" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] DeepSpeedEngine configuration:" .
+
+lxid:LogEventTemplate_d0c10f07
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d0c10f07" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "zero_optimization_stage ...... 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "stage" , "optimization" ;
+        logex:pattern                  "zero_optimization_stage ...... <*>" .
+
+lxid:LogEventTemplate_e5c05e85
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "e5c05e85" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "dynamic_loss_scale_args ...... {'init_scale': 4096, 'scale_window': 1000, 'delayed_shift': 2, 'min_scale': 1}" ;
+        logex:hasAnnotation            cee:domain_os ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "shift" , "min" , "loss" , "arg" , "dynamic" , "scale" , "delay" , "init" , "window" ;
+        logex:pattern                  "dynamic_loss_scale_args ...... {'init_scale': <*>, 'scale_window': <*>, 'delayed_shift': <*>, 'min_scale': <*>}" .
+
+lxid:LogEventTemplate_226d72a9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "226d72a9" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[checkpointing.py:551:forward] ----contiguous Memory Checkpointing False with 24 total layers" ;
+        logex:hasAnnotation            cee:object_memory ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "contiguous" , "checkpoint" , "memory" , "total layer" , "false" , "checkpointing.py" ;
+        logex:pattern                  "[checkpointing.py:<*>:<*>] ----contiguous Memory Checkpointing False with <*> total layers" .
+
+lxid:LogEventTemplate_a02c13de
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a02c13de" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "checkpoint_tag_validation_enabled  True" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "tag" , "true" , "validation" , "checkpoint" , "enable" ;
+        logex:pattern                  "checkpoint_tag_validation_enabled True" .
+
+lxid:LogEventTemplate_05b1cb14
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "05b1cb14" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}" ;
+        logex:hasAnnotation            cee:action_read , cee:action_block , cee:object_thread , cee:object_event , cee:action_lock ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "thread" , "false" , "event" , "queue" , "size" , "count" , "config" , "submit" , "block" , "true" , "config.py" , "depth" , "overlap" , "single" ;
+        logex:pattern                  "[config.py:<*>:<*>] aio_config ................... {'block_size': <*>, 'queue_depth': <*>, 'thread_count': <*>, 'single_submit': False, 'overlap_events': True}" .
+
+lxid:LogEventTemplate_e7c504d4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "e7c504d4" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Rank 0] DeepSpeed LR Scheduler = <megatron.learning_rates.AnnealingLR object at 0x2000bd7b5b80>" ;
+        logex:hasAnnotation            cee:object ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "scheduler" , "lr" , "rates.annealinglr" , "rank" , "deepspeed" , "object" ;
+        logex:pattern                  "[Rank <*>] DeepSpeed LR Scheduler = <megatron.learning_rates.AnnealingLR object at <*>" .
+
+lxid:LogEventTemplate_3cd2ab10
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3cd2ab10" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "DeepSpeedEngine configuration:" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "deepspeedengine configuration" ;
+        logex:pattern                  "DeepSpeedEngine configuration:" .
+
+lxid:LogEventTemplate_ff44327e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ff44327e" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Removing param_group that has no 'params' in the client Optimizer" ;
+        logex:hasAnnotation            cee:action_remove , cee:action_move ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "param" , "remove" , "have" , "client optimizer" , "group" ;
+        logex:pattern                  "Removing param_group that has no 'params' in the client Optimizer" .
+
+lxid:LogEventTemplate_2202e254
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2202e254" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   eigenvalue_max_iter .......... 100" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> .......... <*>" .
+
+lxid:LogEventTemplate_ca1eeb7a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ca1eeb7a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[checkpointing.py:554:forward] ----Synchronization False" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "synchronization false" , "checkpointing.py" ;
+        logex:pattern                  "[checkpointing.py:<*>:<*>] ----Synchronization False" .
+
+lxid:LogEventTemplate_1feae2b9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1feae2b9" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   train_micro_batch_size_per_gpu  4" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "size" , "config.py" , "micro" , "batch" , "train" , "_ gpu" ;
+        logex:pattern                  "[config.py:<*>:<*>] train_micro_batch_size_per_gpu <*>" .
+
+lxid:LogEventTemplate_5a610b14
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "5a610b14" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Rank 0] DeepSpeed Final Optimizer = FusedAdam" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "optimizer" , "deepspeed" , "final" , "rank" , "fusedadam" ;
+        logex:pattern                  "[Rank <*>] DeepSpeed Final Optimizer = FusedAdam" .
+
+lxid:LogEventTemplate_de512520
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "de512520" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Rank 0] Creating fp16 optimizer with dynamic loss scale" ;
+        logex:hasAnnotation            cee:domain_os , cee:action_create ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "loss" , "create" , "optimizer" , "dynamic" , "rank" , "fp16" , "scale" ;
+        logex:pattern                  "[Rank <*>] Creating fp16 optimizer with dynamic loss scale" .
+
+lxid:LogEventTemplate_ddf1531a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ddf1531a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_change_rate ......... 0.001" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "rate" , "change" , "quantize" ;
+        logex:pattern                  "quantize_change_rate ......... <*>.<*>" .
+
+lxid:LogEventTemplate_8b0a4194
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8b0a4194" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Using client Optimizer as basic optimizer" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "use" , "client" , "optimizer" , "basic optimizer" ;
+        logex:pattern                  "Using client Optimizer as basic optimizer" .
+
+lxid:LogEventTemplate_8020953a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8020953a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Setting CUDA_VISIBLE_DEVICES=0,1,2,3" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "set" ;
+        logex:pattern                  "Setting CUDA_VISIBLE_DEVICES=<*>,<*>,<*>,<*>" .
+
+lxid:LogEventTemplate_15128b0a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "15128b0a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "WORLD INFO DICT: {'lassen268': [0, 1, 2, 3], 'lassen412': [0, 1, 2, 3]}" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "dict" , "info" , "lassen412" , "world" , "lassen268" ;
+        logex:pattern                  "WORLD INFO DICT: {'lassen268': [<*>, <*>, <*>, <*>], 'lassen412': [<*>, <*>, <*>, <*>]}" .
+
+lxid:LogEventTemplate_4bed216a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4bed216a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "train_batch_size ............. 480" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "size" , "batch" , "train" ;
+        logex:pattern                  "train_batch_size ............. <*>" .
+
+lxid:LogEventTemplate_ea0ae3a8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ea0ae3a8" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "activation_checkpointing_config  {" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "config" , "checkpoint" , "activation" ;
+        logex:pattern                  "activation_checkpointing_config {" .
+
+lxid:LogEventTemplate_783f1f63
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "783f1f63" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[utils.py:827:see_memory_usage] Before Building Model" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "building model" , "utils.py" ;
+        logex:pattern                  "[utils.py:<*>:<*>] <*> Building Model" .
+
+lxid:LogEventTemplate_27f0c7b8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "27f0c7b8" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   eigenvalue_gas_boundary_resolution  1" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "resolution" , "boundary" , "gas" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] eigenvalue_gas_boundary_resolution <*>" .
+
+lxid:LogEventTemplate_74f73483
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "74f73483" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "fp16_mixed_quantize .......... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "mixed" , "fp16" , "false" , "quantize" ;
+        logex:pattern                  "fp16_mixed_quantize .......... False" .
+
+lxid:LogEventTemplate_424754e6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "424754e6" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "sparse_attention ............. None" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "none" , "attention" , "sparse" ;
+        logex:pattern                  "sparse_attention ............. None" .
+
+lxid:LogEventTemplate_2e3c1290
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2e3c1290" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "use_quantizer_kernel ......... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "kernel" , "use" ;
+        logex:pattern                  "use_quantizer_kernel ......... False" .
+
+lxid:LogEventTemplate_a1256d85
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a1256d85" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[launch.py:110:main] 0 NCCL_DEBUG=warn" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "launch.py" ;
+        logex:pattern                  "[launch.py:<*>:<*>] <*> NCCL_DEBUG=<*>" .
+
+lxid:LogEventTemplate_4056ef2d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4056ef2d" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "pld_params ................... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "param" , "pld" ;
+        logex:pattern                  "pld_params ................... False" .
+
+lxid:LogEventTemplate_89c867d9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "89c867d9" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   activation_checkpointing_config  {" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "checkpoint" , "config.py" , "activation" , "config" ;
+        logex:pattern                  "[config.py:<*>:<*>] activation_checkpointing_config {" .
+
+lxid:LogEventTemplate_a978495a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a978495a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[engine.py:774:_configure_lr_scheduler] DeepSpeed using client LR scheduler" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "engine.py" , "deepspeed" , "scheduler" , "use" , "lr" , "client" ;
+        logex:pattern                  "[engine.py:<*>:<*>] DeepSpeed using client LR scheduler" .
+
+lxid:LogEventTemplate_57bd5f40
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "57bd5f40" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "prescale_gradients ........... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "gradient" , "prescale" ;
+        logex:pattern                  "prescale_gradients ........... False" .
+
+lxid:LogEventTemplate_9ee84eae
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9ee84eae" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "zero_enabled ................. False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "enable" ;
+        logex:pattern                  "zero_enabled ................. False" .
+
+lxid:LogEventTemplate_b02faa06
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b02faa06" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}" ;
+        logex:hasAnnotation            cee:action_lock , cee:object_event , cee:action_block , cee:action_read , cee:object_thread ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "true" , "single" , "thread" , "aio" , "size" , "count" , "event" , "false" , "overlap" , "queue" , "submit" , "config" , "block" , "depth" ;
+        logex:pattern                  "aio_config ................... {'block_size': <*>, 'queue_depth': <*>, 'thread_count': <*>, 'single_submit': False, 'overlap_events': True}" .
+
+lxid:LogEventTemplate_094c3293
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "094c3293" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[launch.py:117:main] WORLD INFO DICT: {'lassen268': [0, 1, 2, 3], 'lassen412': [0, 1, 2, 3]}" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "dict" , "lassen412" , "world" , "info" , "launch.py" , "lassen268" ;
+        logex:pattern                  "[launch.py:<*>:<*>] WORLD INFO DICT: {'lassen268': [<*>, <*>, <*>, <*>], 'lassen412': [<*>, <*>, <*>, <*>]}" .
+
+lxid:LogEventTemplate_b2851fbe
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b2851fbe" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:796:__init__] DeepSpeed elasticity support enabled" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "deepspeed" , "support" , "config.py" , "enable" , "elasticity" ;
+        logex:pattern                  "[config.py:<*>:<*>] DeepSpeed elasticity support enabled" .
+
+lxid:LogEventTemplate_35a4488a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "35a4488a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "> initializing model parallel cuda seeds on global rank 0, model parallel rank 0, and data parallel rank 0 with model parallel seed: 3952 and data parallel seed: 1234" ;
+        logex:hasAnnotation            cee:action_initialize ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "cuda" , "global rank" , "model" , "initialize" , "datum" , "parallel" , "rank" , "seed" ;
+        logex:pattern                  "> initializing model parallel cuda seeds on global rank <*>, model parallel rank <*>, and data parallel rank <*> with model parallel seed: <*> and data parallel seed: <*>" .
+
+lxid:LogEventTemplate_0135127e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0135127e" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0}" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "activation" , "auto" , "layer" , "false" , "interval" , "pipeline" , "checkpoint" , "seed" , "partition" , "stage" ;
+        logex:pattern                  "pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': <*>}" .
+
+lxid:LogEventTemplate_7c9ea270
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7c9ea270" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "train_micro_batch_size_per_gpu  4" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "size" , "micro" , "train" , "batch" , "_ gpu" ;
+        logex:pattern                  "train_micro_batch_size_per_gpu <*>" .
+
+lxid:LogEventTemplate_02fcbe5a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "02fcbe5a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Elasticity] valid GPU counts: [4.0]" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "count" , "gpu" , "valid" ;
+        logex:pattern                  "[<*>] valid GPU counts: [<*>.<*>]" .
+
+lxid:LogEventTemplate_0f8df74b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0f8df74b" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "----contiguous Memory Checkpointing False with 24 total layers" ;
+        logex:hasAnnotation            cee:object_memory ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "total layer" , "memory" , "false" , "contiguous" , "checkpoint" ;
+        logex:pattern                  "----contiguous Memory Checkpointing False with <*> total layers" .
+
+lxid:LogEventTemplate_262a8481
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "262a8481" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[logging.py:69:log_dist] [Rank 0] DeepSpeed LR Scheduler = <megatron.learning_rates.AnnealingLR object at 0x2000bd7b5b80>" ;
+        logex:hasAnnotation            cee:object ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "logging.py" , "object" , "rank" , "rates.annealinglr" , "scheduler" , "lr" , "deepspeed" ;
+        logex:pattern                  "[logging.py:<*>:<*>] [Rank <*>] DeepSpeed LR Scheduler = <megatron.learning_rates.AnnealingLR object at <*>" .
+
+lxid:LogEventTemplate_19951831
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "19951831" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "world_size ................... 8" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "size" , "world" ;
+        logex:pattern                  "world_size ................... <*>" .
+
+lxid:LogEventTemplate_8e8f3950
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8e8f3950" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[launch.py:139:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "set" , "launch.py" ;
+        logex:pattern                  "[launch.py:<*>:<*>] Setting CUDA_VISIBLE_DEVICES=<*>,<*>,<*>,<*>" .
+
+lxid:LogEventTemplate_a92d62b1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a92d62b1" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Unable to find latest file at results/el_scale_up_down//ds_z0_nl24_hs512_gb512_mb4/checkpoint/latest, if trying to load latest checkpoint please ensure this file exists or pass an explicit checkpoint tag when loading a checkpoint." ;
+        logex:hasAnnotation            cee:action_find , cee:object_file ;
+        logex:hasParameterList         ( "path" ) ;
+        logex:keyword                  "file exist" , "file" , "ensure" , "checkpoint" , "explicit" , "please" , "try" , "tag" , "result" , "pass" , "load" , "find" , "unable" ;
+        logex:pattern                  "Unable to find latest file at results/<*>, if trying to load latest checkpoint please ensure this file exists or pass an explicit checkpoint tag when loading a checkpoint." .
+
+lxid:LogEventTemplate_b57d8412
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b57d8412" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Unable to find DEEPSPEED_ELASTICITY_CONFIG environment variable, cannot guarantee resource scheduler will scale this job using compatible GPU counts." ;
+        logex:hasAnnotation            cee:action_find ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "gpu" , "unable" , "guarantee" , "job" , "compatible" , "find" , "variable" , "resource" , "elasticity" , "use" , "config" , "count" , "scale" , "environment" , "scheduler" , "deepspeed" ;
+        logex:pattern                  "Unable to find DEEPSPEED_ELASTICITY_CONFIG environment variable, cannot guarantee resource scheduler will scale this job using compatible GPU counts." .
+
+lxid:LogEventTemplate_eafab6b4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "eafab6b4" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_target_bits ......... 8" ;
+        logex:hasAnnotation            cee:action_get ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "target" , "bit" , "quantize" ;
+        logex:pattern                  "quantize_target_bits ......... <*>" .
+
+lxid:LogEventTemplate_f52f9cfa
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f52f9cfa" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "fp16_master_weights_and_gradients  False" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "false" ;
+        logex:pattern                  "<*> False" .
+
+lxid:LogEventTemplate_03789713
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "03789713" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "monitor_config ............... <deepspeed.monitor.config.DeepSpeedMonitorConfig object at 0x2000bd763c10>" ;
+        logex:hasAnnotation            cee:object ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "deepspeed.monitor.config.deepspeedmonitorconfig object" , "monitor" , "config" ;
+        logex:pattern                  "monitor_config ............... <deepspeed.monitor.config.DeepSpeedMonitorConfig object at <*>" .
+
+lxid:LogEventTemplate_7d0f13a9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7d0f13a9" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Valid World Size (GPUs / Model Parallel Size): [4.0]" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "valid" , "parallel" , "size" , "model" , "gpus" , "world" ;
+        logex:pattern                  "Valid World Size (GPUs / Model Parallel Size): [<*>.<*>]" .
+
+lxid:LogEventTemplate_2159a1b2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2159a1b2" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   global_rank .................. 0" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "rank" , "global" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] global_rank .................. <*>" .
+
+lxid:LogEventTemplate_0c6ccd52
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0c6ccd52" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "pld_enabled .................. False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "enable" , "pld" ;
+        logex:pattern                  "pld_enabled .................. False" .
+
+lxid:LogEventTemplate_6167bb31
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6167bb31" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_verbose ........... False" ;
+        logex:hasAnnotation            cee:domain_os ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "eigenvalue" , "false" , "verbose" ;
+        logex:pattern                  "eigenvalue_verbose ........... False" .
+
+lxid:LogEventTemplate_cdc4304b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cdc4304b" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "disable_allgather ............ False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "allgather" , "disable" ;
+        logex:pattern                  "disable_allgather ............ False" .
+
+lxid:LogEventTemplate_d8fa4e70
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d8fa4e70" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_rounding ............ 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "round" , "quantize" ;
+        logex:pattern                  "quantize_rounding ............ <*>" .
+
+lxid:LogEventTemplate_4df639ea
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4df639ea" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   quantize_groups .............. 1" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> .............. <*>" .
+
+lxid:LogEventTemplate_fcd36948
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fcd36948" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "bfloat16_enabled ............. False" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "false" ;
+        logex:pattern                  "<*> ............. False" .
+
+lxid:LogEventTemplate_ae0717a7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ae0717a7" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "curriculum_enabled ........... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "enable" , "curriculum" ;
+        logex:pattern                  "curriculum_enabled ........... False" .
+
+lxid:LogEventTemplate_259656a3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "259656a3" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "gradient_accumulation_steps .. 15" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "step" , "accumulation" , "gradient" ;
+        logex:pattern                  "gradient_accumulation_steps .. <*>" .
+
+lxid:LogEventTemplate_b75a4845
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b75a4845" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[checkpointing.py:547:forward] Activation Checkpointing Information" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "checkpointing.py" , "activation" , "information" , "checkpointing" ;
+        logex:pattern                  "[checkpointing.py:<*>:<*>] Activation Checkpointing Information" .
+
+lxid:LogEventTemplate_3a5e4974
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3a5e4974" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "initial_dynamic_scale ........ 4096" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "scale" , "dynamic" , "initial" ;
+        logex:pattern                  "initial_dynamic_scale ........ <*>" .
+
+lxid:LogEventTemplate_b91e763b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b91e763b" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "optimizer_name ............... None" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "none" , "name" , "optimizer" ;
+        logex:pattern                  "optimizer_name ............... None" .
+
+lxid:LogEventTemplate_6b418d3a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6b418d3a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[Rank 0] step=0, skipped=0, lr=[5.9999999999999995e-05, 5.9999999999999995e-05], mom=[(0.9, 0.95), (0.9, 0.95)]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "rank" ;
+        logex:pattern                  "[Rank <*>] step=<*>, skipped=<*>, <*> <*> mom=[(<*>.<*>, <*>.<*>), (<*>.<*>, <*>.<*>)]" .
+
+lxid:LogEventTemplate_1ae88841
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1ae88841" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[elasticity.py:283:ensure_immutable_elastic_config] Unable to find DEEPSPEED_ELASTICITY_CONFIG environment variable, cannot guarantee resource scheduler will scale this job using compatible GPU counts." ;
+        logex:hasAnnotation            cee:action_find ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "scheduler" , "variable" , "elasticity.py" , "gpu" , "find" , "resource" , "environment" , "elasticity" , "scale" , "deepspeed" , "count" , "job" , "config" , "guarantee" , "unable" , "compatible" , "use" ;
+        logex:pattern                  "[elasticity.py:<*>:<*>] Unable to find DEEPSPEED_ELASTICITY_CONFIG environment variable, cannot guarantee resource scheduler will scale this job using compatible GPU counts." .
+
+lxid:LogEventTemplate_1d441d44
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1d441d44" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_layer_name ........ bert.encoder.layer" ;
+        logex:hasAnnotation            cee:action_encode ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "bert.encoder.layer" , "name" , "eigenvalue" , "layer" ;
+        logex:pattern                  "eigenvalue_layer_name ........ bert.encoder.layer" .
+
+lxid:LogEventTemplate_b3df8e70
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b3df8e70" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "wall_clock_breakdown ......... True" ;
+        logex:hasAnnotation            cee:action_lock ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "wall" , "clock" , "breakdown" , "true" ;
+        logex:pattern                  "wall_clock_breakdown ......... True" .
+
+lxid:LogEventTemplate_855f953f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "855f953f" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[launch.py:123:main] nnodes=2, num_local_procs=4, node_rank=0" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "launch.py" ;
+        logex:pattern                  "[launch.py:<*>:<*>] nnodes=<*>, num_local_procs=<*>, node_rank=<*>" .
+
+lxid:LogEventTemplate_abc31d23
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "abc31d23" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "MA 0.0 GB         Max_MA 0.0 GB         CA 0.0 GB         Max_CA 0 GB" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "gb" , "ca" , "max" , "gb ca" , "ma" ;
+        logex:pattern                  "MA <*>.<*> GB Max_MA <*>.<*> GB CA <*>.<*> GB Max_CA <*> GB" .
+
+lxid:LogEventTemplate_cfa7169e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cfa7169e" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   amp_enabled .................. False" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "false" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] <*> <*> False" .
+
+lxid:LogEventTemplate_63dcf7fd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "63dcf7fd" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "communication_data_type ...... None" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "datum" , "none" , "type" , "communication" ;
+        logex:pattern                  "communication_data_type ...... None" .
+
+lxid:LogEventTemplate_8fb879b7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8fb879b7" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "eigenvalue_enabled ........... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "enable" , "eigenvalue" ;
+        logex:pattern                  "eigenvalue_enabled ........... False" .
+
+lxid:LogEventTemplate_d2da5219
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d2da5219" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "Activation Checkpointing Information" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "information" , "checkpointing" , "activation" ;
+        logex:pattern                  "Activation Checkpointing Information" .
+
+lxid:LogEventTemplate_59815a60
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "59815a60" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[utils.py:836:see_memory_usage] CPU Virtual Memory:  used = 39.79 GB, percent = 12.5%" ;
+        logex:hasAnnotation            cee:object_memory ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "memory" , "virtual" , "use" , "utils.py" , "percent" , "cpu" , "gb" ;
+        logex:pattern                  "[utils.py:<*>:<*>] CPU Virtual Memory: used = <*>.<*> GB, percent = <*>.<*>%" .
+
+lxid:LogEventTemplate_8e90aa3b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8e90aa3b" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "num_gpus_per_node ............ 4" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "node" , "num" ;
+        logex:pattern                  "num_gpus_per_node ............ <*>" .
+
+lxid:LogEventTemplate_1e926a04
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1e926a04" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:1055:print]   zero_optimization_stage ...... 0" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "stage" , "optimization" , "config.py" ;
+        logex:pattern                  "[config.py:<*>:<*>] zero_optimization_stage ...... <*>" .
+
+lxid:LogEventTemplate_6b243d8f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6b243d8f" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "json = {" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "json" ;
+        logex:pattern                  "json = {" .
+
+lxid:LogEventTemplate_f0b22bd1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f0b22bd1" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "dataloader_drop_last ......... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "drop" , "dataloader" ;
+        logex:pattern                  "dataloader_drop_last ......... False" .
+
+lxid:LogEventTemplate_77bcb12d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "77bcb12d" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[engine.py:1070:_configure_optimizer] Using client Optimizer as basic optimizer" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "client" , "optimizer" , "use" , "engine.py" , "basic optimizer" ;
+        logex:pattern                  "[engine.py:<*>:<*>] Using client Optimizer as basic optimizer" .
+
+lxid:LogEventTemplate_caa87193
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "caa87193" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "global_rank .................. 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "rank" , "global" ;
+        logex:pattern                  "global_rank .................. <*>" .
+
+lxid:LogEventTemplate_8cf87014
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8cf87014" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[elasticity.py:385:compute_elastic_config] Valid World Size (GPUs / Model Parallel Size): [4.0]" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "world" , "elasticity.py" , "size" , "parallel" , "model" , "valid" , "gpus" ;
+        logex:pattern                  "[elasticity.py:<*>:<*>] Valid World Size (GPUs / Model Parallel Size): [<*>.<*>]" .
+
+lxid:LogEventTemplate_7313061e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7313061e" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[config.py:861:__init__] [Elasticity] valid GPU counts: [8, 12, 16, 20, 24, 40, 48, 60, 80, 120, 240]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "gpu" , "config.py" , "count" , "valid" ;
+        logex:pattern                  "[config.py:<*>:<*>] [<*>] valid GPU counts: [<*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>]" .
+
+lxid:LogEventTemplate_87004e2d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "87004e2d" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "loss_scale ................... 0" ;
+        logex:hasAnnotation            cee:domain_os ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "scale" , "loss" ;
+        logex:pattern                  "loss_scale ................... <*>" .
+
+lxid:LogEventTemplate_68c92318
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "68c92318" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_groups .............. 1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "group" , "quantize" ;
+        logex:pattern                  "quantize_groups .............. <*>" .
+
+lxid:LogEventTemplate_4d1621c3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4d1621c3" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "After Building Model" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "building model" ;
+        logex:pattern                  "After Building Model" .
+
+lxid:LogEventTemplate_fc2bbd03
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fc2bbd03" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "optimizer_legacy_fusion ...... False" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "false" , "optimizer" , "fusion" , "legacy" ;
+        logex:pattern                  "optimizer_legacy_fusion ...... False" .
+
+lxid:LogEventTemplate_b5860b5a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b5860b5a" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "quantize_start_bits .......... 16" ;
+        logex:hasAnnotation            cee:action_start ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "start" , "bit" , "quantize" ;
+        logex:pattern                  "quantize_start_bits .......... <*>" .
+
+lxid:LogEventTemplate_b97859f3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b97859f3" ;
+        logex:associatedLogSourceType  lid:SourceType_dl ;
+        logex:example                  "[checkpointing.py:555:forward] ----Profiling time in checkpointing False" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "checkpoint false" , "profiling time" , "checkpointing.py" ;
+        logex:pattern                  "[checkpointing.py:<*>:<*>] ----Profiling time in checkpointing False" .

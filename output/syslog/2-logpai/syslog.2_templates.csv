@@ -1,0 +1,34 @@
+EventId,EventTemplate,Occurrences
+19d70957,"imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>",899
+f49657b2,"imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)",762
+7edba00f,imap(<*>): Logged out in=<*> out=<*>,898
+c7a9a5e4,"[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of ""/<*>""]",243
+0c2ce181,"[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",173
+a33acd0c,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of ""/<*>""]",70
+09cc6741,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of ""/<*>""]",70
+02e23f8a,"[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",30
+aca16d28,(<*>) CMD ( [ -x /<*> ] && if [ ! -d /<*> ]; then /<*>; fi),7
+b6f5e68b,"[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",27
+73f564e0,Starting Clean php session files...,7
+6d8806bb,Started Clean php session files.,7
+3cdd7a4b,"[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of ""/<*>""]",40
+2fc5a013,"[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of ""/<*>""]",7
+6039f7f0,"[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",3
+aa436bfa,(<*>) CMD ( cd / && run-parts --report /<*>),3
+c9f3df73,"[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",39
+8dbb2c05,DHCPREQUEST of <*> on eth0 to <*> port <*>,1
+151a0778,DHCPACK of <*> from <*>,1
+032e2c6f,bound to <*> -- renewal in <*> seconds.,1
+8f8ad23c,"[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",5
+2422872b,"imap-login: Disconnected (no auth attempts in <*> secs): user=<>, rip=<*>, lip=<*>, session=<<*>>",1
+6385bb71,"[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",4
+77d8337a,"Guest user is not authorized for Horde (Host: <*>). [pid <*> on line <*> of ""/<*>""]",5796
+84b1784d,"Session cookies will not work without a FQDN and with a non-empty cookie domain. Either use a fully qualified domain name like ""<*>"" instead of ""http:<*>"" only, or set the cookie domain in the Horde configuration to an empty value, or enable non-cookie (<*>) sessions in the Horde configuration. [pid <*> on line <*> of ""/<*>""]",2
+610e39c8,"[<*>] PHP ERROR: Cannot modify header information - headers already sent [pid <*> on line <*> of ""Unknown""]",284
+ad3de57c,"PHP ERROR: rawurlencode() expects parameter <*> to be string, array given [pid <*> on line <*> of ""/<*>""]",70
+4086fa06,"[<*>] [<*>] Authentication failed. [pid <*> on line <*> of ""/<*>""]",137
+5431e37d,"[<*>] FAILED LOGIN for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",274
+fc9a895a,"imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, <*>",137
+628df301,"[<*>] PHP ERROR: finfo_file(): Empty filename or path [pid <*> on line <*> of ""/<*>""]",1
+038a758d,Starting Cleanup of Temporary Directories...,1
+20447797,Started Cleanup of Temporary Directories.,1

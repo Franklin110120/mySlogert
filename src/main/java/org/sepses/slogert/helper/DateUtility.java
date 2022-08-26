@@ -30,6 +30,11 @@ public class DateUtility {
         String timeString = dateTime + timeZone;
         return localTimeConversion(timeString, "dd/MMM/yyyy':'HH:mm:ssZ");
     }
+    
+    // Date for HPC, single numbers
+    public static String getHPCDate(String time) {
+        return time;
+    }
 
     /**
      * Date string generation

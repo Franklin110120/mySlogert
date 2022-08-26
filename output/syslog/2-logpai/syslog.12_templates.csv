@@ -1,0 +1,43 @@
+EventId,EventTemplate,Occurrences
+77d8337a,"Guest user is not authorized for Horde (Host: <*>). [pid <*> on line <*> of ""/<*>""]",4650
+19d70957,"imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>",1279
+f49657b2,"imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)",1168
+7edba00f,imap(<*>): Logged out in=<*> out=<*>,1279
+b6f5e68b,"[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",25
+c7a9a5e4,"[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of ""/<*>""]",350
+0c2ce181,"[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",278
+2fc5a013,"[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of ""/<*>""]",10
+c9f3df73,"[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",47
+8f8ad23c,"[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",15
+610e39c8,"[<*>] PHP ERROR: Cannot modify header information - headers already sent [pid <*> on line <*> of ""Unknown""]",190
+3cdd7a4b,"[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of ""/<*>""]",42
+a33acd0c,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of ""/<*>""]",72
+09cc6741,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of ""/<*>""]",72
+02e23f8a,"[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",30
+ad3de57c,"PHP ERROR: rawurlencode() expects parameter <*> to be string, array given [pid <*> on line <*> of ""/<*>""]",70
+aca16d28,(<*>) CMD ( [ -x /<*> ] && if [ ! -d /<*> ]; then /<*>; fi),7
+73f564e0,Starting Clean php session files...,7
+6d8806bb,Started Clean php session files.,7
+4086fa06,"[<*>] [<*>] Authentication failed. [pid <*> on line <*> of ""/<*>""]",89
+5431e37d,"[<*>] FAILED LOGIN for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",178
+fc9a895a,"imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, <*>",89
+6385bb71,"[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",4
+aa436bfa,(<*>) CMD ( cd / && run-parts --report /<*>),3
+628df301,"[<*>] PHP ERROR: finfo_file(): Empty filename or path [pid <*> on line <*> of ""/<*>""]",1
+ad3a8d20,"[<*>] Message sent to <*> <*>, <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",4
+b7846b4e,Wed Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up,3
+6ad000fd,Wed Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Wed Mar <*> <*>:<*>:<*> <*>,3
+d7954569,Wed Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!,3
+cdf0b291,Wed Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>,3
+d0f6fa37,Wed Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>,3
+df3544f5,"Wed Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>",8
+ae611aec,"[<*>] Message sent to <*> <*>, Cedrick <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",1
+b37fee6f,Starting Daily apt download activities...,1
+43d542ce,Started Daily apt download activities.,1
+29f25ef6,apt-daily.timer: Adding 3h <*> <*> random time.,2
+6039f7f0,"[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",2
+918d45a8,Wed Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%],1
+15f92ecf,"Wed Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)",1
+ddccfe79,Wed Mar <*> <*>:<*>:<*> <*> -> *Can't query daily.<*>.6810DB54.ping.clamav.net,1
+54585b4f,Wed Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>),1
+9f54fa65,Wed Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>,1

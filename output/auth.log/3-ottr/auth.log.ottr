@@ -149,13 +149,25 @@ lxid:OttrTemplate_ipWithPort[ottr:IRI ?id, ottr:IRI ?ip, xsd:string ?ipString, o
 	ottr:Triple(?port,log:linkedPortService,?linkedPort)
 } . 
 
-lxid:OttrTemplate_ftpUser[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+lxid:OttrTemplate_userLogin[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
 	ottr:Triple(?id,log:hasUser,?obj), 
 	ottr:Triple(?obj,rdf:type,log:User), 
 	ottr:Triple(?obj,log:user.name,?objString)
 } . 
 
-lxid:OttrTemplate_userLogin[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+lxid:OttrTemplate_loginForUser[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_sentToUser[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_fromUser[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
 	ottr:Triple(?id,log:hasUser,?obj), 
 	ottr:Triple(?obj,rdf:type,log:User), 
 	ottr:Triple(?obj,log:user.name,?objString)
@@ -192,17 +204,15 @@ lxid:OttrTemplate_exe[ottr:IRI ?id, xsd:string ?objString] :: {
 
 ### LogEventTemplate OTTR templates 
 
-lxid:LogEventTemplate_e962e6c3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?pname6, ?pid7, ?unknown9, ?obj10, ?objString11, ?unknown12] :: { 
+lxid:LogEventTemplate_58c5527c[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?pname6, ?pid7, ?unknown9, ?unknown10, ?unknown11, ?unknown12, ?obj13, ?objString14, ?ip15, ?ipString16, ?obj17, ?objString18] :: { 
 	lxid:OttrTemplate_unix(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?pname6,?pid7), 
 	lxid:OttrTemplate_unknown(?id,?unknown9), 
-	lxid:OttrTemplate_user(?id,?obj10,?objString11), 
-	lxid:OttrTemplate_unknown(?id,?unknown12)
-} . 
-
-lxid:LogEventTemplate_c61b52d9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?pname6, ?pid7, ?unknown9, ?obj10, ?objString11] :: { 
-	lxid:OttrTemplate_unix(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?pname6,?pid7), 
-	lxid:OttrTemplate_unknown(?id,?unknown9), 
-	lxid:OttrTemplate_user(?id,?obj10,?objString11)
+	lxid:OttrTemplate_unknown(?id,?unknown10), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_user(?id,?obj13,?objString14), 
+	lxid:OttrTemplate_ip(?id,?ip15,?ipString16), 
+	lxid:OttrTemplate_user(?id,?obj17,?objString18)
 } . 
 
 lxid:LogEventTemplate_e4c34c7d[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?pname6, ?pid7, ?unknown9, ?unknown10, ?unknown11, ?unknown12, ?obj13, ?objString14, ?unknown15, ?unknown16, ?obj17, ?objString18] :: { 
@@ -215,5 +225,18 @@ lxid:LogEventTemplate_e4c34c7d[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp
 	lxid:OttrTemplate_unknown(?id,?unknown15), 
 	lxid:OttrTemplate_unknown(?id,?unknown16), 
 	lxid:OttrTemplate_user(?id,?obj17,?objString18)
+} . 
+
+lxid:LogEventTemplate_c61b52d9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?pname6, ?pid7, ?unknown9, ?obj10, ?objString11] :: { 
+	lxid:OttrTemplate_unix(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?pname6,?pid7), 
+	lxid:OttrTemplate_unknown(?id,?unknown9), 
+	lxid:OttrTemplate_user(?id,?obj10,?objString11)
+} . 
+
+lxid:LogEventTemplate_e962e6c3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?pname6, ?pid7, ?unknown9, ?obj10, ?objString11, ?unknown12] :: { 
+	lxid:OttrTemplate_unix(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?pname6,?pid7), 
+	lxid:OttrTemplate_unknown(?id,?unknown9), 
+	lxid:OttrTemplate_user(?id,?obj10,?objString11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
 } . 
 

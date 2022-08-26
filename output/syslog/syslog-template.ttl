@@ -1,0 +1,1139 @@
+@prefix logex: <https://w3id.org/sepses/ns/logex#> .
+@prefix cee:   <https://w3id.org/sepses/cee#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix log:   <https://w3id.org/sepses/ns/log#> .
+@prefix lxid:  <https://w3id.org/sepses/id/logex/> .
+@prefix lid:   <https://w3id.org/sepses/id/log/> .
+@prefix ottr:  <http://ns.ottr.xyz/0.4/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix svid:  <https://w3id.org/sepses/id/service/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+lxid:LogEventTemplate_18286cad
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "18286cad" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Bertie <bertie@mail.cup.com>, Sunni <sunni@mail.cup.com>, Irwin <irwin@mail.cup.com> from danette (192.168.10.200) [pid 4236 on line 970 of \"/var/www/mail.cup.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "line" , "irwin" , "pid" , "sunni" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, Sunni <*>, Irwin <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_3f3a41fb
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3f3a41fb" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 12:29:43 2020 -> Database updated (6769409 signatures) from db.local.clamav.net (IP: 104.16.219.84)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "ip" ) ;
+        logex:keyword                  "signature" , "ip" , "database update" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>)" .
+
+lxid:LogEventTemplate_2934bdd4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2934bdd4" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Portia <portia@mail.cup.com>, Bertie <bertie@mail.cup.com>, georgie@mail.cup.com from kelsey (192.168.10.190) [pid 26005 on line 970 of \"/var/www/mail.cup.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "unknown" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_43d542ce
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "43d542ce" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Started Daily apt download activities." ;
+        logex:hasAnnotation            cee:action_download , cee:action_start ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "activity" , "download" , "apt" , "start" , "daily" ;
+        logex:pattern                  "Started Daily apt download activities." .
+
+lxid:LogEventTemplate_28b065c5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "28b065c5" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 8h 20min 53.545983s random time." ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "timer" , "min" , "random" , "time" , "add 8h" ;
+        logex:pattern                  "apt-daily.timer: Adding 8h 20min <*>.545983s random time." .
+
+lxid:LogEventTemplate_bc9ac869
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bc9ac869" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[303441.120399] audit: type=1300 audit(1583216821.827:12524132): arch=c000003e syscall=2 success=yes exit=28 a0=7f8e9533df87 a1=90800 a2=1 a3=8 items=1 ppid=1 pid=12447 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=\"(auditd)\" exe=\"/lib/systemd/systemd\" key=(null)" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): arch=<*> syscall=<*> success=<*> exit=<*> a0=<*> a1=<*> a2=<*> a3=<*> items=<*> ppid=<*> pid=<*> auid=<*> uid=<*> gid=<*> euid=<*> suid=<*> fsuid=<*> egid=<*> sgid=<*> fsgid=<*> tty=(<*>) ses=<*> comm=\"(<*>)\" exe=\"/<*>\" key=(<*>)" .
+
+lxid:LogEventTemplate_2e87be9e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2e87be9e" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "The audit daemon is exiting." ;
+        logex:hasAnnotation            cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "audit" , "be" , "daemon" , "exit" ;
+        logex:pattern                  "The audit daemon is exiting." .
+
+lxid:LogEventTemplate_8dbb2c05
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8dbb2c05" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "DHCPREQUEST of 192.168.10.122 on eth0 to 192.168.10.2 port 67" ;
+        logex:hasParameterList         ( "ip" "ip" "port" ) ;
+        logex:keyword                  "port" , "eth0" , "dhcprequest" ;
+        logex:pattern                  "DHCPREQUEST of <*> on eth0 to <*> port <*>" .
+
+lxid:LogEventTemplate_1dc1bdd9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1dc1bdd9" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Init complete, auditd 2.6.7 listening for events (startup state enable)" ;
+        logex:hasAnnotation            cee:service_audit , cee:object_event , cee:action_audit , cee:action_start ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "listen" , "enable" , "auditd" , "startup" , "init complete" , "event" , "state" ;
+        logex:pattern                  "Init complete, auditd <*>.<*>.<*> listening for events (startup state enable)" .
+
+lxid:LogEventTemplate_ad3a8d20
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ad3a8d20" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Long <long@mail.insect.com>, Les <les@mail.insect.com>, Marjory <marjory@mail.insect.com> from marcelle (192.168.10.98) [pid 23073 on line 970 of \"/var/www/mail.insect.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "unknown" "email" "unknown" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_032e2c6f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "032e2c6f" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "bound to 192.168.10.122 -- renewal in 32799 seconds." ;
+        logex:hasAnnotation            cee:action_bind ;
+        logex:hasParameterList         ( "ip" "unknown" ) ;
+        logex:keyword                  "renewal" , "bind" , "seconds" ;
+        logex:pattern                  "bound to <*> -- renewal in <*> seconds." .
+
+lxid:LogEventTemplate_78b42a20
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "78b42a20" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> main.cvd is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "tue mar" , "version" , "date" , "sig" , "builder" , "f-level" , "be" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>" .
+
+lxid:LogEventTemplate_5f81f6ed
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "5f81f6ed" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[389985.890591] audit: type=1327 audit(1583303324.181:31330692): proctitle=2F6C69622F73797374656D642F73797374656D642D6367726F7570732D6167656E74002F73797374656D2E736C6963652F6175646974642E73657276696365" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): proctitle=<*>" .
+
+lxid:LogEventTemplate_aca16d28
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "aca16d28" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "(root) CMD (  [ -x /usr/lib/php/sessionclean ] && if [ ! -d /run/systemd/system ]; then /usr/lib/php/sessionclean; fi)" ;
+        logex:hasParameterList         ( "unknown" "path" "path" "path" ) ;
+        logex:keyword                  "fi" , "cmd" ;
+        logex:pattern                  "(<*>) CMD ( [ -x /<*> ] && if [ ! -d /<*> ]; then /<*>; fi)" .
+
+lxid:LogEventTemplate_6ad000fd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6ad000fd" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> ClamAV update process started at Wed Mar  4 00:29:43 2020" ;
+        logex:hasAnnotation            cee:object_process , cee:action_update , cee:action_start ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "process" , "update" , "clamav" , "start" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Wed Mar <*> <*>:<*>:<*> <*>" .
+
+lxid:LogEventTemplate_2dbdc7da
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2dbdc7da" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap-login: Disconnected (auth failed, 2 attempts in 12 secs): user=<irwin>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, secured, session=<Qi33YPOfPIJ/AAAB>" ;
+        logex:hasAnnotation            cee:action_login , cee:action_disconnect , cee:service_auth , cee:action_connect ;
+        logex:hasParameterList         ( "unknown" "unknown" "user" "unknown" "ip" "ip" "path" ) ;
+        logex:keyword                  "attempt" , "disconnect" , "auth fail" , "secure" , "sec" , "imap-login" ;
+        logex:pattern                  "imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, session=<<*>>" .
+
+lxid:LogEventTemplate_be95a278
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "be95a278" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[389985.890586] audit: type=1302 audit(1583303324.181:31330692): item=0 name=\"/lib/systemd/tls/x86_64/libsystemd-shared-232.so\" nametype=UNKNOWN" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): item=<*> name=\"/<*>\" nametype=<*>" .
+
+lxid:LogEventTemplate_2422872b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2422872b" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap-login: Disconnected (no auth attempts in 0 secs): user=<>, rip=192.168.10.81, lip=192.168.10.122, session=<OwkHKQugxoDAqApR>" ;
+        logex:hasAnnotation            cee:service_auth , cee:action_disconnect , cee:action_connect , cee:action_login ;
+        logex:hasParameterList         ( "unknown" "ip" "ip" "unknown" ) ;
+        logex:keyword                  "sec" , "disconnect" , "imap-login" , "auth attempt" ;
+        logex:pattern                  "imap-login: Disconnected (no auth attempts in <*> secs): user=<>, rip=<*>, lip=<*>, session=<<*>>" .
+
+lxid:LogEventTemplate_8342759b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8342759b" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Long <long@mail.insect.com>, Marjory <marjory@mail.insect.com>, cedrick@mail.insect.com from keven (192.168.10.18) [pid 21442 on line 970 of \"/var/www/mail.insect.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "pid" , "line" , "message send" , "marjory" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, Marjory <*>, <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_0d6b83b4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0d6b83b4" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[389985.883027] audit: type=1300 audit(1583303324.181:31330691): arch=c000003e syscall=20 success=yes exit=48462 a0=10 a1=7ffe29571fb0 a2=6 a3=560e7de01e14 items=0 ppid=22788 pid=2214 auid=4294967295 uid=33 gid=33 euid=33 suid=33 fsuid=33 egid=33 sgid=33 fsgid=33 tty=(none) ses=4294967295 comm=\"apache2\" exe=\"/usr/sbin/apache2\" key=(null)" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): arch=<*> syscall=<*> success=<*> exit=<*> a0=<*> a1=<*> a2=<*> a3=<*> items=<*> ppid=<*> pid=<*> auid=<*> uid=<*> gid=<*> euid=<*> suid=<*> fsuid=<*> egid=<*> sgid=<*> fsgid=<*> tty=(<*>) ses=<*> <*> exe=\"/<*>\" key=(<*>)" .
+
+lxid:LogEventTemplate_b37fee6f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b37fee6f" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Starting Daily apt download activities..." ;
+        logex:hasAnnotation            cee:action_start , cee:action_download ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "apt" , "start" , "daily" , "activity" , "download" ;
+        logex:pattern                  "Starting Daily apt download activities..." .
+
+lxid:LogEventTemplate_035fd580
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "035fd580" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 39min 54.707046s random time." ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "random" , "add" , "timer" , "min" , "time" ;
+        logex:pattern                  "apt-daily.timer: Adding 39min <*>.707046s random time." .
+
+lxid:LogEventTemplate_a33acd0c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a33acd0c" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Horde_Form_Action_updatefield::getActionScript(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::getActionScript($form, $renderer, $varname) [pid 7254 on line 0 of \"/usr/share/php/Horde/Form/Action/updatefield.php\"]" ;
+        logex:hasAnnotation            cee:action_update , cee:status_error , cee:action ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "form" , "horde" , "line" , "be compatible" , "php error" , "action" , "varname" , "pid" , "updatefield" , "declaration" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_9f54fa65
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9f54fa65" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 15:31:22 2020 -> !NotifyClamd: Can't find or parse configuration file /etc/clamav/clamd.conf" ;
+        logex:hasAnnotation            cee:object_file , cee:action_find ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "file" , "configuration" , "parse" , "notifyclamd" , "wed mar" , "find" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>" .
+
+lxid:LogEventTemplate_09cc6741
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "09cc6741" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Horde_Form_Action_updatefield::setValues(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::setValues(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid 7254 on line 0 of \"/usr/share/php/Horde/Form/Action/updatefield.php\"]" ;
+        logex:hasAnnotation            cee:action_update , cee:action , cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "index null" , "php error" , "be compatible" , "action" , "updatefield" , "horde" , "arrayval false" , "sourceval" , "pid" , "line" , "form" , "declaration" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_0c2ce181
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0c2ce181" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[nag] PHP ERROR: Declaration of Nag_Form_Task::renderActive() should be compatible with Horde_Form::renderActive($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid 7567 on line 17 of \"/var/www/mail.spiral.com/nag/lib/Form/Task.php\"]" ;
+        logex:hasAnnotation            cee:action , cee:action_get , cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "be compatible" , "action" , "nag" , "declaration" , "focus true" , "method" , "null" , "line" , "get" , "enctype null" , "task" , "pid" , "form" , "php error" , "horde" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_fb2814e0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fb2814e0" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> ^Local version: 0.100.2 Recommended version: 0.102.2" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "recommend version" , "local version" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>" .
+
+lxid:LogEventTemplate_3f36733a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3f36733a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 12:29:13 2020 -> daily.cld updated (version: 25740, sigs: 2204413, f-level: 63, builder: raynman)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "sig" , "daily.cld update" , "tue mar" , "version" , "raynman" , "f-level" , "builder" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)" .
+
+lxid:LogEventTemplate_df3544f5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "df3544f5" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> main.cvd is up to date (version: 59, sigs: 4564902, f-level: 60, builder: sigmgr)" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "builder" , "wed mar" , "f-level" , "version" , "be" , "sig" , "date" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>" .
+
+lxid:LogEventTemplate_6be8674a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6be8674a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Starting Security Auditing Service..." ;
+        logex:hasAnnotation            cee:action_start , cee:service , cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "security" , "start" , "service" , "auditing" ;
+        logex:pattern                  "Starting Security Auditing Service..." .
+
+lxid:LogEventTemplate_2abce80a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2abce80a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> ClamAV update process started at Tue Mar  3 00:28:11 2020" ;
+        logex:hasAnnotation            cee:action_update , cee:object_process , cee:action_start ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "process" , "clamav" , "start" , "update" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Tue Mar <*> <*>:<*>:<*> <*>" .
+
+lxid:LogEventTemplate_c5e4ee87
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c5e4ee87" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "max_restarts_parser called with: 10" ;
+        logex:hasAnnotation            cee:action_start ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "parser call" , "max" , "restart" ;
+        logex:pattern                  "max_restarts_parser called with: <*>" .
+
+lxid:LogEventTemplate_769dc921
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "769dc921" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "failure 1" ;
+        logex:hasAnnotation            cee:status_failure ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "failure" ;
+        logex:pattern                  "failure <*>" .
+
+lxid:LogEventTemplate_7edba00f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7edba00f" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap(suzan): Logged out in=79 out=878" ;
+        logex:hasParameterList         ( "userImap" "unknown" "unknown" ) ;
+        logex:keyword                  "log" , "imap" ;
+        logex:pattern                  "imap(<*>): Logged out in=<*> out=<*>" .
+
+lxid:LogEventTemplate_19b52840
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "19b52840" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"495\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "url" ) ;
+        logex:keyword                  "hup" , "rsyslogd" , "be" , "origin" ;
+        logex:pattern                  "[origin software=\"rsyslogd\" swVersion=\"<*>.<*>.<*>\" x-pid=\"<*>\" x-info=\"<*>\"] rsyslogd was HUPed" .
+
+lxid:LogEventTemplate_dd23ebe3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "dd23ebe3" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "/sbin/augenrules: No change" ;
+        logex:hasParameterList         ( "path" ) ;
+        logex:keyword                  "change" ;
+        logex:pattern                  "/<*>: No change" .
+
+lxid:LogEventTemplate_8f8ad23c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8f8ad23c" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to suzan@mail.spiral.com, marcelino@mail.spiral.com from marquerite (192.168.10.130) [pid 7611 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_53f856aa
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "53f856aa" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Started dispatcher: /sbin/audispd pid: 12451" ;
+        logex:hasAnnotation            cee:action_start ;
+        logex:hasParameterList         ( "path" "pid" ) ;
+        logex:keyword                  "pid" , "start dispatcher" ;
+        logex:pattern                  "Started dispatcher: /<*> pid: <*>" .
+
+lxid:LogEventTemplate_29f25ef6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "29f25ef6" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 3h 9min 29.228524s random time." ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "random time" , "add 3h" , "timer" ;
+        logex:pattern                  "apt-daily.timer: Adding 3h <*> <*> random time." .
+
+lxid:LogEventTemplate_18443d22
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "18443d22" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily-upgrade.timer: Adding 31min 10.720986s random time." ;
+        logex:hasAnnotation            cee:action_upgrade ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "min" , "random time" , "timer" , "apt-daily-upgrade" , "add" ;
+        logex:pattern                  "apt-daily-upgrade.timer: Adding 31min <*> random time." .
+
+lxid:LogEventTemplate_19d70957
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "19d70957" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap-login: Login: user=<suzan>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=9543, secured, session=<kjlyAOifcpZ/AAAB>" ;
+        logex:hasAnnotation            cee:action_login ;
+        logex:hasParameterList         ( "user" "unknown" "ip" "ip" "unknown" "unknown" ) ;
+        logex:keyword                  "imap-login" , "login" , "secure" ;
+        logex:pattern                  "imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>" .
+
+lxid:LogEventTemplate_b7846b4e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b7846b4e" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> Received signal: wake up" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "wake" , "receive signal" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up" .
+
+lxid:LogEventTemplate_f49657b2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f49657b2" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap(suzan): Error: file_dotlock_create(/var/mail/suzan) failed: Permission denied (euid=1004(suzan) egid=1004(suzan) missing +w perm: /var/mail, we're not in group 8(mail), dir owned by 0:8 mode=0775) (set mail_privileged_group=mail)" ;
+        logex:hasAnnotation            cee:action_lock , cee:action_create , cee:status_error , cee:object_file ;
+        logex:hasParameterList         ( "userImap" "path" "unknown" "unknown" "path" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "dir own" , "permission" , "create" , "set" , "imap" , "dotlock" , "fail" , "group" , "miss" , "file" , "w perm" , "error" , "be" , "deny" ;
+        logex:pattern                  "imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)" .
+
+lxid:LogEventTemplate_84b1784d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "84b1784d" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Session cookies will not work without a FQDN and with a non-empty cookie domain. Either use a fully qualified domain name like \"http://www.example.com\" instead of \"http://example\" only, or set the cookie domain in the Horde configuration to an empty value, or enable non-cookie (url-based) sessions in the Horde configuration. [pid 6744 on line 162 of \"/usr/share/php/Horde/Session.php\"]" ;
+        logex:hasAnnotation            cee:object_session , cee:domain ;
+        logex:hasParameterList         ( "url" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "non-empty" , "cookie domain" , "session cookie" , "horde configuration" , "fqdn" , "set" , "qualify" , "http" , "name" , "line" , "cookie" , "session" , "pid" , "empty value" , "use" , "enable non-cookie" , "work" , "domain" ;
+        logex:pattern                  "Session cookies will not work without a FQDN and with a non-empty cookie domain. Either use a fully qualified domain name like \"<*>\" instead of \"http:<*>\" only, or set the cookie domain in the Horde configuration to an empty value, or enable non-cookie (<*>) sessions in the Horde configuration. [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_f00095d5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f00095d5" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[303441.110986] audit_printk_skb: 1194 callbacks suppressed" ;
+        logex:hasAnnotation            cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "callback suppress" , "skb" , "audit" , "printk" ;
+        logex:pattern                  "[<*>.<*>] audit_printk_skb: <*> callbacks suppressed" .
+
+lxid:LogEventTemplate_c9f3df73
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c9f3df73" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[horde] Login success for marquerite to horde (192.168.10.130) [pid 7567 on line 163 of \"/var/www/mail.spiral.com/login.php\"]" ;
+        logex:hasAnnotation            cee:action_login , cee:status_success ;
+        logex:hasParameterList         ( "unknown" "userLogin" "ip" "unknown" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "login success" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_4624b2ab
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4624b2ab" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "audit log is not writable by owner" ;
+        logex:hasAnnotation            cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "audit" , "writable" , "be" , "owner" , "log" ;
+        logex:pattern                  "audit log is not writable by owner" .
+
+lxid:LogEventTemplate_df89639b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "df89639b" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "rate_limit 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "limit" , "rate" ;
+        logex:pattern                  "rate_limit <*>" .
+
+lxid:LogEventTemplate_9b38a354
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9b38a354" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap-login: Disconnected (auth failed, 2 attempts in 11 secs): user=<page>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, secured, session=<mDj+qAWgyr9/AAAB>" ;
+        logex:hasAnnotation            cee:action_login , cee:action_disconnect , cee:action_connect , cee:service_auth ;
+        logex:hasParameterList         ( "unknown" "unknown" "user" "unknown" "ip" "ip" "unknown" ) ;
+        logex:keyword                  "disconnect" , "secure" , "attempt" , "sec" , "auth fail" , "imap-login" ;
+        logex:pattern                  "imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, session=<mDj+qAWgyr9/<*>>" .
+
+lxid:LogEventTemplate_fc9a895a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fc9a895a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap-login: Disconnected (auth failed, 2 attempts in 10 secs): user=<giovanni>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, secured, session=<pxhGhQuggsh/AAAB>" ;
+        logex:hasAnnotation            cee:action_connect , cee:action_login , cee:action_disconnect , cee:service_auth ;
+        logex:hasParameterList         ( "unknown" "unknown" "user" "unknown" "ip" "ip" "unknown" ) ;
+        logex:keyword                  "sec" , "disconnect" , "attempt" , "imap-login" , "auth fail" , "secure" ;
+        logex:pattern                  "imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, <*>" .
+
+lxid:LogEventTemplate_5cd927dd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "5cd927dd" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "(root) CMD (/usr/bin/clamscan --infected  --remove=no --recursive=yes --scan-archive=no /)" ;
+        logex:hasParameterList         ( "unknown" "path" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "cmd" , "infected" ;
+        logex:pattern                  "(<*>) CMD (/<*> --infected --remove=<*> --recursive=<*> --scan-archive=<*> /)" .
+
+lxid:LogEventTemplate_038a758d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "038a758d" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Starting Cleanup of Temporary Directories..." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "start cleanup" , "temporary directory" ;
+        logex:pattern                  "Starting Cleanup of Temporary Directories..." .
+
+lxid:LogEventTemplate_be35dfa1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "be35dfa1" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Started Daily apt upgrade and clean activities." ;
+        logex:hasAnnotation            cee:action_clean , cee:action_start , cee:action_upgrade ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "start" , "daily" , "upgrade" , "apt" , "clean activity" ;
+        logex:pattern                  "Started Daily apt upgrade and clean activities." .
+
+lxid:LogEventTemplate_d70ab203
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d70ab203" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> ^Your ClamAV installation is OUTDATED!" ;
+        logex:hasAnnotation            cee:action_install ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "clamav" , "outdated" , "be" , "tue mar" , "installation" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!" .
+
+lxid:LogEventTemplate_bc30533a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bc30533a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[303583.668033] audit: type=1327 audit(1583216921.178:24082289): proctitle=\"(auditd)\"" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): proctitle=\"(<*>)\"" .
+
+lxid:LogEventTemplate_45bfe7f4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "45bfe7f4" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "dispatch error reporting limit reached - ending report notification." ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "end" , "error" , "notification" , "reach" , "dispatch" , "report" , "limit" ;
+        logex:pattern                  "dispatch error reporting limit reached - ending report notification." .
+
+lxid:LogEventTemplate_15f92ecf
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "15f92ecf" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 15:31:07 2020 -> daily.cld updated (version: 25741, sigs: 2206366, f-level: 63, builder: raynman)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "sig" , "wed mar" , "f-level" , "raynman" , "version" , "builder" , "daily.cld update" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)" .
+
+lxid:LogEventTemplate_628df301
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "628df301" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[turba] PHP ERROR: finfo_file(): Empty filename or path [pid 6745 on line 166 of \"/usr/share/php/Horde/Mime/Magic.php\"]" ;
+        logex:hasAnnotation            cee:status_error , cee:object_file ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "php error" , "finfo" , "line" , "file" , "pid" , "empty filename" , "path" ;
+        logex:pattern                  "[<*>] PHP ERROR: finfo_file(): Empty filename or path [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_d7be613d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d7be613d" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Reloading The Apache HTTP Server." ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "http" , "apache" , "server" , "reload" ;
+        logex:pattern                  "Reloading The Apache HTTP Server." .
+
+lxid:LogEventTemplate_dce780ab
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "dce780ab" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "pid 12447" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "pid" ;
+        logex:pattern                  "pid <*>" .
+
+lxid:LogEventTemplate_669adf99
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "669adf99" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "enabled 1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "enable" ;
+        logex:pattern                  "enabled <*>" .
+
+lxid:LogEventTemplate_c91504ad
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c91504ad" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[303441.120413] audit: type=1327 audit(1583216821.827:12524132): proctitle=\"(auditd)\"" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): <*>" .
+
+lxid:LogEventTemplate_703c7f24
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "703c7f24" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 5h 13min 5.973223s random time." ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "random" , "add 5h" , "timer" , "min" , "time" ;
+        logex:pattern                  "apt-daily.timer: Adding 5h 13min <*>.973223s random time." .
+
+lxid:LogEventTemplate_151a0778
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "151a0778" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "DHCPACK of 192.168.10.122 from 192.168.10.2" ;
+        logex:hasParameterList         ( "ip" "ip" ) ;
+        logex:keyword                  "dhcpack" ;
+        logex:pattern                  "DHCPACK of <*> from <*>" .
+
+lxid:LogEventTemplate_c7a9a5e4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c7a9a5e4" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[nag] PHP ERROR: Declaration of Horde_Form_Type_country::init($prompt = NULL) should be compatible with Horde_Form_Type_enum::init($values, $prompt = NULL) [pid 7567 on line 0 of \"/usr/share/php/Horde/Form/Type.php\"]" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "prompt null" , "type" , "country" , "line" , "value" , "enum" , "declaration" , "php error" , "form" , "be compatible" , "pid" , "horde" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_cb372a73
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cb372a73" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 12:28:12 2020 -> Downloading daily-25740.cdiff [100%]" ;
+        logex:hasAnnotation            cee:action_download ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "download daily" , "cdiff" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%]" .
+
+lxid:LogEventTemplate_610e39c8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "610e39c8" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[horde] PHP ERROR: Cannot modify header information - headers already sent [pid 6569 on line 0 of \"Unknown\"]" ;
+        logex:hasAnnotation            cee:status_unknown , cee:status_error , cee:action_modify ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "modify" , "php error" , "header" , "unknown" , "send" , "pid" , "information" , "line" ;
+        logex:pattern                  "[<*>] PHP ERROR: Cannot modify header information - headers already sent [pid <*> on line <*> of \"Unknown\"]" .
+
+lxid:LogEventTemplate_cdf0b291
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cdf0b291" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> ^Local version: 0.100.2 Recommended version: 0.102.2" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "recommend version" , "local version" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>" .
+
+lxid:LogEventTemplate_6039f7f0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6039f7f0" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Gilberte <gilberte@mail.spiral.com>, marnie@mail.spiral.com from marcelino (192.168.10.130) [pid 13239 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_fac4355b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fac4355b" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 42min 22.144024s random time." ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "timer" , "add" , "random time" ;
+        logex:pattern                  "apt-daily.timer: Adding <*> <*> random time." .
+
+lxid:LogEventTemplate_eaaaf555
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "eaaaf555" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[303441.110988] audit: type=1305 audit(1583216821.819:12524130): audit_pid=0 old=27095 auid=4294967295 ses=4294967295 res=1" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): audit_pid=<*> old=<*> auid=<*> ses=<*> res=<*>" .
+
+lxid:LogEventTemplate_4086fa06
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4086fa06" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] [login] Authentication failed. [pid 6569 on line 730 of \"/var/www/mail.spiral.com/imp/lib/Imap.php\"]" ;
+        logex:hasAnnotation            cee:service_auth ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "authentication fail" , "line" , "pid" ;
+        logex:pattern                  "[<*>] [<*>] Authentication failed. [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_26a2e0f6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "26a2e0f6" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "backlog_wait_time 0" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "time" , "wait" , "backlog" ;
+        logex:pattern                  "backlog_wait_time <*>" .
+
+lxid:LogEventTemplate_918d45a8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "918d45a8" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 15:29:44 2020 -> Downloading daily-25741.cdiff [100%]" ;
+        logex:hasAnnotation            cee:action_download ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "wed mar" , "download daily" , "cdiff" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%]" .
+
+lxid:LogEventTemplate_5431e37d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "5431e37d" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] FAILED LOGIN for giovanni (192.168.10.81) to {imap://localhost/} [pid 6569 on line 156 of \"/var/www/mail.spiral.com/imp/lib/Auth.php\"]" ;
+        logex:hasAnnotation            cee:action_login ;
+        logex:hasParameterList         ( "unknown" "loginForUser" "ip" "unknown" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "fail login" , "line" , "pid" ;
+        logex:pattern                  "[<*>] FAILED LOGIN for <*> <*> <*> <*> [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_73f564e0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "73f564e0" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Starting Clean php session files..." ;
+        logex:hasAnnotation            cee:action_start , cee:object_file , cee:object_session , cee:action_clean ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "clean" , "php" , "file" , "session" , "start" ;
+        logex:pattern                  "Starting Clean php session files..." .
+
+lxid:LogEventTemplate_640a7d30
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "640a7d30" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily-upgrade.timer: Adding 26min 33.210855s random time." ;
+        logex:hasAnnotation            cee:action_upgrade ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "apt-daily-upgrade" , "timer" , "random time" , "add" ;
+        logex:pattern                  "apt-daily-upgrade.timer: Adding <*> <*> random time." .
+
+lxid:LogEventTemplate_f03cbe60
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f03cbe60" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "lost 1565" ;
+        logex:hasAnnotation            cee:domain_os ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "lose" ;
+        logex:pattern                  "lost <*>" .
+
+lxid:LogEventTemplate_26eda89b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "26eda89b" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Long <long@mail.insect.com>, Les <les@mail.insect.com>, Marjory <marjory@mail.insect.com> from marcelle (192.168.10.98) [pid 14563 on line 970 of \"/var/www/mail.insect.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "unknown" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "les" , "pid" , "line" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, Les <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_fcea25a6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fcea25a6" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "(root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))" ;
+        logex:hasParameterList         ( "unknown" "path" "filePath" ) ;
+        logex:keyword                  "test" , "run-part" , "cmd" , "report" , "cd" ;
+        logex:pattern                  "(<*>) CMD (test -x /<*> || ( cd / && run-parts --report /<*> ))" .
+
+lxid:LogEventTemplate_972148e8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "972148e8" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "backlog_limit 81920" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "limit" , "backlog" ;
+        logex:pattern                  "backlog_limit <*>" .
+
+lxid:LogEventTemplate_6385bb71
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6385bb71" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Marnie <marnie@mail.spiral.com>, Clay <clay@mail.spiral.com> from marcelino (192.168.10.130) [pid 14229 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_bc851626
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bc851626" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Stopped Security Auditing Service." ;
+        logex:hasAnnotation            cee:action_stop , cee:service_audit , cee:service , cee:action_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "stopped" , "service" , "security" , "auditing" ;
+        logex:pattern                  "Stopped Security Auditing Service." .
+
+lxid:LogEventTemplate_2fc5a013
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2fc5a013" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[horde] User clay logged out of Horde (192.168.10.130) [pid 5662 on line 106 of \"/var/www/mail.spiral.com/login.php\"]" ;
+        logex:hasParameterList         ( "unknown" "user" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "log" , "horde" , "line" , "pid" , "user" ;
+        logex:pattern                  "[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_d0f6fa37
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d0f6fa37" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav" ;
+        logex:hasAnnotation            cee:action_read ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "url" ) ;
+        logex:keyword                  "wed mar" , "panic" , "read" , "do" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>" .
+
+lxid:LogEventTemplate_54585b4f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "54585b4f" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 15:31:22 2020 -> Database updated (6771362 signatures) from db.local.clamav.net (IP: 104.16.219.84)" ;
+        logex:hasAnnotation            cee:action_update ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "domain" "ip" ) ;
+        logex:keyword                  "ip" , "wed mar" , "signature" , "database update" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>)" .
+
+lxid:LogEventTemplate_0bf58d5e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0bf58d5e" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "No plugins found, exiting" ;
+        logex:hasAnnotation            cee:action_find ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "exit" , "plugin find" ;
+        logex:pattern                  "No plugins found, exiting" .
+
+lxid:LogEventTemplate_a7c1984d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a7c1984d" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 12:29:43 2020 -> !NotifyClamd: Can't find or parse configuration file /etc/clamav/clamd.conf" ;
+        logex:hasAnnotation            cee:action_find , cee:object_file ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "configuration" , "file" , "tue mar" , "parse" , "notifyclamd" , "find" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>" .
+
+lxid:LogEventTemplate_ad3de57c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ad3de57c" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "PHP ERROR: rawurlencode() expects parameter 1 to be string, array given [pid 6556 on line 302 of \"/usr/share/php/Horde/Url.php\"]" ;
+        logex:hasAnnotation            cee:action_encode , cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "rawurlencode" , "array give" , "be string" , "pid" , "line" , "php error" , "expect parameter" ;
+        logex:pattern                  "PHP ERROR: rawurlencode() expects parameter <*> to be string, array given [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_bfae94f5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bfae94f5" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Reloaded The Apache HTTP Server." ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "apache" , "http" , "server" , "reload" ;
+        logex:pattern                  "Reloaded The Apache HTTP Server." .
+
+lxid:LogEventTemplate_3f1ded1e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3f1ded1e" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 15:31:49 2020 -> *Can't query daily.25741.93.1.0.6810DA54.ping.clamav.net" ;
+        logex:hasAnnotation            cee:domain_net ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "wed mar" , "query" , "da54.ping.clamav.net" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> *Can't query daily.<*>.6810DA54.ping.clamav.net" .
+
+lxid:LogEventTemplate_aa436bfa
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "aa436bfa" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "(root) CMD (   cd / && run-parts --report /etc/cron.hourly)" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "cd" , "report" , "run-part" , "cmd" ;
+        logex:pattern                  "(<*>) CMD ( cd / && run-parts --report /<*>)" .
+
+lxid:LogEventTemplate_d7954569
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d7954569" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 00:29:43 2020 -> ^Your ClamAV installation is OUTDATED!" ;
+        logex:hasAnnotation            cee:action_install ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "clamav" , "outdated" , "installation" , "be" , "wed mar" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!" .
+
+lxid:LogEventTemplate_77d8337a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "77d8337a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Guest user is not authorized for Horde (Host: 192.168.10.81). [pid 4815 on line 324 of \"/usr/share/php/Horde/Registry.php\"]" ;
+        logex:hasAnnotation            cee:domain_os , cee:service_auth , cee:service_authorize ;
+        logex:hasParameterList         ( "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "guest" , "host" , "line" , "horde" , "be" , "authorize" , "pid" , "user" ;
+        logex:pattern                  "Guest user is not authorized for Horde (Host: <*>). [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_d2cbdf36
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d2cbdf36" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[303441.113044] audit: type=1131 audit(1583216821.819:12524131): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=auditd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): pid=<*> uid=<*> auid=<*> ses=<*> msg='unit=<*> comm=\"systemd\" exe=\"/<*>\" hostname=? addr=? terminal=? res=<*>'" .
+
+lxid:LogEventTemplate_3cdd7a4b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3cdd7a4b" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Turba_Form_AddContact::validate() should be compatible with Horde_Form::validate($vars = NULL, $canAutoFill = false) [pid 7484 on line 5 of \"/var/www/mail.spiral.com/turba/lib/Form/AddContact.php\"]" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "null" , "horde" , "php error" , "be compatible" , "form" , "declaration" , "addcontact" , "canautofill false" , "turba" , "line" , "pid" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_8cabb1a7
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8cabb1a7" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 11h 19min 15.464837s random time." ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "random time" , "add" , "timer" ;
+        logex:pattern                  "apt-daily.timer: Adding <*> <*> <*> random time." .
+
+lxid:LogEventTemplate_b69f03bd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b69f03bd" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav" ;
+        logex:hasAnnotation            cee:action_read ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "url" ) ;
+        logex:keyword                  "panic" , "read" , "tue mar" , "do" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>" .
+
+lxid:LogEventTemplate_1c791ed4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1c791ed4" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "imap-login: Disconnected (disconnected before auth was ready, waited 0 secs): user=<>, rip=192.168.10.18, lip=192.168.10.21, session=<+KO9uAeg4sPAqAoS>" ;
+        logex:hasAnnotation            cee:action_disconnect , cee:action_login , cee:action_connect , cee:service_auth , cee:action_read ;
+        logex:hasParameterList         ( "unknown" "ip" "ip" ) ;
+        logex:keyword                  "wait" , "ready" , "disconnect" , "imap-login" , "auth" , "sec" , "be" ;
+        logex:pattern                  "imap-login: Disconnected (disconnected before auth was ready, waited <*> secs): user=<>, rip=<*>, lip=<*>, session=<+KO9uAeg4sPAqAoS>" .
+
+lxid:LogEventTemplate_074ecaa1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "074ecaa1" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 12:29:38 2020 -> *Can't query daily.25740.93.1.0.6810DB54.ping.clamav.net" ;
+        logex:hasAnnotation            cee:service_db , cee:domain_net ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "tue mar" , "query" , "db54.ping.clamav.net" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> *Can't query daily.<*>.6810DB54.ping.clamav.net" .
+
+lxid:LogEventTemplate_fd82c615
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fd82c615" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "dispatch err (pipe full) event lost" ;
+        logex:hasAnnotation            cee:object_event , cee:domain_os ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "pipe full" , "event lose" , "dispatch err" ;
+        logex:pattern                  "dispatch err (pipe full) event lost" .
+
+lxid:LogEventTemplate_7ab0ca9a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7ab0ca9a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[303441.120406] audit: type=1302 audit(1583216821.827:12524132): item=0 name=\"/proc/self/fd\" inode=871517 dev=00:04 mode=040500 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): item=<*> name=\"/<*>\" inode=<*> dev=<*>:<*> mode=<*> ouid=<*> ogid=<*> rdev=<*>:<*> nametype=<*>" .
+
+lxid:LogEventTemplate_058f6143
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "058f6143" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "backlog 1" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "backlog" ;
+        logex:pattern                  "backlog <*>" .
+
+lxid:LogEventTemplate_cc63a5ac
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "cc63a5ac" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "No rules" ;
+        logex:hasAnnotation            cee:object_rule ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "rule" ;
+        logex:pattern                  "No rules" .
+
+lxid:LogEventTemplate_6d8806bb
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6d8806bb" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Started Clean php session files." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean , cee:object_file , cee:object_session ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "php" , "start" , "session" , "file" , "clean" ;
+        logex:pattern                  "Started Clean php session files." .
+
+lxid:LogEventTemplate_ed52ffed
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ed52ffed" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Tue Mar  3 00:28:11 2020 -> Received signal: wake up" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "wake" , "receive signal" , "tue mar" ;
+        logex:pattern                  "Tue Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up" .
+
+lxid:LogEventTemplate_e2ca3d27
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "e2ca3d27" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 33min 10.556007s random time." ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "min" , "timer" , "time" , "random" , "add" ;
+        logex:pattern                  "apt-daily.timer: Adding 33min <*>.556007s random time." .
+
+lxid:LogEventTemplate_1821dfc5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1821dfc5" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "apt-daily.timer: Adding 56min 20.962465s random time." ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "timer" , "min" , "random" , "add" , "time" ;
+        logex:pattern                  "apt-daily.timer: Adding 56min <*>.962465s random time." .
+
+lxid:LogEventTemplate_b6f5e68b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b6f5e68b" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to suzan@mail.spiral.com from marquerite (192.168.10.130) [pid 7504 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_02e23f8a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "02e23f8a" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Turba_Form_EditContact::renderActive($renderer, $vars, $action, $method) should be compatible with Horde_Form::renderActive($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid 7254 on line 0 of \"/var/www/mail.spiral.com/turba/lib/Form/EditContact.php\"]" ;
+        logex:hasAnnotation            cee:status_error , cee:action_get , cee:action ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "editcontact" , "enctype null" , "form" , "line" , "horde" , "pid" , "method" , "null" , "get" , "be compatible" , "declaration" , "php error" , "focus true" , "action" , "turba" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_ae611aec
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ae611aec" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "[imp] Message sent to Long <long@mail.insect.com>, Cedrick <cedrick@mail.insect.com>, keven@mail.insect.com from marjory (192.168.10.18) [pid 12901 on line 970 of \"/var/www/mail.insect.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "cedrick" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, Cedrick <*>, <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_18e1df3f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "18e1df3f" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Started Security Auditing Service." ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit , cee:service , cee:action_start ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "start" , "service" , "auditing" , "security" ;
+        logex:pattern                  "Started Security Auditing Service." .
+
+lxid:LogEventTemplate_b8001350
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b8001350" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "priority_boost_parser called with: 4" ;
+        logex:hasAnnotation            cee:domain_os ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "parser call" , "priority" , "boost" ;
+        logex:pattern                  "priority_boost_parser called with: <*>" .
+
+lxid:LogEventTemplate_ddccfe79
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ddccfe79" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Wed Mar  4 15:31:18 2020 -> *Can't query daily.25741.93.1.0.6810DB54.ping.clamav.net" ;
+        logex:hasAnnotation            cee:domain_net , cee:service_db ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "db54.ping.clamav.net" , "wed mar" , "query" ;
+        logex:pattern                  "Wed Mar <*> <*>:<*>:<*> <*> -> *Can't query daily.<*>.6810DB54.ping.clamav.net" .
+
+lxid:LogEventTemplate_ba7787c1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ba7787c1" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Stopping Security Auditing Service..." ;
+        logex:hasAnnotation            cee:service_audit , cee:service , cee:action_audit , cee:action_stop ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "stopping" , "security" , "auditing" , "service" ;
+        logex:pattern                  "Stopping Security Auditing Service..." .
+
+lxid:LogEventTemplate_20447797
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "20447797" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Started Cleanup of Temporary Directories." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "temporary directories" , "start cleanup" ;
+        logex:pattern                  "Started Cleanup of Temporary Directories." .
+
+lxid:LogEventTemplate_76b18ae2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "76b18ae2" ;
+        logex:associatedLogSourceType  lid:SourceType_syslog ;
+        logex:example                  "Starting Daily apt upgrade and clean activities..." ;
+        logex:hasAnnotation            cee:action_start , cee:action_clean , cee:action_upgrade ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "daily" , "clean activity" , "upgrade" , "apt" , "start" ;
+        logex:pattern                  "Starting Daily apt upgrade and clean activities..." .

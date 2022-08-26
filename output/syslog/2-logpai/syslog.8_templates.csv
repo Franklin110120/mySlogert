@@ -1,0 +1,50 @@
+EventId,EventTemplate,Occurrences
+f49657b2,"imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)",2117
+7edba00f,imap(<*>): Logged out in=<*> out=<*>,2386
+19d70957,"imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>",2385
+b6f5e68b,"[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",47
+8f8ad23c,"[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",37
+c7a9a5e4,"[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of ""/<*>""]",743
+0c2ce181,"[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",547
+3cdd7a4b,"[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of ""/<*>""]",112
+a33acd0c,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of ""/<*>""]",196
+09cc6741,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of ""/<*>""]",196
+02e23f8a,"[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",84
+aca16d28,(<*>) CMD ( [ -x /<*> ] && if [ ! -d /<*> ]; then /<*>; fi),25
+73f564e0,Starting Clean php session files...,25
+6d8806bb,Started Clean php session files.,25
+aa436bfa,(<*>) CMD ( cd / && run-parts --report /<*>),13
+c9f3df73,"[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",77
+2fc5a013,"[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of ""/<*>""]",31
+038a758d,Starting Cleanup of Temporary Directories...,1
+20447797,Started Cleanup of Temporary Directories.,1
+4086fa06,"[<*>] [<*>] Authentication failed. [pid <*> on line <*> of ""/<*>""]",144
+5431e37d,"[<*>] FAILED LOGIN for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",288
+fc9a895a,"imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, <*>",144
+2422872b,"imap-login: Disconnected (no auth attempts in <*> secs): user=<>, rip=<*>, lip=<*>, session=<<*>>",1
+610e39c8,"[<*>] PHP ERROR: Cannot modify header information - headers already sent [pid <*> on line <*> of ""Unknown""]",289
+628df301,"[<*>] PHP ERROR: finfo_file(): Empty filename or path [pid <*> on line <*> of ""/<*>""]",1
+6039f7f0,"[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",5
+6385bb71,"[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",5
+ed52ffed,Tue Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up,7
+2abce80a,Tue Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Tue Mar <*> <*>:<*>:<*> <*>,7
+d70ab203,Tue Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!,7
+fb2814e0,Tue Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>,7
+b69f03bd,Tue Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>,7
+78b42a20,"Tue Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>",21
+8dbb2c05,DHCPREQUEST of <*> on eth0 to <*> port <*>,2
+151a0778,DHCPACK of <*> from <*>,2
+032e2c6f,bound to <*> -- renewal in <*> seconds.,2
+b37fee6f,Starting Daily apt download activities...,1
+43d542ce,Started Daily apt download activities.,1
+e2ca3d27,apt-daily.timer: Adding 33min <*>.556007s random time.,1
+28b065c5,apt-daily.timer: Adding 8h 20min <*>.545983s random time.,1
+fcea25a6,(<*>) CMD (test -x /<*> || ( cd / && run-parts --report /<*> )),1
+d7be613d,Reloading The Apache HTTP Server.,1
+bfae94f5,Reloaded The Apache HTTP Server.,1
+f00095d5,[<*>.<*>] audit_printk_skb: <*> callbacks suppressed,1
+eaaaf555,[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): audit_pid=<*> old=<*> auid=<*> ses=<*> res=<*>,1
+d2cbdf36,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): pid=<*> uid=<*> auid=<*> ses=<*> msg='unit=<*> comm=""systemd"" exe=""/<*>"" hostname=? addr=? terminal=? res=<*>'",1
+bc9ac869,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): arch=<*> syscall=<*> success=<*> exit=<*> a0=<*> a1=<*> a2=<*> a3=<*> items=<*> ppid=<*> pid=<*> auid=<*> uid=<*> gid=<*> euid=<*> suid=<*> fsuid=<*> egid=<*> sgid=<*> fsgid=<*> tty=(<*>) ses=<*> comm=""(<*>)"" exe=""/<*>"" key=(<*>)",2
+7ab0ca9a,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): item=<*> name=""/<*>"" inode=<*> dev=<*>:<*> mode=<*> ouid=<*> ogid=<*> rdev=<*>:<*> nametype=<*>",1
+bc30533a,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): proctitle=""(<*>)""",1

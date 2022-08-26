@@ -1,0 +1,47 @@
+EventId,EventTemplate,Occurrences
+f49657b2,"imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)",2474
+7edba00f,imap(<*>): Logged out in=<*> out=<*>,2665
+19d70957,"imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>",2665
+c7a9a5e4,"[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of ""/<*>""]",626
+a33acd0c,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of ""/<*>""]",142
+09cc6741,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of ""/<*>""]",142
+02e23f8a,"[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",68
+8f8ad23c,"[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",52
+0c2ce181,"[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",468
+3cdd7a4b,"[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of ""/<*>""]",74
+b6f5e68b,"[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",64
+c9f3df73,"[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",63
+2fc5a013,"[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of ""/<*>""]",31
+6039f7f0,"[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",1
+aca16d28,(<*>) CMD ( [ -x /<*> ] && if [ ! -d /<*> ]; then /<*>; fi),20
+73f564e0,Starting Clean php session files...,20
+6d8806bb,Started Clean php session files.,20
+aa436bfa,(<*>) CMD ( cd / && run-parts --report /<*>),10
+b7846b4e,Wed Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up,10
+6ad000fd,Wed Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Wed Mar <*> <*>:<*>:<*> <*>,10
+d7954569,Wed Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!,10
+cdf0b291,Wed Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>,10
+d0f6fa37,Wed Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>,10
+df3544f5,"Wed Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>",29
+b37fee6f,Starting Daily apt download activities...,2
+43d542ce,Started Daily apt download activities.,2
+8cabb1a7,apt-daily.timer: Adding <*> <*> <*> random time.,3
+1821dfc5,apt-daily.timer: Adding 56min <*>.962465s random time.,1
+6385bb71,"[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",3
+5cd927dd,(<*>) CMD (/<*> --infected --remove=<*> --recursive=<*> --scan-archive=<*> /),2
+918d45a8,Wed Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%],1
+15f92ecf,"Wed Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)",1
+3f1ded1e,Wed Mar <*> <*>:<*>:<*> <*> -> *Can't query daily.<*>.6810DA54.ping.clamav.net,1
+54585b4f,Wed Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>),1
+9f54fa65,Wed Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>,1
+8dbb2c05,DHCPREQUEST of <*> on eth0 to <*> port <*>,2
+151a0778,DHCPACK of <*> from <*>,2
+032e2c6f,bound to <*> -- renewal in <*> seconds.,2
+038a758d,Starting Cleanup of Temporary Directories...,1
+20447797,Started Cleanup of Temporary Directories.,1
+2422872b,"imap-login: Disconnected (no auth attempts in <*> secs): user=<>, rip=<*>, lip=<*>, session=<<*>>",1
+610e39c8,"[<*>] PHP ERROR: Cannot modify header information - headers already sent [pid <*> on line <*> of ""Unknown""]",97
+4086fa06,"[<*>] [<*>] Authentication failed. [pid <*> on line <*> of ""/<*>""]",48
+5431e37d,"[<*>] FAILED LOGIN for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",96
+fc9a895a,"imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, <*>",48
+628df301,"[<*>] PHP ERROR: finfo_file(): Empty filename or path [pid <*> on line <*> of ""/<*>""]",1

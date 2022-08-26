@@ -1,0 +1,27 @@
+##
+# -- SLOGERT Configuration File --
+##
+
+source: dl.log
+format: "<Device> <LogId> <Date> <Time> <Level> <Method> <Content>"
+rawFolder: input/
+initializedFolder: output/dl.log/1-init
+preprocessedFolder: output/dl.log/2-logpai
+
+sourceLogpai: output/dl.log/2-logpai/dl.log_structured.csv
+sourceLogpaiTemplate: output/dl.log/2-logpai/dl.log_templates.csv
+
+logFormat: dl
+logSourceType: dl
+
+isOverrideExisting: false
+paramExtractAttempt: 10
+logEventsPerExtraction: 10000
+
+targetOttr: output/dl.log/3-ottr
+targetOttrBase: output/dl.log/3-ottr
+targetOttrTurtle: output/dl.log/4-ttl
+
+targetStanfordNer: output/dl.log/ner.rules
+targetConfigTimer: output/timer.csv
+targetConfigTurtle: output/dl.log/dl.log-template.ttl

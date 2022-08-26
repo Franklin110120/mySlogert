@@ -1,0 +1,58 @@
+EventId,EventTemplate,Occurrences
+73f564e0,Starting Clean php session files...,384
+6d8806bb,Started Clean php session files.,384
+b37fee6f,Starting Daily apt download activities...,18
+43d542ce,Started Daily apt download activities.,18
+8cabb1a7,apt-daily.timer: Adding <*> <*> <*> random time.,31
+8dbb2c05,DHCPREQUEST of <*> on eth0 to <*> port <*>,37
+151a0778,DHCPACK of <*> from <*>,37
+032e2c6f,bound to <*> -- renewal in <*> seconds.,37
+76b18ae2,Starting Daily apt upgrade and clean activities...,8
+be35dfa1,Started Daily apt upgrade and clean activities.,8
+640a7d30,apt-daily-upgrade.timer: Adding <*> <*> random time.,16
+d7be613d,Reloading The Apache HTTP Server.,8
+bfae94f5,Reloaded The Apache HTTP Server.,8
+ba7787c1,Stopping Security Auditing Service...,8
+2e87be9e,The audit daemon is exiting.,8
+bc851626,Stopped Security Auditing Service.,8
+6be8674a,Starting Security Auditing Service...,8
+53f856aa,Started dispatcher: /<*> pid: <*>,8
+dd23ebe3,/<*>: No change,8
+18e1df3f,Started Security Auditing Service.,8
+cc63a5ac,No rules,8
+669adf99,enabled <*>,16
+769dc921,failure <*>,16
+dce780ab,pid <*>,16
+df89639b,rate_limit <*>,16
+972148e8,backlog_limit <*>,16
+f03cbe60,lost <*>,16
+058f6143,backlog <*>,16
+26a2e0f6,backlog_wait_time <*>,16
+1dc1bdd9,"Init complete, auditd <*>.<*>.<*> listening for events (startup state enable)",8
+038a758d,Starting Cleanup of Temporary Directories...,8
+20447797,Started Cleanup of Temporary Directories.,8
+fd82c615,dispatch err (pipe full) event lost,10
+45bfe7f4,dispatch error reporting limit reached - ending report notification.,1
+ed52ffed,Tue Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up,48
+2abce80a,Tue Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Tue Mar <*> <*>:<*>:<*> <*>,48
+d70ab203,Tue Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!,48
+fb2814e0,Tue Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>,48
+b69f03bd,Tue Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>,48
+78b42a20,"Tue Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>",142
+fac4355b,apt-daily.timer: Adding <*> <*> random time.,5
+cb372a73,Tue Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%],2
+3f36733a,"Tue Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)",2
+074ecaa1,Tue Mar <*> <*>:<*>:<*> <*> -> *Can't query daily.<*>.6810DB54.ping.clamav.net,2
+3f3a41fb,Tue Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>),2
+a7c1984d,Tue Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>,2
+b7846b4e,Wed Mar <*> <*>:<*>:<*> <*> -> Received signal: wake up,48
+6ad000fd,Wed Mar <*> <*>:<*>:<*> <*> -> ClamAV update process started at Wed Mar <*> <*>:<*>:<*> <*>,48
+d7954569,Wed Mar <*> <*>:<*>:<*> <*> -> ^Your ClamAV installation is OUTDATED!,48
+cdf0b291,Wed Mar <*> <*>:<*>:<*> <*> -> ^Local version: <*>.<*>.<*> Recommended version: <*>.<*>.<*>,48
+d0f6fa37,Wed Mar <*> <*>:<*>:<*> <*> -> DON'T PANIC! Read <*>,48
+df3544f5,"Wed Mar <*> <*>:<*>:<*> <*> -> <*> is up to date (version: <*>, sigs: <*>, f-level: <*>, builder: <*>",142
+918d45a8,Wed Mar <*> <*>:<*>:<*> <*> -> Downloading daily-<*>.cdiff [<*>%],2
+15f92ecf,"Wed Mar <*> <*>:<*>:<*> <*> -> daily.cld updated (version: <*>, sigs: <*>, f-level: <*>, builder: raynman)",2
+2373bc64,Wed Mar <*> <*>:<*>:<*> <*> -> *Can't query <*>,2
+54585b4f,Wed Mar <*> <*>:<*>:<*> <*> -> Database updated (<*> signatures) from <*> (IP: <*>),2
+9f54fa65,Wed Mar <*> <*>:<*>:<*> <*> -> !NotifyClamd: Can't find or parse configuration file /<*>,2

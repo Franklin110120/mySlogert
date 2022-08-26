@@ -23,6 +23,21 @@ namespaces:
     uri: https://w3id.org/sepses/cee#
 
 logFormats:
+  - id: dl
+    ottrBaseTemplate: lxid:OttrTemplate_dl
+    header: LineId,Device,LogId,Date,Time,Level,Method, Content,EventId,EventTemplate,ParameterList
+    host: Device
+    content: Content
+    time: Time
+    parameters:
+      - column: LogId
+        property: log:LogId
+      - column: Level
+        property: log:Level
+      - column: Method
+        property: log:Method
+      - column: Date
+        property: log:Date
   - id: ftp
     ottrBaseTemplate: lxid:OttrTemplate_ftp
     header: LineId,Device,dayOfWeek,month,day,time,year,pid,pidNumber,Content,EventId,EventTemplate,ParameterList
@@ -443,6 +458,26 @@ ottrTemplates:
       - ottr:Triple(?id,log:msg,?message)      
       - ottr:Triple(?id,logex:template,?template)
       - ottr:Triple(?id,log:hasSource,?logSource)
+
+  - uri: lxid:OttrTemplate_dl
+    parameters:
+      - ottr:IRI ?id
+      - ottr:IRI ?hostUrl
+      - xsd:string ?hostString
+      - xsd:dateTime ?timestamp
+      - xsd:string ?message
+      - ottr:IRI ?template
+      - ottr:IRI ?logSource
+      - xsd:string ?LogId
+      - xsd:string ?Level
+      - xsd:string ?Method
+      - xsd:string ?Date
+    functions:
+      - lxid:OttrTemplate_event(?id,?hostUrl,?hostString,?timestamp,?message,?template,?logSource)
+      - ottr:Triple(?id,log:LogId,?LogId)
+      - ottr:Triple(?id,log:Level,?Level)
+      - ottr:Triple(?id,log:Method,?Method)
+      - ottr:Triple(?id,log:Date,?Date)
 
   - uri: lxid:OttrTemplate_unix
     parameters: 

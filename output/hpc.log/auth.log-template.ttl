@@ -1,0 +1,443 @@
+@prefix logex: <https://w3id.org/sepses/ns/logex#> .
+@prefix cee:   <https://w3id.org/sepses/cee#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix log:   <https://w3id.org/sepses/ns/log#> .
+@prefix lxid:  <https://w3id.org/sepses/id/logex/> .
+@prefix lid:   <https://w3id.org/sepses/id/log/> .
+@prefix ottr:  <http://ns.ottr.xyz/0.4/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix svid:  <https://w3id.org/sepses/id/service/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+lxid:LogEventTemplate_b09e9fef
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b09e9fef" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Command has completed successfully" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "command have" ;
+        logex:pattern                  "Command has <*> <*>" .
+
+lxid:LogEventTemplate_3ea2d652
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3ea2d652" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Fan speeds ( 3552 3534 3375 4245 3515 3479 )" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "fan speed" ;
+        logex:pattern                  "Fan speeds ( <*> <*> <*> <*> <*> <*> )" .
+
+lxid:LogEventTemplate_fea08751
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fea08751" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "normal" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "normal" ;
+        logex:pattern                  "normal" .
+
+lxid:LogEventTemplate_ae34778c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ae34778c" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "ClusterFileSystem: There is no server for ServerFileSystem domain storage234" ;
+        logex:hasAnnotation            cee:object_file , cee:object_system , cee:domain ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "server" , "be" , "domain" , "storage" , "serverfilesystem" , "clusterfilesystem" ;
+        logex:pattern                  "ClusterFileSystem: There is no server for ServerFileSystem domain storage<*>" .
+
+lxid:LogEventTemplate_07b9d7a6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "07b9d7a6" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "wait  (command 1975)" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "command" , "wait" ;
+        logex:pattern                  "wait (command <*>)" .
+
+lxid:LogEventTemplate_7b83d3f0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7b83d3f0" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "warning" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "warn" ;
+        logex:pattern                  "warning" .
+
+lxid:LogEventTemplate_2714e4ec
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2714e4ec" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "inconsistent nodesets node-31 0x1fffffffe <ok> node-0 0xfffffffe <ok> node-1 0xfffffffe <ok> node-2 0xfffffffe <ok> node-30 0xfffffffe <ok>" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "node" , "nodeset" , "inconsistent" , "0xfffffffe" , "0x1fffffffe" ;
+        logex:pattern                  "inconsistent nodesets node-<*> 0x1fffffffe <<*>> node-<*> 0xfffffffe <<*>> node-<*> 0xfffffffe <<*>> node-<*> 0xfffffffe <<*>> node-<*> 0xfffffffe <<*>>" .
+
+lxid:LogEventTemplate_c76a5e84
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c76a5e84" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "active" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "active" ;
+        logex:pattern                  "active" .
+
+lxid:LogEventTemplate_fed371bd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fed371bd" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Targeting domains:node-D3 and nodes:node-[104-127] child of command 1963" ;
+        logex:hasAnnotation            cee:domain , cee:action_get ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "node" , "command" , "child" , "targeting domain" ;
+        logex:pattern                  "Targeting domains:<*> and nodes:<*>[<*>-<*>] child of command <*>" .
+
+lxid:LogEventTemplate_76588bd2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "76588bd2" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Fan speeds ( 3552 3534 3375 **** 3515 3479 )" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "fan speed" ;
+        logex:pattern                  "Fan speeds ( <*> <*> <*> **** <*> <*> )" .
+
+lxid:LogEventTemplate_9154a7f9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9154a7f9" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "boot  (command 1911)" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "command" , "boot" ;
+        logex:pattern                  "boot (command <*>)" .
+
+lxid:LogEventTemplate_0c9a99fa
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0c9a99fa" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Targeting domains:node-D0 and nodes:node-0" ;
+        logex:hasAnnotation            cee:action_get , cee:domain ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "targeting domain" , "node" ;
+        logex:pattern                  "Targeting domains:<*> and nodes:<*>" .
+
+lxid:LogEventTemplate_13afdb97
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "13afdb97" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Link error on broadcast tree Interconnect-0T00:00:2:1" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "broadcast tree" , "link error" ;
+        logex:pattern                  "Link error on broadcast tree <*>" .
+
+lxid:LogEventTemplate_9163a589
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9163a589" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Targeting domains:node-D[0\\ 5] and nodes:node-[27\\ 191]" ;
+        logex:hasAnnotation            cee:action_get , cee:domain ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "targeting domain" , "node" ;
+        logex:pattern                  "Targeting domains:<*>[<*>\\ <*>] and nodes:<*>[<*>\\ <*>]" .
+
+lxid:LogEventTemplate_3b38bec1
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3b38bec1" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "closing" ;
+        logex:hasAnnotation            cee:action_close , cee:domain_os ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "close" ;
+        logex:pattern                  "closing" .
+
+lxid:LogEventTemplate_7eff77c0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7eff77c0" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "risBoot (command 1903) Error: Timed out while waiting for SRM prompt: <ABORT code completed>" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "error" , "srm prompt" , "risboot" , "<abort code completed>" , "time" , "wait" , "command" ;
+        logex:pattern                  "risBoot (command <*>) Error: Timed out while waiting for SRM prompt: <ABORT code completed>" .
+
+lxid:LogEventTemplate_2bd60a8d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2bd60a8d" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "ClusterFileSystem: ServerFileSystem domain cluster_root_backup is no longer served by node node-96" ;
+        logex:hasAnnotation            cee:object_system , cee:object_file , cee:domain ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "clusterfilesystem" , "node node" , "serve" , "serverfilesystem domain" , "be" ;
+        logex:pattern                  "ClusterFileSystem: ServerFileSystem domain <*> is no longer served by node node-<*>" .
+
+lxid:LogEventTemplate_7e85bcb6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7e85bcb6" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "critical" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "critical" ;
+        logex:pattern                  "critical" .
+
+lxid:LogEventTemplate_f5742434
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f5742434" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Component State Change: Component \\042SCSI-WWID:01000010:6005-08b4-0001-00c6-0006-3000-003d-0000\\042 is in the unavailable state (HWID=1973)" ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "unavailable state" , "state" , "be" , "component" , "change" ;
+        logex:pattern                  "Component State Change: Component <*> is in the unavailable state (HWID=<*>)" .
+
+lxid:LogEventTemplate_925d626c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "925d626c" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "power/control problem" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "problem" , "power" ;
+        logex:pattern                  "power/<*> problem" .
+
+lxid:LogEventTemplate_18ce170a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "18ce170a" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "inconsistent nodesets node-1 0x000001fc <ok> node-2 0x000001fc <ok> node-7 0x000001fc <ok> node-4 0x000001fc <ok> node-6 0x000001fc <ok> node-5 0x000001fc <ok> node-3 0x000001fc <ok> node-14 0x0003fdfc <ok> node-13 0x0003fdfc <ok> node-12 0x0003fdfc <ok> node-10 0x0003fdfc <ok> node-16 0x0003fdfc <ok> node-15 0x0003fdfc <ok>" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "nodeset" , "node" , "inconsistent" , "0x000001fc" , "0x0003fdfc" ;
+        logex:pattern                  "inconsistent nodesets node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>>" .
+
+lxid:LogEventTemplate_8cfafe98
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8cfafe98" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "configured out" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "configure" ;
+        logex:pattern                  "configured out" .
+
+lxid:LogEventTemplate_c4b885bc
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c4b885bc" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "risBoot  (command 1903)" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "command" , "risboot" ;
+        logex:pattern                  "risBoot (command <*>)" .
+
+lxid:LogEventTemplate_bf7f5fbd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bf7f5fbd" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "NIFF: node node-129 has detected an available network connection on network 10.128.0.0 via interface ee0" ;
+        logex:hasAnnotation            cee:object_connection , cee:domain_net , cee:action_connect , cee:action_detect ;
+        logex:hasParameterList         ( "unknown" "ip" "unknown" ) ;
+        logex:keyword                  "niff" , "have detect" , "network" , "network <" , "interface" , "available" , "connection" , "node node" ;
+        logex:pattern                  "NIFF: node node-<*> has detected an available network connection on network <*> via interface <*>" .
+
+lxid:LogEventTemplate_28a9ef59
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "28a9ef59" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "ambient=30" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:pattern                  "ambient=<*>" .
+
+lxid:LogEventTemplate_0455c0d6
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0455c0d6" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "NIFF: node node-69 detected a failed network connection on network 5.5.224.0 via interface alt0" ;
+        logex:hasAnnotation            cee:object_connection , cee:action_detect , cee:domain_net , cee:action_connect ;
+        logex:hasParameterList         ( "unknown" "ip" "unknown" ) ;
+        logex:keyword                  "network" , "interface alt" , "failed" , "node node" , "connection" , "niff" , "network <" , "detect" ;
+        logex:pattern                  "NIFF: node node-<*> detected a failed network connection on network <*> via interface alt<*>" .
+
+lxid:LogEventTemplate_b02b9741
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b02b9741" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "not responding" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "respond" ;
+        logex:pattern                  "not responding" .
+
+lxid:LogEventTemplate_1ee85f6c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1ee85f6c" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "starting" ;
+        logex:hasAnnotation            cee:action_start ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "start" ;
+        logex:pattern                  "starting" .
+
+lxid:LogEventTemplate_db5aa7f9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "db5aa7f9" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Link in reset" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "reset" , "link" ;
+        logex:pattern                  "Link in reset" .
+
+lxid:LogEventTemplate_53a4d3c2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "53a4d3c2" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "bootGenvmunix  (command 1903)" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "command" , "bootgenvmunix" ;
+        logex:pattern                  "bootGenvmunix (command <*>)" .
+
+lxid:LogEventTemplate_020e3c63
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "020e3c63" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "psu failure\\ ambient=28" ;
+        logex:hasAnnotation            cee:status_failure ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "psu failure" ;
+        logex:pattern                  "psu failure\\ ambient=<*>" .
+
+lxid:LogEventTemplate_75101dcd
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "75101dcd" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "running" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "run" ;
+        logex:pattern                  "running" .
+
+lxid:LogEventTemplate_58a01035
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "58a01035" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Targeting domains:node-D7 and nodes:node-[224\\ 228\\ 232]" ;
+        logex:hasAnnotation            cee:domain , cee:action_get ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "node" , "targeting domain" ;
+        logex:pattern                  "Targeting domains:<*> and nodes:<*>[<*>\\ <*>\\ <*>]" .
+
+lxid:LogEventTemplate_772f76d9
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "772f76d9" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "inconsistent nodesets node-160 0x0001edfe <ok> node-161 0x1001fdfe <ok> node-162 0x1001fdfe <ok> node-163 0x1001fdfe <ok>" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "node" , "nodeset" , "inconsistent" ;
+        logex:pattern                  "inconsistent nodesets node-<*> <*> <<*>> node-<*> <*> <<*>> node-<*> <*> <<*>> node-<*> <*> <<*>>" .
+
+lxid:LogEventTemplate_a8108a6e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a8108a6e" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "ServerFileSystem: ServerFileSystem domain root14_local is full" ;
+        logex:hasAnnotation            cee:domain , cee:object_system , cee:object_file ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "serverfilesystem" , "serverfilesystem domain" , "be full" ;
+        logex:pattern                  "ServerFileSystem: ServerFileSystem domain <*> is full" .
+
+lxid:LogEventTemplate_551adf73
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "551adf73" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "link errors remain current" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "error" , "remain" , "link" , "current" ;
+        logex:pattern                  "link errors remain current" .
+
+lxid:LogEventTemplate_3458891f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3458891f" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Link error" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "link" ;
+        logex:pattern                  "Link <*>" .
+
+lxid:LogEventTemplate_6b6cbcf3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6b6cbcf3" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "ServerFileSystem: An ServerFileSystem domain panic has occurred on storage442" ;
+        logex:hasAnnotation            cee:object_file , cee:object_system , cee:domain ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "domain" , "storage" , "panic" , "have" , "occur" , "serverfilesystem" ;
+        logex:pattern                  "ServerFileSystem: An ServerFileSystem domain panic has occurred on storage<*>" .
+
+lxid:LogEventTemplate_b1f962e3
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b1f962e3" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "boot (command 2092) Error: HALT asserted\\  cannot continue" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "halt" , "error" , "boot" , "continue" , "assert" , "command" ;
+        logex:pattern                  "boot (command <*>) Error: HALT asserted\\ cannot continue" .
+
+lxid:LogEventTemplate_45d7d070
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "45d7d070" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "halt  (command 1982)" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "command" , "halt" ;
+        logex:pattern                  "halt (command <*>)" .
+
+lxid:LogEventTemplate_bd82b62d
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bd82b62d" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Failed subcommands 3406" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "fail subcommand" ;
+        logex:pattern                  "Failed subcommands <*>" .
+
+lxid:LogEventTemplate_9050ee25
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9050ee25" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Linkerror event interval expired" ;
+        logex:hasAnnotation            cee:status_error , cee:object_event ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "linkerror" , "expire" , "event" , "interval" ;
+        logex:pattern                  "Linkerror event interval expired" .
+
+lxid:LogEventTemplate_252f035f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "252f035f" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "not-responding" ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "not-responding" ;
+        logex:pattern                  "not-responding" .
+
+lxid:LogEventTemplate_939ce800
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "939ce800" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "Temperature (41C) exceeds warning threshold" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "warn" , "threshold" , "exceed" , "temperature" ;
+        logex:pattern                  "Temperature (<*>) exceeds warning threshold" .
+
+lxid:LogEventTemplate_7420bcff
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7420bcff" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "clusterAddMember  (command 1902)" ;
+        logex:hasParameterList         ( "unknown" ) ;
+        logex:keyword                  "command" , "clusteraddmember" ;
+        logex:pattern                  "clusterAddMember (command <*>)" .
+
+lxid:LogEventTemplate_61326117
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "61326117" ;
+        logex:associatedLogSourceType  lid:SourceType_hpc ;
+        logex:example                  "blocked" ;
+        logex:hasAnnotation            cee:action_block , cee:action_lock ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "block" ;
+        logex:pattern                  "blocked" .

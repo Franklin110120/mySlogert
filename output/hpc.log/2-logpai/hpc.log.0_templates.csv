@@ -1,0 +1,47 @@
+EventId,EventTemplate,Occurrences
+f5742434,Component State Change: Component <*> is in the unavailable state (HWID=<*>),12
+7420bcff,clusterAddMember (command <*>),2
+c4b885bc,risBoot (command <*>),1
+53a4d3c2,bootGenvmunix (command <*>),2
+9154a7f9,boot (command <*>),67
+07b9d7a6,wait (command <*>),66
+45d7d070,halt (command <*>),3
+b09e9fef,Command has <*> <*>,11
+fed371bd,Targeting domains:<*> and nodes:<*>[<*>-<*>] child of command <*>,5
+58a01035,Targeting domains:<*> and nodes:<*>[<*>\ <*>\ <*>],1
+0c9a99fa,Targeting domains:<*> and nodes:<*>,2
+9163a589,Targeting domains:<*>[<*>\ <*>] and nodes:<*>[<*>\ <*>],1
+020e3c63,psu failure\ ambient=<*>,5
+939ce800,Temperature (<*>) exceeds warning threshold,2
+ae34778c,ClusterFileSystem: There is no server for ServerFileSystem domain storage<*>,32
+0455c0d6,NIFF: node node-<*> detected a failed network connection on network <*> via interface alt<*>,2
+6b6cbcf3,ServerFileSystem: An ServerFileSystem domain panic has occurred on storage<*>,1
+76588bd2,Fan speeds ( <*> <*> <*> **** <*> <*> ),79
+3ea2d652,Fan speeds ( <*> <*> <*> <*> <*> <*> ),11
+925d626c,power/<*> problem,1
+3458891f,Link <*>,26
+db5aa7f9,Link in reset,9
+13afdb97,Link error on broadcast tree <*>,4
+a8108a6e,ServerFileSystem: ServerFileSystem domain <*> is full,12
+2bd60a8d,ClusterFileSystem: ServerFileSystem domain <*> is no longer served by node node-<*>,36
+75101dcd,running,162
+61326117,blocked,15
+b02b9741,not responding,60
+8cfafe98,configured out,91
+772f76d9,inconsistent nodesets node-<*> <*> <<*>> node-<*> <*> <<*>> node-<*> <*> <<*>> node-<*> <*> <<*>>,2
+c76a5e84,active,5
+252f035f,not-responding,1
+18ce170a,inconsistent nodesets node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x000001fc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>> node-<*> 0x0003fdfc <<*>>,1
+1ee85f6c,starting,1
+3b38bec1,closing,1
+2714e4ec,inconsistent nodesets node-<*> 0x1fffffffe <<*>> node-<*> 0xfffffffe <<*>> node-<*> 0xfffffffe <<*>> node-<*> 0xfffffffe <<*>> node-<*> 0xfffffffe <<*>>,1
+fea08751,normal,206
+7b83d3f0,warning,205
+28a9ef59,ambient=<*>,292
+7e85bcb6,critical,20
+9050ee25,Linkerror event interval expired,394
+7eff77c0,risBoot (command <*>) Error: Timed out while waiting for SRM prompt: <ABORT code completed>,1
+b1f962e3,boot (command <*>) Error: HALT asserted\ cannot continue,1
+bd82b62d,Failed subcommands <*>,1
+551adf73,link errors remain current,56
+bf7f5fbd,NIFF: node node-<*> has detected an available network connection on network <*> via interface <*>,91

@@ -1,0 +1,30 @@
+EventId,EventTemplate,Occurrences
+77d8337a,"Guest user is not authorized for Horde (Host: <*>). [pid <*> on line <*> of ""/<*>""]",717
+ad3de57c,"PHP ERROR: rawurlencode() expects parameter <*> to be string, array given [pid <*> on line <*> of ""/<*>""]",3
+c7a9a5e4,"[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of ""/<*>""]",3208
+3cdd7a4b,"[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of ""/<*>""]",372
+a33acd0c,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of ""/<*>""]",702
+09cc6741,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of ""/<*>""]",702
+02e23f8a,"[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",330
+610e39c8,"[<*>] PHP ERROR: Cannot modify header information - headers already sent [pid <*> on line <*> of ""Unknown""]",277
+6039f7f0,"[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",31
+b6f5e68b,"[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",252
+0c2ce181,"[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",2498
+4086fa06,"[<*>] [<*>] Authentication failed. [pid <*> on line <*> of ""/<*>""]",141
+e4140226,"[<*>] <*> <*> for <*> (<*>) to {imap:<*>} [pid <*> on line <*> of ""/<*>""]",260
+d402f075,"[<*>] Login success for <*> to horde (<*>) [pid <*> on line <*> of ""/<*>""]",120
+6385bb71,"[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",30
+628df301,"[<*>] PHP ERROR: finfo_file(): Empty filename or path [pid <*> on line <*> of ""/<*>""]",1
+8f8ad23c,"[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",218
+2fc5a013,"[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of ""/<*>""]",108
+f00095d5,[<*>.<*>] audit_printk_skb: <*> callbacks suppressed,2
+eaaaf555,[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): audit_pid=<*> old=<*> auid=<*> ses=<*> res=<*>,2
+d2cbdf36,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): pid=<*> uid=<*> auid=<*> ses=<*> msg='unit=<*> comm=""systemd"" exe=""/<*>"" hostname=? addr=? terminal=? res=<*>'",2
+bc9ac869,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): arch=<*> syscall=<*> success=<*> exit=<*> a0=<*> a1=<*> a2=<*> a3=<*> items=<*> ppid=<*> pid=<*> auid=<*> uid=<*> gid=<*> euid=<*> suid=<*> fsuid=<*> egid=<*> sgid=<*> fsgid=<*> tty=(<*>) ses=<*> comm=""(<*>)"" exe=""/<*>"" key=(<*>)",6
+7ab0ca9a,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): item=<*> name=""/<*>"" inode=<*> dev=<*>:<*> mode=<*> ouid=<*> ogid=<*> rdev=<*>:<*> nametype=<*>",4
+c91504ad,[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): <*>,6
+4624b2ab,audit log is not writable by owner,2
+0bf58d5e,"No plugins found, exiting",2
+19b52840,"[origin software=""rsyslogd"" swVersion=""<*>.<*>.<*>"" x-pid=""<*>"" x-info=""<*>""] rsyslogd was HUPed",2
+2934bdd4,"[<*>] Message sent to <*> <*>, <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",2
+18286cad,"[<*>] Message sent to <*> <*>, Sunni <*>, Irwin <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",1

@@ -1,0 +1,340 @@
+@prefix logex: <https://w3id.org/sepses/ns/logex#> .
+@prefix cee:   <https://w3id.org/sepses/cee#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix log:   <https://w3id.org/sepses/ns/log#> .
+@prefix lxid:  <https://w3id.org/sepses/id/logex/> .
+@prefix lid:   <https://w3id.org/sepses/id/log/> .
+@prefix ottr:  <http://ns.ottr.xyz/0.4/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix svid:  <https://w3id.org/sepses/id/service/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+lxid:LogEventTemplate_77d8337a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "77d8337a" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "Guest user is not authorized for Horde (Host: 192.168.10.81). [pid 4815 on line 324 of \"/usr/share/php/Horde/Registry.php\"]" ;
+        logex:hasAnnotation            cee:domain_os , cee:service_auth , cee:service_authorize ;
+        logex:hasParameterList         ( "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "guest" , "host" , "line" , "horde" , "be" , "authorize" , "pid" , "user" ;
+        logex:pattern                  "Guest user is not authorized for Horde (Host: <*>). [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_8f8ad23c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8f8ad23c" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to suzan@mail.spiral.com, marcelino@mail.spiral.com from marquerite (192.168.10.130) [pid 7611 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_09cc6741
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "09cc6741" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Horde_Form_Action_updatefield::setValues(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::setValues(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid 7254 on line 0 of \"/usr/share/php/Horde/Form/Action/updatefield.php\"]" ;
+        logex:hasAnnotation            cee:action_update , cee:action , cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "index null" , "php error" , "be compatible" , "action" , "updatefield" , "horde" , "arrayval false" , "sourceval" , "pid" , "line" , "form" , "declaration" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_02e23f8a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "02e23f8a" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Turba_Form_EditContact::renderActive($renderer, $vars, $action, $method) should be compatible with Horde_Form::renderActive($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid 7254 on line 0 of \"/var/www/mail.spiral.com/turba/lib/Form/EditContact.php\"]" ;
+        logex:hasAnnotation            cee:status_error , cee:action_get , cee:action ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "editcontact" , "enctype null" , "form" , "line" , "horde" , "pid" , "method" , "null" , "declaration" , "be compatible" , "get" , "php error" , "action" , "focus true" , "turba" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_610e39c8
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "610e39c8" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[horde] PHP ERROR: Cannot modify header information - headers already sent [pid 6569 on line 0 of \"Unknown\"]" ;
+        logex:hasAnnotation            cee:status_unknown , cee:status_error , cee:action_modify ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "modify" , "php error" , "header" , "unknown" , "send" , "pid" , "information" , "line" ;
+        logex:pattern                  "[<*>] PHP ERROR: Cannot modify header information - headers already sent [pid <*> on line <*> of \"Unknown\"]" .
+
+lxid:LogEventTemplate_4624b2ab
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4624b2ab" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "audit log is not writable by owner" ;
+        logex:hasAnnotation            cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "audit" , "writable" , "be" , "owner" , "log" ;
+        logex:pattern                  "audit log is not writable by owner" .
+
+lxid:LogEventTemplate_2934bdd4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2934bdd4" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to Portia <portia@mail.cup.com>, Bertie <bertie@mail.cup.com>, georgie@mail.cup.com from kelsey (192.168.10.190) [pid 26005 on line 970 of \"/var/www/mail.cup.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "unknown" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "message send" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_0bf58d5e
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0bf58d5e" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "No plugins found, exiting" ;
+        logex:hasAnnotation            cee:action_find ;
+        logex:hasParameterList         () ;
+        logex:keyword                  "plugin find" , "exit" ;
+        logex:pattern                  "No plugins found, exiting" .
+
+lxid:LogEventTemplate_0d6b83b4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0d6b83b4" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[303583.668014] audit: type=1300 audit(1583216921.178:24082289): arch=c000003e syscall=2 success=yes exit=26 a0=7f4a7d5c5f87 a1=90800 a2=1 a3=8 items=1 ppid=1 pid=11171 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=\"(auditd)\" exe=\"/lib/systemd/systemd\" key=(null)" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): arch=<*> syscall=<*> success=<*> exit=<*> a0=<*> a1=<*> a2=<*> a3=<*> items=<*> ppid=<*> pid=<*> auid=<*> uid=<*> gid=<*> euid=<*> suid=<*> fsuid=<*> egid=<*> sgid=<*> fsgid=<*> tty=(<*>) ses=<*> <*> exe=\"/<*>\" key=(<*>)" .
+
+lxid:LogEventTemplate_0c2ce181
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "0c2ce181" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[nag] PHP ERROR: Declaration of Nag_Form_Task::renderActive() should be compatible with Horde_Form::renderActive($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid 7567 on line 17 of \"/var/www/mail.spiral.com/nag/lib/Form/Task.php\"]" ;
+        logex:hasAnnotation            cee:action , cee:action_get , cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "be compatible" , "action" , "nag" , "declaration" , "focus true" , "method" , "null" , "line" , "get" , "enctype null" , "task" , "pid" , "php error" , "form" , "horde" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_3cdd7a4b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "3cdd7a4b" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Turba_Form_AddContact::validate() should be compatible with Horde_Form::validate($vars = NULL, $canAutoFill = false) [pid 7484 on line 5 of \"/var/www/mail.spiral.com/turba/lib/Form/AddContact.php\"]" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "null" , "horde" , "php error" , "be compatible" , "form" , "declaration" , "addcontact" , "canautofill false" , "turba" , "line" , "pid" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_6039f7f0
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6039f7f0" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to Gilberte <gilberte@mail.spiral.com>, marnie@mail.spiral.com from marcelino (192.168.10.130) [pid 13239 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_ad3de57c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ad3de57c" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "PHP ERROR: rawurlencode() expects parameter 1 to be string, array given [pid 6556 on line 302 of \"/usr/share/php/Horde/Url.php\"]" ;
+        logex:hasAnnotation            cee:action_encode , cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "rawurlencode" , "array give" , "be string" , "pid" , "line" , "php error" , "expect parameter" ;
+        logex:pattern                  "PHP ERROR: rawurlencode() expects parameter <*> to be string, array given [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_c7a9a5e4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c7a9a5e4" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[nag] PHP ERROR: Declaration of Horde_Form_Type_country::init($prompt = NULL) should be compatible with Horde_Form_Type_enum::init($values, $prompt = NULL) [pid 7567 on line 0 of \"/usr/share/php/Horde/Form/Type.php\"]" ;
+        logex:hasAnnotation            cee:status_error ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "prompt null" , "type" , "country" , "line" , "value" , "enum" , "declaration" , "php error" , "form" , "be compatible" , "pid" , "horde" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_4086fa06
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "4086fa06" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] [login] Authentication failed. [pid 6569 on line 730 of \"/var/www/mail.spiral.com/imp/lib/Imap.php\"]" ;
+        logex:hasAnnotation            cee:service_auth ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "authentication fail" , "line" , "pid" ;
+        logex:pattern                  "[<*>] [<*>] Authentication failed. [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_f00095d5
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f00095d5" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[303441.110986] audit_printk_skb: 1194 callbacks suppressed" ;
+        logex:hasAnnotation            cee:action_audit , cee:service_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" ) ;
+        logex:keyword                  "callback suppress" , "skb" , "audit" , "printk" ;
+        logex:pattern                  "[<*>.<*>] audit_printk_skb: <*> callbacks suppressed" .
+
+lxid:LogEventTemplate_c9f3df73
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c9f3df73" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[horde] Login success for marquerite to horde (192.168.10.130) [pid 7567 on line 163 of \"/var/www/mail.spiral.com/login.php\"]" ;
+        logex:hasAnnotation            cee:action_login , cee:status_success ;
+        logex:hasParameterList         ( "unknown" "userLogin" "ip" "unknown" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "login success" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_19b52840
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "19b52840" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[origin software=\"rsyslogd\" swVersion=\"8.24.0\" x-pid=\"495\" x-info=\"http://www.rsyslog.com\"] rsyslogd was HUPed" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "url" ) ;
+        logex:keyword                  "rsyslogd" , "hup" , "be" , "origin" ;
+        logex:pattern                  "[origin software=\"rsyslogd\" swVersion=\"<*>.<*>.<*>\" x-pid=\"<*>\" x-info=\"<*>\"] rsyslogd was HUPed" .
+
+lxid:LogEventTemplate_18286cad
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "18286cad" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to Bertie <bertie@mail.cup.com>, Sunni <sunni@mail.cup.com>, Irwin <irwin@mail.cup.com> from danette (192.168.10.200) [pid 4236 on line 970 of \"/var/www/mail.cup.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "line" , "irwin" , "pid" , "sunni" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, Sunni <*>, Irwin <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_628df301
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "628df301" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[turba] PHP ERROR: finfo_file(): Empty filename or path [pid 6745 on line 166 of \"/usr/share/php/Horde/Mime/Magic.php\"]" ;
+        logex:hasAnnotation            cee:status_error , cee:object_file ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "php error" , "finfo" , "line" , "file" , "pid" , "empty filename" , "path" ;
+        logex:pattern                  "[<*>] PHP ERROR: finfo_file(): Empty filename or path [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_2fc5a013
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2fc5a013" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[horde] User clay logged out of Horde (192.168.10.130) [pid 5662 on line 106 of \"/var/www/mail.spiral.com/login.php\"]" ;
+        logex:hasParameterList         ( "unknown" "user" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "log" , "horde" , "line" , "pid" , "user" ;
+        logex:pattern                  "[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_c91504ad
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "c91504ad" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[303441.120413] audit: type=1327 audit(1583216821.827:12524132): proctitle=\"(auditd)\"" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): <*>" .
+
+lxid:LogEventTemplate_d2cbdf36
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d2cbdf36" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[303441.113044] audit: type=1131 audit(1583216821.819:12524131): pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=auditd comm=\"systemd\" exe=\"/lib/systemd/systemd\" hostname=? addr=? terminal=? res=success'" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): pid=<*> uid=<*> auid=<*> ses=<*> msg='unit=<*> comm=\"systemd\" exe=\"/<*>\" hostname=? addr=? terminal=? res=<*>'" .
+
+lxid:LogEventTemplate_b6f5e68b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "b6f5e68b" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to suzan@mail.spiral.com from marquerite (192.168.10.130) [pid 7504 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_8342759b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "8342759b" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to Long <long@mail.insect.com>, Marjory <marjory@mail.insect.com>, cedrick@mail.insect.com from keven (192.168.10.18) [pid 21442 on line 970 of \"/var/www/mail.insect.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "pid" , "line" , "message send" , "marjory" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, Marjory <*>, <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_ad3a8d20
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "ad3a8d20" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to Long <long@mail.insect.com>, Les <les@mail.insect.com>, Marjory <marjory@mail.insect.com> from marcelle (192.168.10.98) [pid 14563 on line 970 of \"/var/www/mail.insect.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "unknown" "email" "unknown" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_6385bb71
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "6385bb71" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] Message sent to Marnie <marnie@mail.spiral.com>, Clay <clay@mail.spiral.com> from marcelino (192.168.10.130) [pid 14229 on line 970 of \"/var/www/mail.spiral.com/imp/lib/Compose.php\"]" ;
+        logex:hasParameterList         ( "unknown" "sentToUser" "email" "email" "email" "fromUser" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "message send" , "pid" , "line" ;
+        logex:pattern                  "[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_eaaaf555
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "eaaaf555" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[303441.110988] audit: type=1305 audit(1583216821.819:12524130): audit_pid=0 old=27095 auid=4294967295 ses=4294967295 res=1" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): audit_pid=<*> old=<*> auid=<*> ses=<*> res=<*>" .
+
+lxid:LogEventTemplate_e4140226
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "e4140226" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[imp] FAILED LOGIN for giovanni (192.168.10.81) to {imap://localhost/} [pid 6569 on line 156 of \"/var/www/mail.spiral.com/imp/lib/Auth.php\"]" ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "loginForUser" "ip" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "line" , "pid" , "imap" ;
+        logex:pattern                  "[<*>] <*> <*> for <*> (<*>) to {imap:<*>} [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_be95a278
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "be95a278" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[389985.890586] audit: type=1302 audit(1583303324.181:31330692): item=0 name=\"/lib/systemd/tls/x86_64/libsystemd-shared-232.so\" nametype=UNKNOWN" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): item=<*> name=\"/<*>\" nametype=<*>" .
+
+lxid:LogEventTemplate_a33acd0c
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "a33acd0c" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[turba] PHP ERROR: Declaration of Horde_Form_Action_updatefield::getActionScript(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::getActionScript($form, $renderer, $varname) [pid 7254 on line 0 of \"/usr/share/php/Horde/Form/Action/updatefield.php\"]" ;
+        logex:hasAnnotation            cee:action_update , cee:status_error , cee:action ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "form" , "horde" , "line" , "be compatible" , "php error" , "action" , "varname" , "pid" , "declaration" , "updatefield" ;
+        logex:pattern                  "[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_7ab0ca9a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7ab0ca9a" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[303441.120406] audit: type=1302 audit(1583216821.827:12524132): item=0 name=\"/proc/self/fd\" inode=871517 dev=00:04 mode=040500 ouid=0 ogid=0 rdev=00:00 nametype=NORMAL" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): item=<*> name=\"/<*>\" inode=<*> dev=<*>:<*> mode=<*> ouid=<*> ogid=<*> rdev=<*>:<*> nametype=<*>" .
+
+lxid:LogEventTemplate_d402f075
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "d402f075" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[horde] Login success for giovanni to horde (192.168.10.81) [pid 7885 on line 163 of \"/var/www/mail.spiral.com/login.php\"]" ;
+        logex:hasAnnotation            cee:status_success , cee:action_login ;
+        logex:hasParameterList         ( "unknown" "userLogin" "ip" "unknown" "unknown" "filePath" ) ;
+        logex:keyword                  "horde" , "login success" , "line" , "pid" ;
+        logex:pattern                  "[<*>] Login success for <*> to horde (<*>) [pid <*> on line <*> of \"/<*>\"]" .
+
+lxid:LogEventTemplate_bc9ac869
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "bc9ac869" ;
+        logex:associatedLogSourceType  lid:SourceType_messages ;
+        logex:example                  "[303441.120399] audit: type=1300 audit(1583216821.827:12524132): arch=c000003e syscall=2 success=yes exit=28 a0=7f8e9533df87 a1=90800 a2=1 a3=8 items=1 ppid=1 pid=12447 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=\"(auditd)\" exe=\"/lib/systemd/systemd\" key=(null)" ;
+        logex:hasAnnotation            cee:service_audit , cee:action_audit ;
+        logex:hasParameterList         ( "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "pid" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "unknown" "path" "unknown" ) ;
+        logex:keyword                  "audit" ;
+        logex:pattern                  "[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): arch=<*> syscall=<*> success=<*> exit=<*> a0=<*> a1=<*> a2=<*> a3=<*> items=<*> ppid=<*> pid=<*> auid=<*> uid=<*> gid=<*> euid=<*> suid=<*> fsuid=<*> egid=<*> sgid=<*> fsgid=<*> tty=(<*>) ses=<*> comm=\"(<*>)\" exe=\"/<*>\" key=(<*>)" .

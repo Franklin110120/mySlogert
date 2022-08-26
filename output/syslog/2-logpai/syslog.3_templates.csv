@@ -1,0 +1,61 @@
+EventId,EventTemplate,Occurrences
+f49657b2,"imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)",2435
+7edba00f,imap(<*>): Logged out in=<*> out=<*>,2643
+19d70957,"imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>",2643
+b6f5e68b,"[<*>] Message sent to <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",58
+c7a9a5e4,"[<*>] PHP ERROR: Declaration of Horde_Form_Type_country::<*>($prompt = NULL) should be compatible with Horde_Form_Type_enum::<*>($values, $prompt = NULL) [pid <*> on line <*> of ""/<*>""]",792
+a33acd0c,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$form, &$renderer, $varname) should be compatible with Horde_Form_Action::<*>($form, $renderer, $varname) [pid <*> on line <*> of ""/<*>""]",168
+09cc6741,"[<*>] PHP ERROR: Declaration of Horde_Form_Action_updatefield::<*>(&$vars, $sourceVal, $arrayVal = false) should be compatible with Horde_Form_Action::<*>(&$vars, $sourceVal, $index = NULL, $arrayVal = false) [pid <*> on line <*> of ""/<*>""]",168
+02e23f8a,"[<*>] PHP ERROR: Declaration of Turba_Form_EditContact::<*>($renderer, $vars, $action, $method) should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",82
+0c2ce181,"[<*>] PHP ERROR: Declaration of Nag_Form_Task::<*>() should be compatible with Horde_Form::<*>($renderer = NULL, $vars = NULL, $action = '', $method = 'get', $enctype = NULL, $focus = true) [pid <*> on line <*> of ""/<*>""]",624
+8f8ad23c,"[<*>] Message sent to <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",49
+3cdd7a4b,"[<*>] PHP ERROR: Declaration of Turba_Form_AddContact::<*>() should be compatible with Horde_Form::<*>($vars = NULL, $canAutoFill = false) [pid <*> on line <*> of ""/<*>""]",86
+6385bb71,"[<*>] Message sent to <*> <*>, <*> <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",7
+aca16d28,(<*>) CMD ( [ -x /<*> ] && if [ ! -d /<*> ]; then /<*>; fi),31
+73f564e0,Starting Clean php session files...,31
+6d8806bb,Started Clean php session files.,31
+2fc5a013,"[<*>] User <*> logged out of Horde (<*>) [pid <*> on line <*> of ""/<*>""]",26
+aa436bfa,(<*>) CMD ( cd / && run-parts --report /<*>),15
+c9f3df73,"[<*>] Login success for <*> <*> <*> <*> [pid <*> on line <*> of ""/<*>""]",42
+6039f7f0,"[<*>] Message sent to <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",6
+b37fee6f,Starting Daily apt download activities...,2
+43d542ce,Started Daily apt download activities.,2
+8cabb1a7,apt-daily.timer: Adding <*> <*> <*> random time.,4
+fcea25a6,(<*>) CMD (test -x /<*> || ( cd / && run-parts --report /<*> )),1
+d7be613d,Reloading The Apache HTTP Server.,1
+bfae94f5,Reloaded The Apache HTTP Server.,1
+f00095d5,[<*>.<*>] audit_printk_skb: <*> callbacks suppressed,1
+eaaaf555,[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): audit_pid=<*> old=<*> auid=<*> ses=<*> res=<*>,1
+d2cbdf36,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): pid=<*> uid=<*> auid=<*> ses=<*> msg='unit=<*> comm=""systemd"" exe=""/<*>"" hostname=? addr=? terminal=? res=<*>'",1
+bc9ac869,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): arch=<*> syscall=<*> success=<*> exit=<*> a0=<*> a1=<*> a2=<*> a3=<*> items=<*> ppid=<*> pid=<*> auid=<*> uid=<*> gid=<*> euid=<*> suid=<*> fsuid=<*> egid=<*> sgid=<*> fsgid=<*> tty=(<*>) ses=<*> comm=""(<*>)"" exe=""/<*>"" key=(<*>)",3
+7ab0ca9a,"[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): item=<*> name=""/<*>"" inode=<*> dev=<*>:<*> mode=<*> ouid=<*> ogid=<*> rdev=<*>:<*> nametype=<*>",2
+c91504ad,[<*>.<*>] audit: type=<*> audit(<*>.<*>:<*>): <*>,3
+ba7787c1,Stopping Security Auditing Service...,1
+2e87be9e,The audit daemon is exiting.,1
+bc851626,Stopped Security Auditing Service.,1
+4624b2ab,audit log is not writable by owner,1
+6be8674a,Starting Security Auditing Service...,1
+53f856aa,Started dispatcher: /<*> pid: <*>,1
+dd23ebe3,/<*>: No change,1
+18e1df3f,Started Security Auditing Service.,1
+1dc1bdd9,"Init complete, auditd <*>.<*>.<*> listening for events (startup state enable)",1
+cc63a5ac,No rules,1
+669adf99,enabled <*>,2
+769dc921,failure <*>,2
+dce780ab,pid <*>,2
+df89639b,rate_limit <*>,2
+972148e8,backlog_limit <*>,2
+f03cbe60,lost <*>,2
+058f6143,backlog <*>,2
+26a2e0f6,backlog_wait_time <*>,2
+b8001350,priority_boost_parser called with: <*>,1
+c5e4ee87,max_restarts_parser called with: <*>,1
+0bf58d5e,"No plugins found, exiting",1
+19b52840,"[origin software=""rsyslogd"" swVersion=""<*>.<*>.<*>"" x-pid=""<*>"" x-info=""<*>""] rsyslogd was HUPed",1
+76b18ae2,Starting Daily apt upgrade and clean activities...,1
+be35dfa1,Started Daily apt upgrade and clean activities.,1
+640a7d30,apt-daily-upgrade.timer: Adding <*> <*> random time.,2
+8dbb2c05,DHCPREQUEST of <*> on eth0 to <*> port <*>,2
+151a0778,DHCPACK of <*> from <*>,2
+032e2c6f,bound to <*> -- renewal in <*> seconds.,2
+2934bdd4,"[<*>] Message sent to <*> <*>, <*> <*>, <*> from <*> (<*>) [pid <*> on line <*> of ""/<*>""]",2

@@ -1,0 +1,1254 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix owl: <http://www.w3.org/2002/07/owl#> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
+@prefix ottr: <http://ns.ottr.xyz/0.4/> . 
+@prefix log: <https://w3id.org/sepses/ns/log#> . 
+@prefix logex: <https://w3id.org/sepses/ns/logex#> . 
+@prefix lid: <https://w3id.org/sepses/id/log/> . 
+@prefix lxid: <https://w3id.org/sepses/id/logex/> . 
+@prefix svid: <https://w3id.org/sepses/id/service/> . 
+@prefix cee: <https://w3id.org/sepses/cee#> . 
+
+### Basic OTTR templates 
+
+lxid:OttrTemplate_event[ottr:IRI ?id, ottr:IRI ?hostUrl, xsd:string ?hostString, xsd:dateTime ?timestamp, xsd:string ?message, ottr:IRI ?template, ottr:IRI ?logSource] :: { 
+	ottr:Triple(?id,rdf:type,log:Event), 
+	ottr:Triple(?id,log:hasSourceHost,?hostUrl), 
+	ottr:Triple(?hostUrl,rdf:type,log:Host), 
+	ottr:Triple(?hostUrl,log:host,?hostString), 
+	ottr:Triple(?id,log:time,?timestamp), 
+	ottr:Triple(?id,log:msg,?message), 
+	ottr:Triple(?id,logex:template,?template), 
+	ottr:Triple(?id,log:hasSource,?logSource)
+} . 
+
+lxid:OttrTemplate_dl[ottr:IRI ?id, ottr:IRI ?hostUrl, xsd:string ?hostString, xsd:dateTime ?timestamp, xsd:string ?message, ottr:IRI ?template, ottr:IRI ?logSource, xsd:string ?LogId, xsd:string ?Level, xsd:string ?Method, xsd:string ?Date] :: { 
+	lxid:OttrTemplate_event(?id,?hostUrl,?hostString,?timestamp,?message,?template,?logSource), 
+	ottr:Triple(?id,log:LogId,?LogId), 
+	ottr:Triple(?id,log:Level,?Level), 
+	ottr:Triple(?id,log:Method,?Method), 
+	ottr:Triple(?id,log:Date,?Date)
+} . 
+
+lxid:OttrTemplate_unix[ottr:IRI ?id, ottr:IRI ?hostUrl, xsd:string ?hostString, xsd:dateTime ?timestamp, xsd:string ?message, ottr:IRI ?template, ottr:IRI ?logSource, xsd:string ?pname, xsd:string ?pid] :: { 
+	lxid:OttrTemplate_event(?id,?hostUrl,?hostString,?timestamp,?message,?template,?logSource), 
+	ottr:Triple(?id,log:pid,?pid), 
+	ottr:Triple(?id,log:pname,?pname)
+} . 
+
+lxid:OttrTemplate_ftp[ottr:IRI ?id, ottr:IRI ?hostUrl, xsd:string ?hostString, xsd:dateTime ?timestamp, xsd:string ?message, ottr:IRI ?template, ottr:IRI ?logSource, xsd:string ?pid] :: { 
+	lxid:OttrTemplate_event(?id,?hostUrl,?hostString,?timestamp,?message,?template,?logSource), 
+	ottr:Triple(?id,log:pid,?pid)
+} . 
+
+lxid:OttrTemplate_audit[ottr:IRI ?id, ottr:IRI ?hostUrl, xsd:string ?hostString, xsd:dateTime ?timestamp, xsd:string ?message, ottr:IRI ?template, ottr:IRI ?logSource, xsd:string ?cmd] :: { 
+	lxid:OttrTemplate_event(?id,?hostUrl,?hostString,?timestamp,?message,?template,?logSource), 
+	ottr:Triple(?id,log:cmd,?cmd)
+} . 
+
+lxid:OttrTemplate_apache[ottr:IRI ?id, ottr:IRI ?hostUrl, xsd:string ?hostString, xsd:dateTime ?timestamp, xsd:string ?message, ottr:IRI ?template, ottr:IRI ?logSource, ottr:IRI ?ip, xsd:string ?ipString] :: { 
+	lxid:OttrTemplate_event(?id,?hostUrl,?hostString,?timestamp,?message,?template,?logSource), 
+	ottr:Triple(?id,log:hasIPv4,?ip), 
+	ottr:Triple(?ip,rdf:type,log:IPv4), 
+	ottr:Triple(?ip,log:ipv4,?ipString)
+} . 
+
+lxid:OttrTemplate_unknown[ottr:IRI ?id, xsd:string ?unknown] :: { 
+	ottr:Triple(?id,log:contain,?unknown)
+} . 
+
+lxid:OttrTemplate_Source[ottr:IRI ?logSource, xsd:string ?logSourceString, ottr:IRI ?sourceType, xsd:string ?sourceTypeString, ottr:IRI ?logFormat, xsd:string ?logFormatString] :: { 
+	ottr:Triple(?logSource,rdf:type,log:Source), 
+	ottr:Triple(?logSource,rdfs:label,?logSourceString), 
+	ottr:Triple(?logSource,log:hasSourceType,?sourceType), 
+	ottr:Triple(?sourceType,rdf:type,log:SourceType), 
+	ottr:Triple(?sourceType,rdfs:label,?sourceTypeString), 
+	ottr:Triple(?sourceType,log:hasFormat,?logFormat), 
+	ottr:Triple(?logFormat,rdf:type,log:Format), 
+	ottr:Triple(?logFormat,rdfs:label,?logFormatString)
+} . 
+
+
+### Parameter OTTR templates 
+
+lxid:OttrTemplate_ip[ottr:IRI ?id, ottr:IRI ?ip, xsd:string ?ipString] :: { 
+	ottr:Triple(?id,log:hasIPv4,?ip), 
+	ottr:Triple(?ip,rdf:type,log:IPv4), 
+	ottr:Triple(?ip,log:ipv4,?ipString)
+} . 
+
+lxid:OttrTemplate_port[ottr:IRI ?id, ottr:IRI ?port, ottr:IRI ?linkedPort, xsd:integer ?portInt] :: { 
+	ottr:Triple(?id,log:hasPort,?port), 
+	ottr:Triple(?port,rdf:type,log:Port), 
+	ottr:Triple(?port,log:port,?portInt), 
+	ottr:Triple(?port,log:linkedPortService,?linkedPort)
+} . 
+
+lxid:OttrTemplate_host[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasHost,?obj), 
+	ottr:Triple(?obj,rdf:type,log:Host), 
+	ottr:Triple(?obj,log:host,?objString)
+} . 
+
+lxid:OttrTemplate_domain[ottr:IRI ?id, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:domainName,?objString)
+} . 
+
+lxid:OttrTemplate_user[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_pid[ottr:IRI ?id, xsd:integer ?pid] :: { 
+	ottr:Triple(?id,log:pid,?pid)
+} . 
+
+lxid:OttrTemplate_userPassword[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_email[ottr:IRI ?id, xsd:string ?email] :: { 
+	ottr:Triple(?id, log:email, ?email)
+} . 
+
+lxid:OttrTemplate_path[ottr:IRI ?id, ottr:IRI ?path, xsd:string ?pathString] :: { 
+	ottr:Triple(?id,log:hasFile,?path), 
+	ottr:Triple(?path,rdf:type,log:File), 
+	ottr:Triple(?path,log:file.path,?pathString)
+} . 
+
+lxid:OttrTemplate_filePath[ottr:IRI ?id, ottr:IRI ?path, xsd:string ?pathString, xsd:string ?fileString] :: { 
+	ottr:Triple(?id,log:hasFile,?path), 
+	ottr:Triple(?path,rdf:type,log:File), 
+	ottr:Triple(?path,log:file.path,?pathString), 
+	ottr:Triple(?path,log:file.name,?fileString)
+} . 
+
+lxid:OttrTemplate_URL[ottr:IRI ?id, ottr:IRI ?url, xsd:string ?urlString] :: { 
+	ottr:Triple(?id,log:hasURL,?url), 
+	ottr:Triple(?url,rdf:type,log:URL), 
+	ottr:Triple(?url,log:url.url,?urlString)
+} . 
+
+lxid:OttrTemplate_urlWithParameters[ottr:IRI ?id, ottr:IRI ?url, xsd:string ?urlString, xsd:string ?paramString] :: { 
+	ottr:Triple(?id,log:hasURL,?url), 
+	ottr:Triple(?url,rdf:type,log:URL), 
+	ottr:Triple(?url,log:url.url,?urlString), 
+	ottr:Triple(?url,log:url.param,?paramString)
+} . 
+
+lxid:OttrTemplate_ipWithPrefix[ottr:IRI ?id, ottr:IRI ?ip, xsd:string ?ipString] :: { 
+	ottr:Triple(?id,log:hasIPv4,?ip), 
+	ottr:Triple(?ip,rdf:type,log:IPv4), 
+	ottr:Triple(?ip,log:ipv4,?ipString)
+} . 
+
+lxid:OttrTemplate_ipWithPort[ottr:IRI ?id, ottr:IRI ?ip, xsd:string ?ipString, ottr:IRI ?port, ottr:IRI ?linkedPort, xsd:integer ?portInt] :: { 
+	ottr:Triple(?id,log:hasIPv4,?ip), 
+	ottr:Triple(?ip,rdf:type,log:IPv4), 
+	ottr:Triple(?ip,log:ipv4,?ipString), 
+	ottr:Triple(?id,log:hasPort,?port), 
+	ottr:Triple(?port,rdf:type,log:Port), 
+	ottr:Triple(?port,log:port,?portInt), 
+	ottr:Triple(?port,log:linkedPortService,?linkedPort)
+} . 
+
+lxid:OttrTemplate_userLogin[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_loginForUser[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_sentToUser[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_fromUser[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_userImap[ottr:IRI ?id, ottr:IRI ?obj, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:hasUser,?obj), 
+	ottr:Triple(?obj,rdf:type,log:User), 
+	ottr:Triple(?obj,log:user.name,?objString)
+} . 
+
+lxid:OttrTemplate_group[ottr:IRI ?id, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:group,?objString)
+} . 
+
+lxid:OttrTemplate_mac[ottr:IRI ?id, xsd:string ?mac] :: { 
+	ottr:Triple(?id,log:mac,?mac)
+} . 
+
+lxid:OttrTemplate_ciscoMac[ottr:IRI ?id, xsd:string ?mac] :: { 
+	ottr:Triple(?id,log:ciscoMac,?mac)
+} . 
+
+lxid:OttrTemplate_ipv6[ottr:IRI ?id, ottr:IRI ?ip, xsd:string ?ipString] :: { 
+	ottr:Triple(?id,log:hasIPv6,?ip), 
+	ottr:Triple(?ip,rdf:type,log:IPv6), 
+	ottr:Triple(?ip,log:ipv6,?ipString)
+} . 
+
+lxid:OttrTemplate_exe[ottr:IRI ?id, xsd:string ?objString] :: { 
+	ottr:Triple(?id,log:cmd,?objString)
+} . 
+
+
+### LogEventTemplate OTTR templates 
+
+lxid:LogEventTemplate_663ae7ca[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20, ?unknown21, ?unknown22, ?unknown23, ?unknown24, ?unknown25, ?unknown26, ?unknown27, ?unknown28, ?unknown29] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20), 
+	lxid:OttrTemplate_unknown(?id,?unknown21), 
+	lxid:OttrTemplate_unknown(?id,?unknown22), 
+	lxid:OttrTemplate_unknown(?id,?unknown23), 
+	lxid:OttrTemplate_unknown(?id,?unknown24), 
+	lxid:OttrTemplate_unknown(?id,?unknown25), 
+	lxid:OttrTemplate_unknown(?id,?unknown26), 
+	lxid:OttrTemplate_unknown(?id,?unknown27), 
+	lxid:OttrTemplate_unknown(?id,?unknown28), 
+	lxid:OttrTemplate_unknown(?id,?unknown29)
+} . 
+
+lxid:LogEventTemplate_35a4488a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15)
+} . 
+
+lxid:LogEventTemplate_05a72aef[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_874baa2f[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_259656a3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_4df639ea[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_d8fa4e70[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_615dc366[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15)
+} . 
+
+lxid:LogEventTemplate_27f0c7b8[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_8cef1637[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_8b0a4194[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_1e926a04[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_5a610b14[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_b97859f3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_0c6ccd52[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_74f73483[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_7313061e[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20, ?unknown21, ?unknown22, ?unknown23] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20), 
+	lxid:OttrTemplate_unknown(?id,?unknown21), 
+	lxid:OttrTemplate_unknown(?id,?unknown22), 
+	lxid:OttrTemplate_unknown(?id,?unknown23)
+} . 
+
+lxid:LogEventTemplate_cfa5e20a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_de512520[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_55e6b3e7[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_fcd36948[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_1ae88841[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_1d441d44[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_b584137e[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_44eccd97[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_f0b22bd1[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_2c8bd350[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14)
+} . 
+
+lxid:LogEventTemplate_55dd3316[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_623dbfa8[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20)
+} . 
+
+lxid:LogEventTemplate_f52f9cfa[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_855f953f[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14)
+} . 
+
+lxid:LogEventTemplate_ddad4b74[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_70ed8281[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_b57d8412[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_48689334[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_e6d83b25[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_abc31d23[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14)
+} . 
+
+lxid:LogEventTemplate_3a5e4974[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_b5860b5a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_76e91027[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_ca1eeb7a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_050829a3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19)
+} . 
+
+lxid:LogEventTemplate_cfa7169e[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_08a4492a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_086a2d06[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_37def568[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_c4d4bc01[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_6b243d8f[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_2374d1b2[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_e7c504d4[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_ddf1531a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_8e8f3950[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_8dfe98a0[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_d2da5219[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_5312d01a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_cb2cb073[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20, ?unknown21] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20), 
+	lxid:OttrTemplate_unknown(?id,?unknown21)
+} . 
+
+lxid:LogEventTemplate_b02faa06[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_9ee84eae[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_ec925f35[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_6edf1159[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_ccb03221[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?path12, ?pathString13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_path(?id,?path12,?pathString13)
+} . 
+
+lxid:LogEventTemplate_eafab6b4[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_b2851fbe[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_e9f907e5[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_8fb879b7[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_9522b3ad[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_4d1621c3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_d1edd8d4[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_96704e02[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_b91e763b[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_4bed216a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_262a8481[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_05b1cb14[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14)
+} . 
+
+lxid:LogEventTemplate_ae0717a7[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_11121736[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?path14, ?pathString15] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_path(?id,?path14,?pathString15)
+} . 
+
+lxid:LogEventTemplate_077664f9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_2159a1b2[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_ff2adda7[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_89c867d9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_04779f53[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_437694a9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_429f7ca6[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_66306e76[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20, ?unknown21, ?unknown22] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20), 
+	lxid:OttrTemplate_unknown(?id,?unknown21), 
+	lxid:OttrTemplate_unknown(?id,?unknown22)
+} . 
+
+lxid:LogEventTemplate_c8296646[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_783f1f63[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_fbe58aea[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_dc7da35f[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_6b418d3a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19)
+} . 
+
+lxid:LogEventTemplate_2556a272[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?path13, ?pathString14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_path(?id,?path13,?pathString14)
+} . 
+
+lxid:LogEventTemplate_b7ba94e3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?path12, ?pathString13, ?unknown14, ?unknown15, ?unknown16] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_path(?id,?path12,?pathString13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16)
+} . 
+
+lxid:LogEventTemplate_7c9ea270[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_5144d680[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16)
+} . 
+
+lxid:LogEventTemplate_36778482[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_6a14f83d[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_fc2bbd03[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_15d4fae6[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_a02c13de[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_dd9bb945[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_57bd5f40[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_15128b0a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18)
+} . 
+
+lxid:LogEventTemplate_f543a5bd[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20, ?unknown21, ?unknown22] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20), 
+	lxid:OttrTemplate_unknown(?id,?unknown21), 
+	lxid:OttrTemplate_unknown(?id,?unknown22)
+} . 
+
+lxid:LogEventTemplate_8020953a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_8e90aa3b[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_59815a60[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_3f0148f6[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20)
+} . 
+
+lxid:LogEventTemplate_a1256d85[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_68c92318[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_1fcd89f7[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_3cd2ab10[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_ab8b3167[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_19951831[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_b75a4845[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_63dcf7fd[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_6167bb31[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_b4525677[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_3e9d3024[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_ea0ae3a8[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_1ab7d420[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_5f4c49f5[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_a92d62b1[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?path11, ?pathString12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_path(?id,?path11,?pathString12)
+} . 
+
+lxid:LogEventTemplate_8cf87014[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_0135127e[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_424754e6[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_1feae2b9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_4e3dadaf[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_8d0e4fa4[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_2202e254[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_e5c05e85[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14)
+} . 
+
+lxid:LogEventTemplate_03789713[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_aac74d1f[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_ff44327e[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_cf48736c[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_572b5463[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_b20db7a5[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_32fa1626[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_caa87193[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_abcca85f[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_77bcb12d[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_02fcbe5a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_0f8df74b[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_9a6fa12e[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14)
+} . 
+
+lxid:LogEventTemplate_cb76094b[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?objString13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_domain(?id,?objString13)
+} . 
+
+lxid:LogEventTemplate_4748f35b[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15)
+} . 
+
+lxid:LogEventTemplate_f24320bb[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14)
+} . 
+
+lxid:LogEventTemplate_2e3c1290[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_ca965ec3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16)
+} . 
+
+lxid:LogEventTemplate_fced26b0[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_0e29a366[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_7850e62f[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_bc93983c[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_9e584687[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_4e272e49[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19, ?unknown20, ?unknown21, ?unknown22, ?unknown23, ?unknown24, ?unknown25, ?unknown26, ?unknown27, ?unknown28] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19), 
+	lxid:OttrTemplate_unknown(?id,?unknown20), 
+	lxid:OttrTemplate_unknown(?id,?unknown21), 
+	lxid:OttrTemplate_unknown(?id,?unknown22), 
+	lxid:OttrTemplate_unknown(?id,?unknown23), 
+	lxid:OttrTemplate_unknown(?id,?unknown24), 
+	lxid:OttrTemplate_unknown(?id,?unknown25), 
+	lxid:OttrTemplate_unknown(?id,?unknown26), 
+	lxid:OttrTemplate_unknown(?id,?unknown27), 
+	lxid:OttrTemplate_unknown(?id,?unknown28)
+} . 
+
+lxid:LogEventTemplate_8ebf4064[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_d0c10f07[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_f8909c47[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?path12, ?pathString13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_path(?id,?path12,?pathString13)
+} . 
+
+lxid:LogEventTemplate_4056ef2d[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_7d0f13a9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_e7261fa7[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13)
+} . 
+
+lxid:LogEventTemplate_3908097b[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_92df95f3[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15)
+} . 
+
+lxid:LogEventTemplate_094c3293[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12, ?unknown13, ?unknown14, ?unknown15, ?unknown16, ?unknown17, ?unknown18, ?unknown19] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12), 
+	lxid:OttrTemplate_unknown(?id,?unknown13), 
+	lxid:OttrTemplate_unknown(?id,?unknown14), 
+	lxid:OttrTemplate_unknown(?id,?unknown15), 
+	lxid:OttrTemplate_unknown(?id,?unknown16), 
+	lxid:OttrTemplate_unknown(?id,?unknown17), 
+	lxid:OttrTemplate_unknown(?id,?unknown18), 
+	lxid:OttrTemplate_unknown(?id,?unknown19)
+} . 
+
+lxid:LogEventTemplate_226d72a9[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11, ?unknown12] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11), 
+	lxid:OttrTemplate_unknown(?id,?unknown12)
+} . 
+
+lxid:LogEventTemplate_b3df8e70[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_a8a41ace[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_a978495a[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_cdc4304b[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_87004e2d[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9, ?unknown11] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9), 
+	lxid:OttrTemplate_unknown(?id,?unknown11)
+} . 
+
+lxid:LogEventTemplate_d12742c8[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+
+lxid:LogEventTemplate_1e3d9c20[ottr:IRI ?id, ?hostUrl0, ?hostString1, ?timestamp2, ?message3, ?template4, ?logSource5, ?LogId6, ?Level7, ?Method8, ?Date9] :: { 
+	lxid:OttrTemplate_dl(?id,?hostUrl0,?hostString1,?timestamp2,?message3,?template4,?logSource5,?LogId6,?Level7,?Method8,?Date9)
+} . 
+

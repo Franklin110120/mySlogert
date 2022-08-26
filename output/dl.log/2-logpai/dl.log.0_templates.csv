@@ -1,0 +1,107 @@
+EventId,EventTemplate,Occurrences
+572b5463,<*> NCCL_DEBUG=<*>,2
+15128b0a,"WORLD INFO DICT: {'lassen268': [<*>, <*>, <*>, <*>], 'lassen412': [<*>, <*>, <*>, <*>]}",2
+44eccd97,"nnodes=<*>, num_local_procs=<*>, node_rank=<*>",2
+050829a3,"global_rank_mapping=<*>(<class 'list'>, {'lassen268': [<*>, <*>, <*>, <*>], 'lassen412': [<*>, <*>, <*>, <*>]})",2
+96704e02,dist_world_size=<*>,2
+8020953a,"Setting CUDA_VISIBLE_DEVICES=<*>,<*>,<*>,<*>",2
+5f4c49f5,"Candidate batch size: [<*>, <*>]",110
+cb2cb073,"Valid World Size (GPUs / Model Parallel Size): [<*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>]",93
+a8a41ace,Initializing TorchBackend in DeepSpeed with backend nccl,9
+35a4488a,"> initializing model parallel cuda seeds on global rank <*>, model parallel rank <*>, and data parallel rank <*> with model parallel seed: <*> and data parallel seed: <*>",9
+76e91027,DeepSpeed elasticity support enabled,80
+b57d8412,"Unable to find DEEPSPEED_ELASTICITY_CONFIG environment variable, cannot guarantee resource scheduler will scale this job using compatible GPU counts.",80
+f24320bb,[<*>] overriding <*> <*> -> <*>,160
+66306e76,"[<*>] valid GPU counts: [<*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>, <*>]",64
+0e29a366,Before Building Model,9
+abc31d23,MA <*>.<*> GB Max_MA <*>.<*> GB CA <*>.<*> GB Max_CA <*> GB,18
+37def568,"CPU Virtual Memory: used = <*>.<*> GB, percent = <*>.<*>%",18
+4d1621c3,After Building Model,9
+11121736,"[Rank <*>] DeepSpeed info: version=<*>+4f9c535, git-hash=<*>, git-branch=<*>",9
+05a72aef,DeepSpeed Flops Profiler Enabled: False,9
+ff44327e,Removing param_group that has no 'params' in the client Optimizer,9
+8b0a4194,Using client Optimizer as basic optimizer,9
+8dfe98a0,DeepSpeed Basic Optimizer = FusedAdam,9
+de512520,[Rank <*>] Creating fp16 optimizer with dynamic loss scale,9
+5a610b14,[Rank <*>] DeepSpeed Final Optimizer = FusedAdam,9
+d12742c8,DeepSpeed using client LR scheduler,9
+e7c504d4,[Rank <*>] DeepSpeed LR Scheduler = <megatron.learning_rates.AnnealingLR object at <*>,9
+6b418d3a,"[Rank <*>] step=<*>, skipped=<*>, <*> <*> mom=[(<*>.<*>, <*>.<*>), (<*>.<*>, <*>.<*>)]",283
+3cd2ab10,DeepSpeedEngine configuration:,9
+ea0ae3a8,activation_checkpointing_config {,9
+b02faa06,"aio_config ................... {'block_size': <*>, 'queue_depth': <*>, 'thread_count': <*>, 'single_submit': False, 'overlap_events': True}",8
+b20db7a5,amp_enabled .................. False,9
+e9f907e5,amp_params ................... False,9
+5312d01a,autotuning_config ............ {,9
+fcd36948,<*> ............. False,27
+a02c13de,checkpoint_tag_validation_enabled True,8
+fbe58aea,checkpoint_tag_validation_fail False,9
+63dcf7fd,communication_data_type ...... None,9
+ae0717a7,curriculum_enabled ........... False,9
+8ebf4064,curriculum_params ............ False,9
+f0b22bd1,dataloader_drop_last ......... False,9
+cdc4304b,disable_allgather ............ False,9
+ff2adda7,dump_state ................... False,9
+e5c05e85,"dynamic_loss_scale_args ...... {'init_scale': <*>, 'scale_window': <*>, 'delayed_shift': <*>, 'min_scale': <*>}",9
+8fb879b7,eigenvalue_enabled ........... False,9
+3e9d3024,eigenvalue_gas_boundary_resolution <*>,9
+1d441d44,eigenvalue_layer_name ........ bert.encoder.layer,9
+70ed8281,eigenvalue_layer_num ......... <*>,9
+9e584687,eigenvalue_max_iter .......... <*>,9
+32fa1626,eigenvalue_stability ......... 1e-<*>,9
+6a14f83d,eigenvalue_tol ............... <*>.<*>,9
+6167bb31,eigenvalue_verbose ........... False,9
+e6d83b25,elastic_model_parallel_size .. <*>,9
+437694a9,elasticity_enabled ........... True,9
+429f7ca6,flops_profiler_config ........ {,9
+8d0e4fa4,fp16_enabled ................. True,9
+f52f9cfa,<*> False,27
+74f73483,fp16_mixed_quantize .......... False,9
+caa87193,global_rank .................. <*>,9
+259656a3,gradient_accumulation_steps .. <*>,9
+bc93983c,gradient_clipping ............ <*>.<*>,9
+b584137e,gradient_predivide_factor .... <*>.<*>,9
+3a5e4974,initial_dynamic_scale ........ <*>,9
+87004e2d,loss_scale ................... <*>,9
+03789713,monitor_config ............... <deepspeed.monitor.config.DeepSpeedMonitorConfig object at <*>,9
+8e90aa3b,num_gpus_per_node ............ <*>,9
+fc2bbd03,optimizer_legacy_fusion ...... False,9
+b91e763b,optimizer_name ............... None,9
+36778482,optimizer_params ............. None,9
+0135127e,"pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': <*>}",9
+0c6ccd52,pld_enabled .................. False,9
+4056ef2d,pld_params ................... False,9
+57bd5f40,prescale_gradients ........... False,9
+ddf1531a,quantize_change_rate ......... <*>.<*>,9
+68c92318,quantize_groups .............. <*>,9
+9522b3ad,quantize_offset .............. <*>,9
+8cef1637,quantize_period .............. <*>,9
+d8fa4e70,quantize_rounding ............ <*>,9
+b5860b5a,quantize_start_bits .......... <*>,9
+eafab6b4,quantize_target_bits ......... <*>,9
+55dd3316,quantize_training_enabled .... False,9
+c4d4bc01,quantize_type ................ <*>,9
+fced26b0,scheduler_name ............... None,9
+08a4492a,scheduler_params ............. None,9
+424754e6,sparse_attention ............. None,9
+2374d1b2,sparse_gradients_enabled ..... False,9
+4e3dadaf,steps_per_print .............. <*>,9
+4bed216a,train_batch_size ............. <*>,9
+7c9ea270,train_micro_batch_size_per_gpu <*>,9
+2e3c1290,use_quantizer_kernel ......... False,9
+b3df8e70,wall_clock_breakdown ......... True,9
+19951831,world_size ................... <*>,9
+1e3d9c20,zero_config .................. {,9
+9ee84eae,zero_enabled ................. False,9
+d0c10f07,zero_optimization_stage ...... <*>,9
+6b243d8f,json = {,9
+a92d62b1,"Unable to find latest file at results/<*>, if trying to load latest checkpoint please ensure this file exists or pass an explicit checkpoint tag when loading a checkpoint.",8
+d2da5219,Activation Checkpointing Information,9
+04779f53,"----Partition Activations False, CPU CHECKPOINTING False",9
+0f8df74b,----contiguous Memory Checkpointing False with <*> total layers,9
+dd9bb945,----Profiling time in checkpointing False,9
+4e272e49,[Rank <*>] rank=<*> time (<*>) | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*> | <*> <*>.<*>,822
+2c8bd350,"0/<*>, SamplesPerSec=<*>, MemAllocated=<*>, MaxMemAllocated=<*>",256
+f8909c47,[Rank <*>] Saving model checkpoint: results/<*>,11
+7d0f13a9,Valid World Size (GPUs / Model Parallel Size): [<*>.<*>],23
+02fcbe5a,[<*>] valid GPU counts: [<*>.<*>],16

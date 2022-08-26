@@ -280,7 +280,8 @@ public class LogEvent {
      */
     public String getDate(CSVRecord record, LogFormat format) {
         String result = null;
-
+        log.info("***this is format id***");
+	log.info(format.id);
         if (format.id.equals("ftp")) {
             String[] vars = format.time.split(",");
             result = DateUtility
@@ -297,7 +298,11 @@ public class LogEvent {
             String[] vars = format.time.split(",");
             result = DateUtility
                     .getAppDate(record.get(vars[0]), record.get(vars[1]), record.get(vars[2]), record.get(vars[3]));
-        } else {
+        } else if (format.id.equals("dl")) {
+            
+            result = DateUtility.getHPCDate(record.get(format.time));
+	} else {
+	    log.info("hello");
             log.error("*** Unknown Log Format!! ***");
         }
 

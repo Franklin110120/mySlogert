@@ -1,0 +1,90 @@
+@prefix logex: <https://w3id.org/sepses/ns/logex#> .
+@prefix cee:   <https://w3id.org/sepses/cee#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix log:   <https://w3id.org/sepses/ns/log#> .
+@prefix lxid:  <https://w3id.org/sepses/id/logex/> .
+@prefix lid:   <https://w3id.org/sepses/id/log/> .
+@prefix ottr:  <http://ns.ottr.xyz/0.4/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix svid:  <https://w3id.org/sepses/id/service/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+lxid:LogEventTemplate_2dbdc7da
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2dbdc7da" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap-login: Disconnected (auth failed, 2 attempts in 12 secs): user=<irwin>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, secured, session=<Qi33YPOfPIJ/AAAB>" ;
+        logex:hasAnnotation            cee:action_login , cee:action_disconnect , cee:service_auth , cee:action_connect ;
+        logex:hasParameterList         ( "unknown" "unknown" "user" "unknown" "ip" "ip" "path" ) ;
+        logex:keyword                  "attempt" , "disconnect" , "auth fail" , "secure" , "sec" , "imap-login" ;
+        logex:pattern                  "imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, session=<<*>>" .
+
+lxid:LogEventTemplate_1c791ed4
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "1c791ed4" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap-login: Disconnected (disconnected before auth was ready, waited 0 secs): user=<>, rip=192.168.10.18, lip=192.168.10.21, session=<+KO9uAeg4sPAqAoS>" ;
+        logex:hasAnnotation            cee:action_disconnect , cee:action_login , cee:action_connect , cee:service_auth , cee:action_read ;
+        logex:hasParameterList         ( "unknown" "ip" "ip" ) ;
+        logex:keyword                  "wait" , "ready" , "disconnect" , "imap-login" , "auth" , "sec" , "be" ;
+        logex:pattern                  "imap-login: Disconnected (disconnected before auth was ready, waited <*> secs): user=<>, rip=<*>, lip=<*>, session=<+KO9uAeg4sPAqAoS>" .
+
+lxid:LogEventTemplate_2422872b
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "2422872b" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap-login: Disconnected (no auth attempts in 0 secs): user=<>, rip=192.168.10.81, lip=192.168.10.122, session=<OwkHKQugxoDAqApR>" ;
+        logex:hasAnnotation            cee:service_auth , cee:action_disconnect , cee:action_connect , cee:action_login ;
+        logex:hasParameterList         ( "unknown" "ip" "ip" "unknown" ) ;
+        logex:keyword                  "sec" , "disconnect" , "imap-login" , "auth attempt" ;
+        logex:pattern                  "imap-login: Disconnected (no auth attempts in <*> secs): user=<>, rip=<*>, lip=<*>, session=<<*>>" .
+
+lxid:LogEventTemplate_fc9a895a
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "fc9a895a" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap-login: Disconnected (auth failed, 2 attempts in 10 secs): user=<giovanni>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, secured, session=<pxhGhQuggsh/AAAB>" ;
+        logex:hasAnnotation            cee:action_connect , cee:action_login , cee:action_disconnect , cee:service_auth ;
+        logex:hasParameterList         ( "unknown" "unknown" "user" "unknown" "ip" "ip" "unknown" ) ;
+        logex:keyword                  "sec" , "disconnect" , "attempt" , "imap-login" , "auth fail" , "secure" ;
+        logex:pattern                  "imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, <*>" .
+
+lxid:LogEventTemplate_19d70957
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "19d70957" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap-login: Login: user=<suzan>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, mpid=9543, secured, session=<kjlyAOifcpZ/AAAB>" ;
+        logex:hasAnnotation            cee:action_login ;
+        logex:hasParameterList         ( "user" "unknown" "ip" "ip" "unknown" "unknown" ) ;
+        logex:keyword                  "imap-login" , "login" , "secure" ;
+        logex:pattern                  "imap-login: Login: user=<<*>>, method=<*>, rip=<*>, lip=<*>, mpid=<*>, secured, <*>" .
+
+lxid:LogEventTemplate_f49657b2
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "f49657b2" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap(suzan): Error: file_dotlock_create(/var/mail/suzan) failed: Permission denied (euid=1004(suzan) egid=1004(suzan) missing +w perm: /var/mail, we're not in group 8(mail), dir owned by 0:8 mode=0775) (set mail_privileged_group=mail)" ;
+        logex:hasAnnotation            cee:action_lock , cee:action_create , cee:status_error , cee:object_file ;
+        logex:hasParameterList         ( "userImap" "path" "unknown" "unknown" "path" "unknown" "unknown" "unknown" "unknown" ) ;
+        logex:keyword                  "dir own" , "permission" , "create" , "set" , "dotlock" , "imap" , "fail" , "group" , "file" , "miss" , "w perm" , "error" , "be" , "deny" ;
+        logex:pattern                  "imap(<*>): Error: file_dotlock_create(<*>) failed: Permission denied (euid=<*>(<*>) egid=<*>(<*>) missing +w perm: /<*>, we're not in group <*>(<*>), dir owned by <*>:<*> mode=<*>) (set mail_privileged_group=<*>)" .
+
+lxid:LogEventTemplate_9b38a354
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "9b38a354" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap-login: Disconnected (auth failed, 2 attempts in 11 secs): user=<page>, method=PLAIN, rip=127.0.0.1, lip=127.0.0.1, secured, session=<mDj+qAWgyr9/AAAB>" ;
+        logex:hasAnnotation            cee:action_login , cee:action_disconnect , cee:action_connect , cee:service_auth ;
+        logex:hasParameterList         ( "unknown" "unknown" "user" "unknown" "ip" "ip" "unknown" ) ;
+        logex:keyword                  "disconnect" , "secure" , "attempt" , "sec" , "auth fail" , "imap-login" ;
+        logex:pattern                  "imap-login: Disconnected (auth failed, <*> attempts in <*> secs): user=<<*>>, method=<*>, rip=<*>, lip=<*>, secured, session=<mDj+qAWgyr9/<*>>" .
+
+lxid:LogEventTemplate_7edba00f
+        a                              logex:LogEventTemplate ;
+        rdfs:label                     "7edba00f" ;
+        logex:associatedLogSourceType  lid:SourceType_mail.log ;
+        logex:example                  "imap(suzan): Logged out in=79 out=878" ;
+        logex:hasParameterList         ( "userImap" "unknown" "unknown" ) ;
+        logex:keyword                  "imap" , "log" ;
+        logex:pattern                  "imap(<*>): Logged out in=<*> out=<*>" .
